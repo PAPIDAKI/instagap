@@ -1,0 +1,45 @@
+<%= form_for(@production) do |f| %>
+  <% if @production.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@production.errors.count, "error") %> prohibited this production from being saved:</h2>
+
+      <ul>
+      <% @production.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :pmu_id %><br>
+    <%= f.text_field :pmu_id %>
+  </div>
+  <div class="form-group">
+    <%= f.label :produce_id %><br>
+    <%= f.text_field :produce_id %>
+  </div>
+  <div class="form-group">
+    <%= f.label :variety %><br>
+    <%= f.text_field :variety,class:'form-control'  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :plantation_year %><br>
+    <%= f.number_field :plantation_year,class:'form-control'  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :number_of_trees %><br>
+    <%= f.number_field :number_of_trees ,class:'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :expected_quantitiy %><br>
+    <%= f.number_field :expected_quantitiy,class:'form-control'  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :ehd %><br>
+    <%= f.date_select :ehd,class:'form-control'  %>
+  </div>
+  <div class="actions">
+    <%= f.submit class:'btn btn-default'%>
+  </div>
+<% end %>

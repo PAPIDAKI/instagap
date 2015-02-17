@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pmu:</strong>
+  <%= @production.pmu %>
+</p>
+
+<p>
+  <strong>Produce:</strong>
+  <%= @production.produce %>
+</p>
+
+<p>
+  <strong>Variety:</strong>
+  <%= @production.variety %>
+</p>
+
+<p>
+  <strong>Plantation year:</strong>
+  <%= @production.plantation_year %>
+</p>
+
+<p>
+  <strong>Number of trees:</strong>
+  <%= @production.number_of_trees %>
+</p>
+
+<p>
+  <strong>Expected quantitiy:</strong>
+  <%= @production.expected_quantitiy %>
+</p>
+
+<p>
+  <strong>Ehd:</strong>
+  <%= @production.ehd %>
+</p>
+
+<%= link_to 'Edit', edit_production_path(@production) ,class:'btn btn-link' %> |
+<%= link_to 'Back', productions_path,class:'btn btn-link'  %>

@@ -1,0 +1,29 @@
+<%= form_for(@grower) do |f| %>
+  <% if @grower.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@grower.errors.count, "error") %> prohibited this grower from being saved:</h2>
+
+      <ul>
+      <% @grower.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name,class:'form-control' %>
+  </div>
+    <div class="form-group">
+    <%= f.label :address %><br>
+    <%= f.text_field :address,class:'form-control'  %>
+  </div>
+    <div class="form-group">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone,class:'form-control'  %>
+  </div>
+  <div class="actions">
+    <%= f.submit class:'btn btn-default' %>
+  </div>
+<% end %>

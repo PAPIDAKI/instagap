@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @pmu.address %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @pmu.location %>
+</p>
+
+<p>
+  <strong>Grower:</strong>
+  <%= @pmu.grower %>
+</p>
+
+<p>
+  <strong>Facilities:</strong>
+  <%= @pmu.facilities %>
+</p>
+
+<%= link_to 'Edit', edit_pmu_path(@pmu) ,class:'btn btn-link' %> |
+<%= link_to 'Back', pmus_path ,class:'btn btn-link' %>

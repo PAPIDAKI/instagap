@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @group.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @group.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @group.email %>
+</p>
+
+<%= link_to 'Edit', edit_group_path(@group) ,class:'btn btn-link' %> |
+<%= link_to 'Back', groups_path,class:'btn btn-link'  %>

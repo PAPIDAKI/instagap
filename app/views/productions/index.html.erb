@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Productions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pmu</th>
+      <th>Produce</th>
+      <th>Variety</th>
+      <th>Plantation year</th>
+      <th>Number of trees</th>
+      <th>Expected quantitiy</th>
+      <th>Ehd</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @productions.each do |production| %>
+      <tr>
+        <td><%= production.pmu %></td>
+        <td><%= production.produce %></td>
+        <td><%= production.variety %></td>
+        <td><%= production.plantation_year %></td>
+        <td><%= production.number_of_trees %></td>
+        <td><%= production.expected_quantitiy %></td>
+        <td><%= production.ehd %></td>
+        <td><%= link_to 'Show', production,class:'btn btn-link'  %></td>
+        <td><%= link_to 'Edit', edit_production_path(production),class:'btn btn-link'  %></td>
+        <td><%= link_to 'Destroy', production, method: :delete, data: { confirm: 'Are you sure?' } ,class:'btn btn-link' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Production', new_production_path,class:'btn btn-link'  %>

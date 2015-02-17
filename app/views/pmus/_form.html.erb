@@ -1,0 +1,33 @@
+<%= form_for(@pmu) do |f| %>
+  <% if @pmu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pmu.errors.count, "error") %> prohibited this pmu from being saved:</h2>
+
+      <ul>
+      <% @pmu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :address %><br>
+    <%= f.text_field :address,class:'form-control'  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :location %><br>
+    <%= f.text_field :location,class:'form-control'  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :grower_id %><br>
+    <%= f.text_field :grower_id,class:'form-control'  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :facilities %><br>
+    <%= f.text_field :facilities ,class:'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit class:'btn btn-default'%>
+  </div>
+<% end %>
