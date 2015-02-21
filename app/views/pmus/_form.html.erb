@@ -1,4 +1,4 @@
-<%= form_for(@pmu) do |f| %>
+<%= form_for([@registration,@pmu]) do |f| %>
   <% if @pmu.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@pmu.errors.count, "error") %> prohibited this pmu from being saved:</h2>

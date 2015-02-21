@@ -1,23 +1,45 @@
 Rails.application.routes.draw do
+
+
+
+
 	root "groups#index"
 
-  resources :standards
+	resources :groups do
+		resources :registrations
+		resources :pmus
+		#resources :memberships
+		#resources :growers
+	end
 
-  resources :produces
+	resources :registrations do
+		resources :pmus
+	end
 
-  resources :productions
 
-  resources :pmus
+	resources :pmus do
+		resources :productions
+	end
+
 
   resources :growers
 
-  resources :groups
+
+
+
 
   get 'pages/about'
 
   get 'pages/contact'
 
-  # The priority is based upon order of creation: first created -> highest priority.
+	resources :standards
+
+	resources :produces
+	resources :productions
+
+
+
+	# The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

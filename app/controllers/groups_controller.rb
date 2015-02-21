@@ -10,6 +10,8 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
+		@group=Group.find(params[:id])
+		@registrations=@group.registrations
   end
 
   # GET /groups/new
@@ -69,6 +71,7 @@ class GroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
-      params.require(:group).permit(:name, :address, :phone, :email)
+      params.require(:group).permit(:name, :address, :phone, :email,:avatar)
     end
 end
+

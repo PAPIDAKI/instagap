@@ -4,42 +4,47 @@ class ProductionsController < ApplicationController
   # GET /productions
   # GET /productions.json
   def index
-    @productions = Production.all
+		@pmu=Pmu.find(params[:pmu_id])
+    @productions = @pmu.productions
   end
 
   # GET /productions/1
   # GET /productions/1.json
-  def show
+  def shown
+			@pmu=Pmu.find(params[:pmu_id])
+			@production=@pmu.productions.find(params[:id])
   end
 
   # GET /productions/new
   def new
-    @production = Production.new
+		@pmu=Pmu.find(params[:pmu_id])
+    @production = @pmu.productions.new
+
   end
 
   # GET /productions/1/edit
   def edit
+		@pmu=Pmu.find(params[:pmu_id])
+		@production=@pmu.productions.find(params[:id])
   end
 
   # POST /productions
   # POST /productions.json
   def create
-    @production = Production.new(production_params)
+		@pmu=Pmu.find(params[:pmu_id])
+    @production = @pmu.productions.new(production_params)
+		if @production.save
+			redirect_to pmu_production_path(@pmu,@production), notice: 'Production was successfully created.'
+		else
+			render :new
+			end
 
-    respond_to do |format|
-      if @production.save
-        format.html { redirect_to @production, notice: 'Production was successfully created.' }
-        format.json { render :show, status: :created, location: @production }
-      else
-        format.html { render :new }
-        format.json { render json: @production.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /productions/1
   # PATCH/PUT /productions/1.json
   def update
+
     respond_to do |format|
       if @production.update(production_params)
         format.html { redirect_to @production, notice: 'Production was successfully updated.' }
@@ -64,7 +69,16 @@ class ProductionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_production
-      @production = Production.find(params[:id])
+
+	   # @pmu=Pmu.find(params[:pmu_id])
+	    #@production = @pmu.productions.find(params[:id])
+
+    end
+
+    def set_pmu
+
+	    #@pmu=Pmu.find(params[:pmu_id])
+	    #@production=@pmu.productions
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

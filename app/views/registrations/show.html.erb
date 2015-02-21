@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<%=link_to "<<=Group(show)",@group%>
+
+<div class="jumbotron">
+
+<p>
+  <strong>Name:</strong>
+  <%= @registration.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @registration.email %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @registration.role %>
+</p>
+
+<%= link_to 'Edit',edit_group_registration_path(@group,@registration),class:'btn btn-link'  %>
+</div>
+<hr>
+<h3>+Add Pmu</h3>
+
+<%=link_to "Add Pmu",new_registration_pmu_path(@registration),class:'btn btn-link' %>
+<%=@registration.pmus.count%>
+<ol>
+  <% @pmus.each do |pmu|%>
+  <li><%=link_to pmu.address,pmu%></li>
+      <%end%>
+</ol>
+<hr>
+<h3>+Add Event in Logbook</h3>
+<h3>Print outs</h3>

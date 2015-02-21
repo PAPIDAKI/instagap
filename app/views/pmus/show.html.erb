@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<h3><%=link_to"#{@pmu.registration.name}",@registration%></h3>
+
+<p>
+  <strong>Reg id (to be hidden):</strong>
+  <%=@pmu.registration.id%>
+</p>
+
+
 <p>
   <strong>Address:</strong>
   <%= @pmu.address %>
@@ -10,15 +18,14 @@
   <%= @pmu.location %>
 </p>
 
-<p>
-  <strong>Grower:</strong>
-  <%= @pmu.grower %>
-</p>
+
 
 <p>
   <strong>Facilities:</strong>
   <%= @pmu.facilities %>
 </p>
+<%= link_to 'Edit', edit_registration_pmu_path(@registration,@pmu) ,class:'btn btn-link' %>
 
-<%= link_to 'Edit', edit_pmu_path(@pmu) ,class:'btn btn-link' %> |
-<%= link_to 'Back', pmus_path ,class:'btn btn-link' %>
+<hr>
+<h3>+ Add Production </h3>
+<%=link_to "Add Production",new_pmu_production_path(@pmu)%>

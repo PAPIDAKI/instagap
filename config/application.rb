@@ -10,6 +10,7 @@ require "action_view/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -30,5 +31,9 @@ module Instagap
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+		#For carrierwave upoaders to work correctly
+		# (shows error -> unitialized constant on the rails console)
+    config.autoload_paths += %W(#{config.root}/app/uploaders)
+
   end
 end

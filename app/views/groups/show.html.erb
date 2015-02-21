@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
+<div class="jumbotron">
+<p>
+  <%=image_tag @group.avatar_url if @group.avatar%>
+</p>
 
 <p>
   <strong>Name:</strong>
@@ -22,3 +26,20 @@
 
 <%= link_to 'Edit', edit_group_path(@group) ,class:'btn btn-link' %> |
 <%= link_to 'Back', groups_path,class:'btn btn-link'  %>
+</div>
+
+<p>
+<% if @registrations.any? %>
+    <h3>Registered members</h3>
+    <% @registrations.each do |r|%>
+    <ul>
+      <li> <%=link_to "#{r.name} -#{r.role}",group_registration_path(@group,r)%></li>
+    </ul>
+    <%end%>
+<%end%>
+</p>
+<p>
+  <%=link_to "Register!",new_group_registration_path(@group),class:'btn btn-link'%>
+</p>
+<hr>
+

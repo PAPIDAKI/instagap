@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails instagap: development" uuid="f9796637-3f98-486d-88b7-7494187b3bef">
+      <schema-pattern>instagap_development.*</schema-pattern>
+      <default-schemas>instagap_development.*</default-schemas>
+    </data-source>
+    <data-source name="Rails instagap: test" uuid="3c8c90f9-a03a-4ed3-88c5-3c43d53477ed">
+      <first-sync>true</first-sync>
+    </data-source>
+    <data-source name="Rails instagap: production" uuid="c19eba38-b60f-4042-9cb1-8aeaea1c1cec">
+      <first-sync>true</first-sync>
+      <user-name>instagap</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe3dfe4dff9dffedfebdfeddfebdffadff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+    <data-source name="Rails instagap: development [2]" uuid="ce63e48f-a502-4868-a77d-77ef5e54d413">
+      <schema-pattern>instagap_development.*</schema-pattern>
+      <default-schemas>instagap_development.*</default-schemas>
+    </data-source>
+  </component>
+</project>

@@ -4,7 +4,10 @@ class GrowersController < ApplicationController
   # GET /growers
   # GET /growers.json
   def index
-    @growers = Grower.all
+
+		@group=Group.find(params[:group_id])
+    @growers = @group.growers
+
   end
 
   # GET /growers/1
@@ -14,7 +17,8 @@ class GrowersController < ApplicationController
 
   # GET /growers/new
   def new
-    @grower = Grower.new
+		@group=Group.find(params[:group_id])
+    @grower=@group.growers.new
   end
 
   # GET /growers/1/edit
@@ -24,11 +28,12 @@ class GrowersController < ApplicationController
   # POST /growers
   # POST /growers.json
   def create
-    @grower = Grower.new(grower_params)
+		@group=Group.find(params[:group_id])
+    @grower = @group.growers.new(grower_params)
 
     respond_to do |format|
       if @grower.save
-        format.html { redirect_to @grower, notice: 'Grower was successfully created.' }
+        format.html { redirect_to group_growers_path(@grower), notice: 'Grower was successfully created.' }
         format.json { render :show, status: :created, location: @grower }
       else
         format.html { render :new }

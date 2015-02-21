@@ -2,5 +2,6 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @pmu,class:'btn btn-link'  %> |
-<%= link_to 'Back', pmus_path,class:'btn btn-link'  %>
+<%= link_to 'Cancel', registration_pmu_path(@registration,@pmu),class:'btn btn-link'  %>
+<%= link_to 'Delete', registration_pmu_path(@registration,@pmu), method: :delete, data: { confirm: 'Are you sure?' },class:'btn btn-link' %>
+

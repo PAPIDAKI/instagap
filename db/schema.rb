@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150217080620) do
+ActiveRecord::Schema.define(version: 20150219100928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150217080620) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "avatar"
   end
 
   create_table "growers", force: :cascade do |t|
@@ -58,11 +59,13 @@ ActiveRecord::Schema.define(version: 20150217080620) do
     t.string   "location"
     t.integer  "grower_id"
     t.string   "facilities"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "registration_id"
   end
 
   add_index "pmus", ["grower_id"], name: "index_pmus_on_grower_id", using: :btree
+  add_index "pmus", ["registration_id"], name: "index_pmus_on_registration_id", using: :btree
 
   create_table "produces", force: :cascade do |t|
     t.string   "name"
@@ -85,6 +88,17 @@ ActiveRecord::Schema.define(version: 20150217080620) do
   add_index "productions", ["pmu_id"], name: "index_productions_on_pmu_id", using: :btree
   add_index "productions", ["produce_id"], name: "index_productions_on_produce_id", using: :btree
 
+  create_table "registrations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "role"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "registrations", ["group_id"], name: "index_registrations_on_group_id", using: :btree
+
   create_table "standards", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -98,4 +112,5 @@ ActiveRecord::Schema.define(version: 20150217080620) do
   add_foreign_key "pmus", "growers"
   add_foreign_key "productions", "pmus"
   add_foreign_key "productions", "produces"
+  add_foreign_key "registrations", "groups"
 end

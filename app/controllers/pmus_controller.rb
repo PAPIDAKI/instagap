@@ -1,48 +1,76 @@
 class PmusController < ApplicationController
   before_action :set_pmu, only: [:show, :edit, :update, :destroy]
 
-  # GET /pmus
+  # GET registrations/1/pmus
   # GET /pmus.json
   def index
-    @pmus = Pmu.all
+		@registration=Registration.find(params[:registration_id])
+    @pmus = @registration.pmus
   end
 
-  # GET /pmus/1
+  # GET registrations/1/pmus/1
   # GET /pmus/1.json
   def show
+		if params[:registration_id]
+	  @registration=Registration.find(params[:registration_id])
+		@pmu=@registration.pmus.find(params[:id])
+		@group=@registration.group
+		else
+			@pmu=Pmu.find(params[:id])
+			@registration=@pmu.registration
+			@group=@registration.group
+		end
+
   end
 
   # GET /pmus/new
   def new
-    @pmu = Pmu.new
+		@registration=Registration.find(params[:registration_id])
+    @pmu = @registration.pmus.new
   end
 
   # GET /pmus/1/edit
   def edit
+
+		if params[:registration_id]
+		@registration=Registration.find(params[:registration_id])
+		@pmu=@registration.pmus.find(params[:id])
+		else
+			@pmu=Pmu.find(params[:id])
+			end
   end
 
   # POST /pmus
   # POST /pmus.json
   def create
-    @pmu = Pmu.new(pmu_params)
 
-    respond_to do |format|
-      if @pmu.save
-        format.html { redirect_to @pmu, notice: 'Pmu was successfully created.' }
-        format.json { render :show, status: :created, location: @pmu }
-      else
-        format.html { render :new }
-        format.json { render json: @pmu.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+	  @registration=Registration.find(params[:registration_id])
+	  @pmu = @registration.pmus.create(pmu_params)
+		if @pmu.save
 
-  # PATCH/PUT /pmus/1
-  # PATCH/PUT /pmus/1.json
+			redirect_to registration_pmu_path(@registration,@pmu)
+
+		else
+			render :new
+			end
+	end
+
+
   def update
+
+	  if params[:registration_id]
+		  @registration=Registration.find(params[:registration_id])
+		  @pmu=@registration.pmus.find(params[:id])
+	  else
+		  @pmu=Pmu.find(params[:id])
+		  end
+
+		#@registration=Registration.find(params[:registration_id])
+		#@pmu=@registration.pmus.create(pmu_params)
+
     respond_to do |format|
       if @pmu.update(pmu_params)
-        format.html { redirect_to @pmu, notice: 'Pmu was successfully updated.' }
+        format.html { redirect_to registration_pmu_path(@registration,@pmu), notice: 'Pmu was successfully updated.' }
         format.json { render :show, status: :ok, location: @pmu }
       else
         format.html { render :edit }
@@ -51,12 +79,20 @@ class PmusController < ApplicationController
     end
   end
 
-  # DELETE /pmus/1
+  # DELETE registrations/1/pmus/1
   # DELETE /pmus/1.json
   def destroy
-    @pmu.destroy
+		if params[:registration]
+		@registration=Registration.find(params[:registration_id])
+		@pmu=@registration.pmus.find(params[:id])
+			@group=@registration.group
+		else
+			@pmu=Pmu.find(params[:id])
+			@registration=@pmu.registration
+			end
+		@pmu.destroy
     respond_to do |format|
-      format.html { redirect_to pmus_url, notice: 'Pmu was successfully destroyed.' }
+      format.html { redirect_to @registration, notice: 'Pmu was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +100,15 @@ class PmusController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pmu
-      @pmu = Pmu.find(params[:id])
+	    #@registration=Registration.find(params[:registration_id])
+	    #@pmu=@registration.pmus.find(params[:id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pmu_params
       params.require(:pmu).permit(:address, :location, :grower_id, :facilities)
     end
-end
+	end
+
+
