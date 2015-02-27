@@ -1,13 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<%=link_to "<<=Pmu(of production)",team_registration_pmu_path(@registration)%>
+
+<h3>Production for <%=@production.pmu.address%></h3>
+
 <p>
   <strong>Pmu:</strong>
-  <%= @production.pmu %>
+  <%= @production.pmu.address %>
 </p>
 
 <p>
   <strong>Produce:</strong>
-  <%= @production.produce %>
+  <%= @production.produce.name %>
 </p>
 
 <p>
@@ -35,5 +39,12 @@
   <%= @production.ehd %>
 </p>
 
-<%= link_to 'Edit', edit_production_path(@production) ,class:'btn btn-link' %> |
-<%= link_to 'Back', productions_path,class:'btn btn-link'  %>
+<hr>
+<strong>Certification:</strong>
+<ul>
+  <% @production.standards.each do |standard|%>
+      <li><%=standard.name%></li>
+  <%end%>
+</ul>
+
+<%= link_to 'Edit', edit_pmu_production_path(@pmu,@production) ,class:'btn btn-link' %>

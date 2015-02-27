@@ -1,4 +1,4 @@
-class RegistrationsController < ApplicationController
+class Team::RegistrationsController < ApplicationController
 
 	def index
 		@group=Group.find(params[:group_id])
@@ -14,7 +14,7 @@ class RegistrationsController < ApplicationController
 		@group=Group.find(params[:group_id])
 		@registration=@group.registrations.new(registration_params)
 		if @registration.save
-			redirect_to group_registration_path(@group,@registration),notice:"Registered successfully!"
+			redirect_to group_team_registration_path(@group,@registration),notice:"Registered successfully!"
 		else
 			render :new
 		end
@@ -25,16 +25,13 @@ class RegistrationsController < ApplicationController
 			@registration=@group.registrations.find(params[:id])
 	end
 
-
-
-
 	def update
 		@group=Group.find(params[:group_id])
 		@registration=@group.registrations.find(params[:id])
 
 		respond_to do |format|
 			if @registration.update(registration_params)
-				format.html { redirect_to group_path(@group), notice: 'Production updated!.' }
+				format.html { redirect_to group_team_registration_path(@group,@registration), notice: 'Group registration updated!.' }
 				format.json { render :show, status: :ok, location: @production }
 			else
 				format.html { render :edit }
@@ -75,5 +72,4 @@ class RegistrationsController < ApplicationController
 	end
 
 
-
-end
+	end

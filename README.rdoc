@@ -1,4 +1,6 @@
 DONE=>TODO update git to the secure 2.2.1 v
+TODO set default picture on carrierwave
+
 
 == README
 

@@ -2,5 +2,6 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @production ,class:'btn btn-link' %> |
-<%= link_to 'Back', productions_path,class:'btn btn-link'  %>
+<%= link_to 'Cancel', pmu_production_path(@pmu,@production),class:'btn btn-link'  %> |
+<%= link_to 'Delete', pmu_production_path(@pmu,@production),method: :delete,data: { confirm: 'Are you sure?' },class:'btn btn-link' %>
+

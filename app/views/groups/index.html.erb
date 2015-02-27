@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<%=link_to "Add new Group",new_group_path%>
 
-<h1>Listing Groups</h1>
+
+<h1>Groups</h1>
+<%=link_to "+ Add new Group",new_group_path%>
 <ul>
   <% @groups.each do |group|%>
   <li> <%= link_to "#{group.name}",group%></li>
@@ -25,7 +26,7 @@
   <tbody>
     <% @groups.each do |group| %>
       <tr>
-        <td><%= image_tag(group.avatar_url)%></td>
+        <td><%= image_tag group.avatar_url(:thumb) if group.avatar? %></td>
         <td><%= group.name %></td>
         <td><%= group.address %></td>
         <td><%= group.phone %></td>

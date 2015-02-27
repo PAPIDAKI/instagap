@@ -4,4 +4,7 @@ class Production < ActiveRecord::Base
 
   has_many :certifications,dependent: :destroy
   has_many :standards ,through: :certifications
+
+  validates :variety,uniqueness: :true
+
 end

@@ -3,7 +3,7 @@
 
 <ol>
   <%@registrations.each do |r|%>
-      <li><%=link_to "#{r.name} -#{r.role}",group_registration_path(@group,r)%>
+      <li><%=link_to "#{r.name} -#{r.role}",group_team_registration_path(@group,r)%>
     </li>
 
   <%end%>
@@ -28,9 +28,9 @@
         <td><%= r.email %></td>
         <td><%= r.role %></td>
 
-        <td><%= link_to 'Show', group_registration_path(@group,r),class:'btn btn-link'  %></td>
-        <td><%= link_to 'Edit',edit_group_registration_path(@group,r) , class:'btn btn-link'  %></td>
-        <td><%= link_to 'Destroy', group_registration_path(@group,r), method: :delete, data: { confirm: 'Are you sure?' } ,class:'btn btn-link' %></td>
+        <td><%= link_to 'Show', group_team_registration_path(@group,r),class:'btn btn-link'  %></td>
+        <td><%= link_to 'Edit',edit_group_team_registration_path(@group,r) , class:'btn btn-link'  %></td>
+        <td><%= link_to 'Destroy', group_team_registration_path(@group,r), method: :delete, data: { confirm: 'Are you sure?' } ,class:'btn btn-link' %></td>
       </tr>
   <% end %>
   </tbody>

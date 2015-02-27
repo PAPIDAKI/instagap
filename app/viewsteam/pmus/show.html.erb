@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<%=link_to "<<=Back to #{@pmu.registration.name}(show)",group_team_registration_path(@group,@registration)%>
+<h3><%=link_to"#{@pmu.registration.name}",team: @registration%></h3>
+
+<h2>Pmu:  <%= @pmu.address %></h2>
+
+<p>
+  <strong>Reg id (to be hidden):</strong>
+  <%=@pmu.registration.id%>
+</p>
+
+
+<p>
+  <strong>Address:</strong>
+  <%= @pmu.address %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @pmu.location %>
+</p>
+
+
+
+<p>
+  <strong>Facilities:</strong>
+  <%= @pmu.facilities %>
+</p>
+<%= link_to 'Edit',edit_team_registration_pmu_path(@registration,@pmu),class:'btn btn-link' %>
+
+<hr>
+<h3>Pmu's Productions </h3>
+<%=link_to " + Add Production",new_pmu_production_path(@pmu)%>
+<p>
+  <ul>
+    <%@productions.each do |production|%>
+     <li><%=link_to "#{production.produce.name} #{production.variety}",pmu_production_path(@pmu,production) %></li>
+    <%end%>
+  </ul>
+</p>
+ <hr>

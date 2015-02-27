@@ -1,0 +1,7 @@
+<h1>Editing Pmu</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Cancel', team_registration_pmu_path(@registration,@pmu),class:'btn btn-link'  %>
+<%= link_to 'Delete', team_registration_pmu_path(@registration,@pmu), method: :delete, data: { confirm: 'Are you sure?' },class:'btn btn-link' %>
+

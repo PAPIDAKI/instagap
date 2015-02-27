@@ -14,4 +14,12 @@ class Group < ActiveRecord::Base
 
 	mount_uploader :avatar, AvatarUploader
 
+	def team_registrations
+		# code here
+	end
+
+	def team_registrations
+		# code here
+	end
+
 end

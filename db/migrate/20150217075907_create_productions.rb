@@ -11,7 +11,7 @@ class CreateProductions < ActiveRecord::Migration
 #
      t.timestamps null: false
    end
-   add_foreign_key :productions, :pmus
+   add_foreign_key :productions, :'pmus'
    add_foreign_key :productions, :produces
   end
 end

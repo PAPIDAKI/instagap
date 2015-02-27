@@ -1,0 +1,7 @@
+<h1>Editing Registration</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Cancel', group_team_registration_path(@group,@registration),class:'btn btn-link'  %> |
+<%= link_to 'Delete',group_team_registration_path(@group,@registration),method: :delete,data: { confirm: 'Are you sure?' },class:'btn btn-link'%>
+

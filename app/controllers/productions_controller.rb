@@ -4,28 +4,31 @@ class ProductionsController < ApplicationController
   # GET /productions
   # GET /productions.json
   def index
+		if params[:pmu_id]
 		@pmu=Pmu.find(params[:pmu_id])
     @productions = @pmu.productions
-  end
-
-  # GET /productions/1
-  # GET /productions/1.json
-  def shown
-			@pmu=Pmu.find(params[:pmu_id])
-			@production=@pmu.productions.find(params[:id])
-  end
-
-  # GET /productions/new
-  def new
-		@pmu=Pmu.find(params[:pmu_id])
-    @production = @pmu.productions.new
-
+		else
+			@production=Production.find(params[:id])
+			@pmu=@production.pmu
+		end
   end
 
   # GET /productions/1/edit
   def edit
+		if params[:pmu_id]
 		@pmu=Pmu.find(params[:pmu_id])
 		@production=@pmu.productions.find(params[:id])
+		else
+			@production=Production.find(params[:id])
+			@pmu=@production.pmu
+		end
+  end
+
+
+  # GET /productions/new
+  def new
+	  @pmu=Pmu.find(params[:pmu_id])
+	  @production = @pmu.productions.new
   end
 
   # POST /productions
@@ -41,13 +44,29 @@ class ProductionsController < ApplicationController
 
   end
 
+  # GET /productions/1
+  # GET /productions/1.json
+  def show
+	  #@production=Production.find(params[:id])
+	  #@pmu=@production.pmu
+
+	  #if params[:pmu_id]
+	  	@pmu=Pmu.find(params[:pmu_id])
+	  	@production=@pmu.productions.find(params[:id])
+			@registration=@pmu.registration
+	  #	else
+	  #	end
+  end
+
   # PATCH/PUT /productions/1
   # PATCH/PUT /productions/1.json
   def update
 
     respond_to do |format|
+	    @production=Production.find(params[:id])
+	    @pmu=@production.pmu
       if @production.update(production_params)
-        format.html { redirect_to @production, notice: 'Production was successfully updated.' }
+        format.html { redirect_to pmu_production_path(@pmu,@production), notice: 'Production was successfully updated.' }
         format.json { render :show, status: :ok, location: @production }
       else
         format.html { render :edit }
@@ -59,9 +78,11 @@ class ProductionsController < ApplicationController
   # DELETE /productions/1
   # DELETE /productions/1.json
   def destroy
+		@production=Production.find(params[:id])
+		@pmu=@production.pmu
     @production.destroy
     respond_to do |format|
-      format.html { redirect_to productions_url, notice: 'Production was successfully destroyed.' }
+      format.html { redirect_to @pmu, notice: 'Production was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -83,6 +104,6 @@ class ProductionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def production_params
-      params.require(:production).permit(:pmu_id, :produce_id, :variety, :plantation_year, :number_of_trees, :expected_quantitiy, :ehd)
+      params.require(:production).permit(:pmu_id, :produce_id, :variety, :plantation_year, :number_of_trees, :expected_quantitiy, :ehd,standard_ids:[])
     end
 end
