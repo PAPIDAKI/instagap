@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :fertilizations
+
 	root "groups#index"
 
 	namespace :team do
