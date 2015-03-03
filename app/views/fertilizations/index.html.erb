@@ -2,7 +2,7 @@
 
 <h1>Listing Fertilizations</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Date</th>
@@ -24,7 +24,7 @@
       <tr>
         <td><%= fertilization.date %></td>
         <td><%= fertilization.name %></td>
-        <td><%= fertilization.type %></td>
+        <td><%= fertilization.typos %></td>
         <td><%= fertilization.concentration %></td>
         <td><%= fertilization.amount %></td>
         <td><%= fertilization.application_method %></td>
@@ -32,9 +32,9 @@
         <td><%= fertilization.approved_by %></td>
         <td><%= fertilization.operator %></td>
         <td><%= fertilization.note %></td>
-        <td><%= link_to 'Show', fertilization %></td>
-        <td><%= link_to 'Edit', edit_fertilization_path(fertilization) %></td>
-        <td><%= link_to 'Destroy', fertilization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', production_fertilization_path(@production,fertilization )%></td>
+        <td><%= link_to 'Edit', edit_production_fertilization_path(@production,fertilization) %></td>
+        <td><%= link_to 'Destroy', production_fertilization_path(@production,fertilization), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Fertilization', new_fertilization_path %>
+<%= link_to 'New Fertilization', new_production_fertilization_path(@production) %>

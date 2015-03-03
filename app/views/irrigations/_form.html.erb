@@ -1,0 +1,44 @@
+<%= form_for([@production,@irrigation]) do |f| %>
+  <% if @irrigation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@irrigation.errors.count, "error") %> prohibited this irrigation from being saved:</h2>
+
+      <ul>
+      <% @irrigation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="form-group">
+    <%= f.label :date %><br>
+    <%= f.date_select :date,class:'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :duration %><br>
+    <%= f.text_field :duration,class:'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :qunatity %><br>
+    <%= f.text_field :qunatity,class:'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :operator %><br>
+    <%= f.text_field :operator,class:'form-control' %>
+  </div>
+
+    <div class="form-group">
+      <%= f.label :persons %><br>
+      <%= f.number_field :persons,class:'form-control' %>
+    </div>
+
+
+  <div class="form-group">
+    <%= f.label :note %><br>
+    <%= f.text_field :note,class:'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit class:'btn btn-default' %>
+  </div>
+<% end %>

@@ -1,4 +1,4 @@
-<%= form_for(@fertilization) do |f| %>
+<%= form_for([@production,@fertilization]) do |f| %>
   <% if @fertilization.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@fertilization.errors.count, "error") %> prohibited this fertilization from being saved:</h2>
@@ -11,47 +11,57 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :date %><br>
-    <%= f.date_select :date %>
+    <%= f.date_select :date,class:'form-control' %>
   </div>
-  <div class="field">
+
+    <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name,class:'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
+
+    <div class="form-group">
+    <%= f.label :typos %><br>
+    <%= f.text_field :typos,class:'form-control' %>
   </div>
-  <div class="field">
+
+    <div class="form-group">
     <%= f.label :concentration %><br>
-    <%= f.text_field :concentration %>
+    <%= f.text_field :concentration,class:'form-control' %>
   </div>
-  <div class="field">
+
+    <div class="form-group">
     <%= f.label :amount %><br>
-    <%= f.text_field :amount %>
+    <%= f.text_field :amount,class:'form-control' %>
   </div>
-  <div class="field">
+
+    <div class="form-group">
     <%= f.label :application_method %><br>
-    <%= f.text_field :application_method %>
+    <%= f.text_field :application_method,class:'form-control' %>
   </div>
-  <div class="field">
+
+    <div class="form-group">
     <%= f.label :machinery %><br>
-    <%= f.text_field :machinery %>
+    <%= f.text_field :machinery,class:'form-control' %>
   </div>
-  <div class="field">
+
+    <div class="form-group">
     <%= f.label :approved_by %><br>
-    <%= f.text_field :approved_by %>
+    <%= f.text_field :approved_by,class:'form-control' %>
   </div>
-  <div class="field">
+
+    <div class="form-group">
     <%= f.label :operator %><br>
-    <%= f.text_field :operator %>
+    <%= f.text_field :operator,class:'form-control' %>
   </div>
-  <div class="field">
+
+    <div class="form-group">
     <%= f.label :note %><br>
-    <%= f.text_field :note %>
+    <%= f.text_field :note,class:'form-control' %>
   </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class:'btn btn-default'%>
   </div>
 <% end %>

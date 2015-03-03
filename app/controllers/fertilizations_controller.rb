@@ -4,35 +4,58 @@ class FertilizationsController < ApplicationController
   respond_to :html
 
   def index
-    @fertilizations = Fertilization.all
+		@production=Production.find(params[:production_id])
+    @fertilizations =@production.fertilizations.all
     respond_with(@fertilizations)
   end
 
   def show
+		@production=Production.find(params[:production_id])
+		@fertilization=Fertilization.find(params[:id])
+		@pmu=@production.pmu
     respond_with(@fertilization)
   end
 
   def new
-    @fertilization = Fertilization.new
-    respond_with(@fertilization)
+		@production=Production.find(params[:production_id])
+    @fertilization = @production.fertilizations.new
   end
 
   def edit
+	  @production=Production.find(params[:production_id])
+	  @fertilization = Fertilization.find(params[:id])
+
   end
 
   def create
-    @fertilization = Fertilization.new(fertilization_params)
-    @fertilization.save
-    respond_with(@fertilization)
+
+	  @production=Production.find(params[:production_id])
+	  @fertilization = @production.fertilizations.new(fertilization_params)
+	  @pmu=@production.pmu
+    if @fertilization.save
+			redirect_to pmu_production_path(@pmu,@production)
+    else
+			render :new
+    end
   end
 
   def update
-    @fertilization.update(fertilization_params)
-    respond_with(@fertilization)
+	  @production=Production.find(params[:production_id])
+	  @fertilization =Fertilization.find(params[:id])
+	  @fertilization.update(fertilization_params)
+	  @pmu=@production.pmu
+	  if @fertilization.save
+		  redirect_to pmu_production_path(@pmu,@production)
+	  else
+		  render :edit
+	  end
+
   end
 
   def destroy
-    @fertilization.destroy
+	  @production=Production.find(params[:production_id])
+	  @fertilization = Fertilization.find(params[:id])
+	  @fertilization.destroy
     respond_with(@fertilization)
   end
 
@@ -42,6 +65,6 @@ class FertilizationsController < ApplicationController
     end
 
     def fertilization_params
-      params.require(:fertilization).permit(:date, :name, :type, :concentration, :amount, :application_method, :machinery, :approved_by, :operator, :note)
+      params.require(:fertilization).permit(:date, :name, :typos, :concentration, :amount, :application_method, :machinery, :approved_by, :operator, :note,:production_id)
     end
 end

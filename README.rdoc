@@ -4,32 +4,6 @@ TODO set default picture on carrierwave
 
 
 
->>Fertilizer
-date operator note
-commercial name
-type(n,p,k)
-concentration 11,17,11
-amount in weight or volume
-method (irrigation mechanical
-machinery used
-Tech responsible
-
->>Irrigation
-date operator note
-volume per water mete or per unit
-
-
-
->>PP
-date operator note
-trade name (including formulation)
-active igredient or beneficial organism
-
-name of pests -diseases - weeds
-amount of product applied in weight or volume
-application method (Machinery via irrigation dusting ,fogger ,aerial)
-phi
-tech responsible
 
 
 

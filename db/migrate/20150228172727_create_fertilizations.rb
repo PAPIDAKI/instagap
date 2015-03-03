@@ -3,7 +3,7 @@ class CreateFertilizations < ActiveRecord::Migration
     create_table :fertilizations do |t|
       t.date :date
       t.string :name
-      t.string :type
+      t.string :typos
       t.string :concentration
       t.decimal :amount
       t.string :application_method

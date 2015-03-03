@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :pps
+
+  resources :irrigations
+
   resources :fertilizations
 
 	root "groups#index"
@@ -6,7 +10,6 @@ Rails.application.routes.draw do
 	namespace :team do
 	resources :registrations
 	end
-
 
 	resources :groups do
 	  namespace :team do
@@ -17,16 +20,22 @@ Rails.application.routes.draw do
 	namespace :team do
 	  resources :registrations,:only=>[:show] do
 			resources :pmus
-
 		end
 	end
 
+  resources :growers,:produces,:standards
 
-	resources :pmus do
+  resources :pmus do
 		resources :productions
 	end
 
-  resources :growers,:pmus,:productions,:produces,:standards
+  resources :productions do
+	  resources :fertilizations
+	  resources :irrigations
+	  resources :pps
+
+  end
+
 
   get 'pages/about'
   get 'pages/contact'

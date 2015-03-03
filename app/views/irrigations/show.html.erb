@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @irrigation.date %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @irrigation.duration %>
+</p>
+
+<p>
+  <strong>Qunatity:</strong>
+  <%= @irrigation.qunatity %>
+</p>
+
+<p>
+  <strong>Operator:</strong>
+  <%= @irrigation.operator %>
+</p>
+
+<p>
+  <strong>Persons:</strong>
+  <%= @irrigation.persons %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @irrigation.note %>
+</p>
+
+<%= link_to 'Edit', edit_irrigation_path(@irrigation) %> |
+<%= link_to 'Back', irrigations_path %>
