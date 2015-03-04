@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150228172727) do
+ActiveRecord::Schema.define(version: 20150301163144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150228172727) do
   create_table "fertilizations", force: :cascade do |t|
     t.date     "date"
     t.string   "name"
-    t.string   "type"
+    t.string   "typos"
     t.string   "concentration"
     t.decimal  "amount"
     t.string   "application_method"
@@ -39,7 +39,10 @@ ActiveRecord::Schema.define(version: 20150228172727) do
     t.string   "note"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "production_id"
   end
+
+  add_index "fertilizations", ["production_id"], name: "index_fertilizations_on_production_id", using: :btree
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
@@ -58,6 +61,20 @@ ActiveRecord::Schema.define(version: 20150228172727) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "irrigations", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "duration"
+    t.decimal  "qunatity"
+    t.integer  "persons"
+    t.string   "operator"
+    t.string   "note"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "production_id"
+  end
+
+  add_index "irrigations", ["production_id"], name: "index_irrigations_on_production_id", using: :btree
 
   create_table "memberships", force: :cascade do |t|
     t.integer  "group_id"
@@ -81,6 +98,22 @@ ActiveRecord::Schema.define(version: 20150228172727) do
 
   add_index "pmus", ["grower_id"], name: "index_pmus_on_grower_id", using: :btree
   add_index "pmus", ["registration_id"], name: "index_pmus_on_registration_id", using: :btree
+
+  create_table "pps", force: :cascade do |t|
+    t.date     "date"
+    t.string   "trade_name"
+    t.string   "active_ingridient"
+    t.string   "reason"
+    t.decimal  "amount"
+    t.string   "application_method"
+    t.string   "tech_responsible"
+    t.string   "operator"
+    t.string   "persons"
+    t.string   "note"
+    t.integer  "production_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "produces", force: :cascade do |t|
     t.string   "name"
