@@ -1,0 +1,1 @@
+class Harvesting < Activity;end

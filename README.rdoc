@@ -1,6 +1,16 @@
 DONE=>TODO update git to the secure 2.2.1 v
 TODO set default picture on carrierwave
 
+TODO Add activities through habtm checkboxes
+build chems and import csv
+add many chems
+list chems
+select and add chems
+add map -
+gmaps select and calculate
+
+
+
 
 
 

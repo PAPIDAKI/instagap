@@ -1,3 +1,1 @@
-class Irrigation < ActiveRecord::Base
-	belongs_to :production
-end
+class Irrigation < Activity; end

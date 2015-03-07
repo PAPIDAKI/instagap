@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150301163144) do
+ActiveRecord::Schema.define(version: 20150306093226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.date     "date"
+    t.string   "type"
+    t.text     "note"
+    t.string   "operator"
+    t.integer  "persons"
+    t.string   "approved_by"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "registration_id"
+  end
+
+  add_index "activities", ["registration_id"], name: "index_activities_on_registration_id", using: :btree
 
   create_table "certifications", force: :cascade do |t|
     t.integer  "standard_id"
@@ -25,24 +39,6 @@ ActiveRecord::Schema.define(version: 20150301163144) do
 
   add_index "certifications", ["production_id"], name: "index_certifications_on_production_id", using: :btree
   add_index "certifications", ["standard_id"], name: "index_certifications_on_standard_id", using: :btree
-
-  create_table "fertilizations", force: :cascade do |t|
-    t.date     "date"
-    t.string   "name"
-    t.string   "typos"
-    t.string   "concentration"
-    t.decimal  "amount"
-    t.string   "application_method"
-    t.string   "machinery"
-    t.string   "approved_by"
-    t.string   "operator"
-    t.string   "note"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.integer  "production_id"
-  end
-
-  add_index "fertilizations", ["production_id"], name: "index_fertilizations_on_production_id", using: :btree
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
@@ -61,20 +57,6 @@ ActiveRecord::Schema.define(version: 20150301163144) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "irrigations", force: :cascade do |t|
-    t.date     "date"
-    t.integer  "duration"
-    t.decimal  "qunatity"
-    t.integer  "persons"
-    t.string   "operator"
-    t.string   "note"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "production_id"
-  end
-
-  add_index "irrigations", ["production_id"], name: "index_irrigations_on_production_id", using: :btree
 
   create_table "memberships", force: :cascade do |t|
     t.integer  "group_id"
@@ -99,27 +81,21 @@ ActiveRecord::Schema.define(version: 20150301163144) do
   add_index "pmus", ["grower_id"], name: "index_pmus_on_grower_id", using: :btree
   add_index "pmus", ["registration_id"], name: "index_pmus_on_registration_id", using: :btree
 
-  create_table "pps", force: :cascade do |t|
-    t.date     "date"
-    t.string   "trade_name"
-    t.string   "active_ingridient"
-    t.string   "reason"
-    t.decimal  "amount"
-    t.string   "application_method"
-    t.string   "tech_responsible"
-    t.string   "operator"
-    t.string   "persons"
-    t.string   "note"
-    t.integer  "production_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
-
   create_table "produces", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "productionactiviations", force: :cascade do |t|
+    t.integer  "activity_id"
+    t.integer  "production_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "productionactiviations", ["activity_id"], name: "index_productionactiviations_on_activity_id", using: :btree
+  add_index "productionactiviations", ["production_id"], name: "index_productionactiviations_on_production_id", using: :btree
 
   create_table "productions", force: :cascade do |t|
     t.integer  "pmu_id"

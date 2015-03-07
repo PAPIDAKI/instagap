@@ -1,0 +1,1 @@
+class Protection < Activity; end

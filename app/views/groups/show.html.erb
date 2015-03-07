@@ -1,33 +1,22 @@
 
 <%=link_to "<<=Back to your projects(Groups/index)", groups_path ,class:'btn btn-link'%>
-<div class="jumbotron">
-<p>
-  <%=image_tag @group.avatar_url(:mid) if @group.avatar%>
-</p>
+ <div class="jumbotron">
+  <div class="row">
+    <div class="col-xs-3 col-xs-offset">
+    <h2></h2>
+    <%=image_tag @group.avatar_url(:mid) if @group.avatar%>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
+  </div>
+  <div class="col-xs-9">
+    <h2><%= @group.name %><br/>
+    <small><%= @group.address %><br/>
+    <%= @group.phone %>
+    <%= @group.email %></small></h2>
 
-<p>
-  <strong>Address:</strong>
-  <%= @group.address %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @group.phone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @group.email %>
-</p>
-
-<%= link_to 'Edit', edit_group_path(@group) ,class:'btn btn-link' %>
-</div>
-
+    <%= link_to 'Edit', edit_group_path(@group) ,class:'btn btn-link' %>
+  </div>
+ </div>
+   </div>
 <p>
 <% if @registrations.any? %>
     <h3>Registered members</h3>

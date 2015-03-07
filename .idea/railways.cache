@@ -1,0 +1,135 @@
+                      Prefix Verb   URI Pattern                                                  Controller#Action
+                  activities GET    /activities(.:format)                                        activities#index
+                             POST   /activities(.:format)                                        activities#create
+                new_activity GET    /activities/new(.:format)                                    activities#new
+               edit_activity GET    /activities/:id/edit(.:format)                               activities#edit
+                    activity GET    /activities/:id(.:format)                                    activities#show
+                             PATCH  /activities/:id(.:format)                                    activities#update
+                             PUT    /activities/:id(.:format)                                    activities#update
+                             DELETE /activities/:id(.:format)                                    activities#destroy
+                        root GET    /                                                            groups#index
+          team_registrations GET    /team/registrations(.:format)                                team/registrations#index
+                             POST   /team/registrations(.:format)                                team/registrations#create
+       new_team_registration GET    /team/registrations/new(.:format)                            team/registrations#new
+      edit_team_registration GET    /team/registrations/:id/edit(.:format)                       team/registrations#edit
+           team_registration GET    /team/registrations/:id(.:format)                            team/registrations#show
+                             PATCH  /team/registrations/:id(.:format)                            team/registrations#update
+                             PUT    /team/registrations/:id(.:format)                            team/registrations#update
+                             DELETE /team/registrations/:id(.:format)                            team/registrations#destroy
+    group_team_registrations GET    /groups/:group_id/team/registrations(.:format)               team/registrations#index
+                             POST   /groups/:group_id/team/registrations(.:format)               team/registrations#create
+ new_group_team_registration GET    /groups/:group_id/team/registrations/new(.:format)           team/registrations#new
+edit_group_team_registration GET    /groups/:group_id/team/registrations/:id/edit(.:format)      team/registrations#edit
+     group_team_registration GET    /groups/:group_id/team/registrations/:id(.:format)           team/registrations#show
+                             PATCH  /groups/:group_id/team/registrations/:id(.:format)           team/registrations#update
+                             PUT    /groups/:group_id/team/registrations/:id(.:format)           team/registrations#update
+                             DELETE /groups/:group_id/team/registrations/:id(.:format)           team/registrations#destroy
+                      groups GET    /groups(.:format)                                            groups#index
+                             POST   /groups(.:format)                                            groups#create
+                   new_group GET    /groups/new(.:format)                                        groups#new
+                  edit_group GET    /groups/:id/edit(.:format)                                   groups#edit
+                       group GET    /groups/:id(.:format)                                        groups#show
+                             PATCH  /groups/:id(.:format)                                        groups#update
+                             PUT    /groups/:id(.:format)                                        groups#update
+                             DELETE /groups/:id(.:format)                                        groups#destroy
+      team_registration_pmus GET    /team/registrations/:registration_id/pmus(.:format)          team/pmus#index
+                             POST   /team/registrations/:registration_id/pmus(.:format)          team/pmus#create
+   new_team_registration_pmu GET    /team/registrations/:registration_id/pmus/new(.:format)      team/pmus#new
+  edit_team_registration_pmu GET    /team/registrations/:registration_id/pmus/:id/edit(.:format) team/pmus#edit
+       team_registration_pmu GET    /team/registrations/:registration_id/pmus/:id(.:format)      team/pmus#show
+                             PATCH  /team/registrations/:registration_id/pmus/:id(.:format)      team/pmus#update
+                             PUT    /team/registrations/:registration_id/pmus/:id(.:format)      team/pmus#update
+                             DELETE /team/registrations/:registration_id/pmus/:id(.:format)      team/pmus#destroy
+                             GET    /team/registrations/:id(.:format)                            team/registrations#show
+                     growers GET    /growers(.:format)                                           growers#index
+                             POST   /growers(.:format)                                           growers#create
+                  new_grower GET    /growers/new(.:format)                                       growers#new
+                 edit_grower GET    /growers/:id/edit(.:format)                                  growers#edit
+                      grower GET    /growers/:id(.:format)                                       growers#show
+                             PATCH  /growers/:id(.:format)                                       growers#update
+                             PUT    /growers/:id(.:format)                                       growers#update
+                             DELETE /growers/:id(.:format)                                       growers#destroy
+                    produces GET    /produces(.:format)                                          produces#index
+                             POST   /produces(.:format)                                          produces#create
+                 new_produce GET    /produces/new(.:format)                                      produces#new
+                edit_produce GET    /produces/:id/edit(.:format)                                 produces#edit
+                     produce GET    /produces/:id(.:format)                                      produces#show
+                             PATCH  /produces/:id(.:format)                                      produces#update
+                             PUT    /produces/:id(.:format)                                      produces#update
+                             DELETE /produces/:id(.:format)                                      produces#destroy
+                   standards GET    /standards(.:format)                                         standards#index
+                             POST   /standards(.:format)                                         standards#create
+                new_standard GET    /standards/new(.:format)                                     standards#new
+               edit_standard GET    /standards/:id/edit(.:format)                                standards#edit
+                    standard GET    /standards/:id(.:format)                                     standards#show
+                             PATCH  /standards/:id(.:format)                                     standards#update
+                             PUT    /standards/:id(.:format)                                     standards#update
+                             DELETE /standards/:id(.:format)                                     standards#destroy
+             pmu_productions GET    /pmus/:pmu_id/productions(.:format)                          productions#index
+                             POST   /pmus/:pmu_id/productions(.:format)                          productions#create
+          new_pmu_production GET    /pmus/:pmu_id/productions/new(.:format)                      productions#new
+         edit_pmu_production GET    /pmus/:pmu_id/productions/:id/edit(.:format)                 productions#edit
+              pmu_production GET    /pmus/:pmu_id/productions/:id(.:format)                      productions#show
+                             PATCH  /pmus/:pmu_id/productions/:id(.:format)                      productions#update
+                             PUT    /pmus/:pmu_id/productions/:id(.:format)                      productions#update
+                             DELETE /pmus/:pmu_id/productions/:id(.:format)                      productions#destroy
+                        pmus GET    /pmus(.:format)                                              pmus#index
+                             POST   /pmus(.:format)                                              pmus#create
+                     new_pmu GET    /pmus/new(.:format)                                          pmus#new
+                    edit_pmu GET    /pmus/:id/edit(.:format)                                     pmus#edit
+                         pmu GET    /pmus/:id(.:format)                                          pmus#show
+                             PATCH  /pmus/:id(.:format)                                          pmus#update
+                             PUT    /pmus/:id(.:format)                                          pmus#update
+                             DELETE /pmus/:id(.:format)                                          pmus#destroy
+                 productions GET    /productions(.:format)                                       productions#index
+                             POST   /productions(.:format)                                       productions#create
+              new_production GET    /productions/new(.:format)                                   productions#new
+             edit_production GET    /productions/:id/edit(.:format)                              productions#edit
+                  production GET    /productions/:id(.:format)                                   productions#show
+                             PATCH  /productions/:id(.:format)                                   productions#update
+                             PUT    /productions/:id(.:format)                                   productions#update
+                             DELETE /productions/:id(.:format)                                   productions#destroy
+                 pages_about GET    /pages/about(.:format)                                       pages#about
+               pages_contact GET    /pages/contact(.:format)                                     pages#contact
+            new_user_session GET    /users/sign_in(.:format)                                     devise/sessions#new
+                user_session POST   /users/sign_in(.:format)                                     devise/sessions#create
+        destroy_user_session DELETE /users/sign_out(.:format)                                    devise/sessions#destroy
+               user_password POST   /users/password(.:format)                                    devise/passwords#create
+           new_user_password GET    /users/password/new(.:format)                                devise/passwords#new
+          edit_user_password GET    /users/password/edit(.:format)                               devise/passwords#edit
+                             PATCH  /users/password(.:format)                                    devise/passwords#update
+                             PUT    /users/password(.:format)                                    devise/passwords#update
+    cancel_user_registration GET    /users/cancel(.:format)                                      devise/registrations#cancel
+           user_registration POST   /users(.:format)                                             devise/registrations#create
+       new_user_registration GET    /users/sign_up(.:format)                                     devise/registrations#new
+      edit_user_registration GET    /users/edit(.:format)                                        devise/registrations#edit
+                             PATCH  /users(.:format)                                             devise/registrations#update
+                             PUT    /users(.:format)                                             devise/registrations#update
+                             DELETE /users(.:format)                                             devise/registrations#destroy
+                             GET    /activities(.:format)                                        activities#index
+                             POST   /activities(.:format)                                        activities#create
+                             GET    /activities/new(.:format)                                    activities#new
+                             GET    /activities/:id/edit(.:format)                               activities#edit
+                             GET    /activities/:id(.:format)                                    activities#show
+                             PATCH  /activities/:id(.:format)                                    activities#update
+                             PUT    /activities/:id(.:format)                                    activities#update
+                             DELETE /activities/:id(.:format)                                    activities#destroy
+              fertilizations GET    /fertilizations(.:format)                                    activities#index {:type=>"Fertilization"}
+                             POST   /fertilizations(.:format)                                    activities#create {:type=>"Fertilization"}
+           new_fertilization GET    /fertilizations/new(.:format)                                activities#new {:type=>"Fertilization"}
+          edit_fertilization GET    /fertilizations/:id/edit(.:format)                           activities#edit {:type=>"Fertilization"}
+               fertilization GET    /fertilizations/:id(.:format)                                activities#show {:type=>"Fertilization"}
+                             PATCH  /fertilizations/:id(.:format)                                activities#update {:type=>"Fertilization"}
+                             PUT    /fertilizations/:id(.:format)                                activities#update {:type=>"Fertilization"}
+                             DELETE /fertilizations/:id(.:format)                                activities#destroy {:type=>"Fertilization"}
+                 irrigations GET    /irrigations(.:format)                                       activities#index {:type=>"Irrigation"}
+                             POST   /irrigations(.:format)                                       activities#create {:type=>"Irrigation"}
+              new_irrigation GET    /irrigations/new(.:format)                                   activities#new {:type=>"Irrigation"}
+             edit_irrigation GET    /irrigations/:id/edit(.:format)                              activities#edit {:type=>"Irrigation"}
+                  irrigation GET    /irrigations/:id(.:format)                                   activities#show {:type=>"Irrigation"}
+                             PATCH  /irrigations/:id(.:format)                                   activities#update {:type=>"Irrigation"}
+                             PUT    /irrigations/:id(.:format)                                   activities#update {:type=>"Irrigation"}
+                             DELETE /irrigations/:id(.:format)                                   activities#destroy {:type=>"Irrigation"}
+   activities_fertilizations GET    /activities/fertilizations(.:format)                         activities#index {:scope=>"fertilizations"}
+      activities_irrigations GET    /activities/irrigations(.:format)                            activities#index {:scope=>"irrigations"}
+      activities_protections GET    /activities/protections(.:format)                            activities#index {:scope=>"protections"}
