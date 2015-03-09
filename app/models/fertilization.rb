@@ -1,2 +1,1 @@
-class Fertilization < ActiveRecord::Base
-end
+class Fertilization < Activity; end

@@ -3,5 +3,9 @@ class Registration < ActiveRecord::Base
   has_many :pmus,dependent: :destroy
   has_many :productions ,through: :pmus
 
-	ROLES=['Grower','Agronomist','Auditor']
+  has_many :activities
+  delegate :irrigations,:fertilizations,:protections,:harvestings ,:cultivations, to: :activities
+
+
+  ROLES=['Grower','Agronomist','Auditor']
 end

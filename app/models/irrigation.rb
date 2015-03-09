@@ -1,0 +1,1 @@
+class Irrigation < Activity; end

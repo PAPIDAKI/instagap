@@ -1,0 +1,3 @@
+class Cultivation < Activity;
+
+end

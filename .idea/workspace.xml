@@ -36,7 +36,7 @@
         <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="Rails instagap: development" />
+        <option name="myItemId" value="Rails instagap: development [2]" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
@@ -50,7 +50,7 @@
         <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="Rails instagap: development" />
+        <option name="myItemId" value="Rails instagap: development [2]" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
@@ -58,7 +58,7 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="productions" />
+        <option name="myItemId" value="activities" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -68,33 +68,7 @@
         <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="Rails instagap: development" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="instagap_development.public" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="pmus" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Rails instagap: development" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="instagap_development.public" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="certifications" />
+        <option name="myItemId" value="Rails instagap: development [2]" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -115,31 +89,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/productions/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-34.482758" vertical-offset="0" max-vertical-offset="1120">
               <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+=======
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/activities/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.310345" vertical-offset="381" max-vertical-offset="980">
+              <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/activities/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.448276" vertical-offset="241" max-vertical-offset="840">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+>>>>>>> logs
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file leaf-file-name="20150228172727_create_fertilizations.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/migrate/20150228172727_create_fertilizations.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.59504133" vertical-offset="0" max-vertical-offset="605">
               <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+=======
+      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="681" max-vertical-offset="1600">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+>>>>>>> logs
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="README.rdoc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.rdoc">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="560" max-vertical-offset="1480">
               <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+=======
+      <file leaf-file-name="activities_controller.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/activities_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.42975205" vertical-offset="220" max-vertical-offset="1760">
+              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/activity.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="980">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="5" />
+>>>>>>> logs
               <folding />
             </state>
           </provider>
@@ -162,57 +180,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/db/migrate/20150219100928_add_registration_id_to_pmu.rb" />
-        <option value="$PROJECT_DIR$/app/models/grower.rb" />
-        <option value="$PROJECT_DIR$/app/views/registrations/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/registration.rb" />
-        <option value="$PROJECT_DIR$/app/views/groups/edit.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/pmus/edit.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/registrations/edit.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/pmus/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/registrations/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/productions/new.html.erb" />
-        <option value="$PROJECT_DIR$/config/application.yml" />
-        <option value="$PROJECT_DIR$/config/initializers/carrierwave.rb" />
-        <option value="$PROJECT_DIR$/app/views/groups/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/groups/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/uploaders/avatar_uploader.rb" />
-        <option value="$PROJECT_DIR$/app/views/productions/edit.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/productions/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/fertilizations/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/fertilizations_controller.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20150301162921_create_add_production_id_to_irrigations.rb" />
+        <option value="$PROJECT_DIR$/app/models/pp.rb" />
+        <option value="$PROJECT_DIR$/app/views/irrigations/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/pps/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/pps/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/productions_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/pmu.rb" />
-        <option value="$PROJECT_DIR$/app/models/production.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/config/environments/development.rb" />
-        <option value="$PROJECT_DIR$/config/environments/production.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/config/initializers/devise.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/registrations_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/groups_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/group.rb" />
-        <option value="$PROJECT_DIR$/app/views/team/registrations/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/team/registrations/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/team/registrations/edit.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/pmus/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/team/registrations_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/team/registrations/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/registration_pmus_controller.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/team_pmus_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/pmus_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/team/pmus/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/pmus/_form.html.erb" />
+        <option value="$PROJECT_DIR$/db/migrate/20150301162534_create_irrigations.rb" />
+        <option value="$PROJECT_DIR$/app/views/irrigations/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/pps/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/pps/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/pps/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/pps_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/irrigations/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/irrigations_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/productions/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/groups/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/team/pmus/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/team/registrations/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/team/pmus/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/team/pmus/edit.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/team/pmus_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
+        <option value="$PROJECT_DIR$/db/migrate/20150301075128_add_production_id_to_fertilizations.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20150301163144_add_production_id_to_irrigations.rb" />
+        <option value="$PROJECT_DIR$/config/initializers/activity_loading.rb" />
+        <option value="$PROJECT_DIR$/app/models/fertilization.rb" />
+        <option value="$PROJECT_DIR$/app/models/irrigation.rb" />
+        <option value="$PROJECT_DIR$/app/models/protection.rb" />
+        <option value="$PROJECT_DIR$/app/models/harvesting.rb" />
+        <option value="$PROJECT_DIR$/app/models/productionactiviation.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20150305101951_remove_production_id_column_from_activities.rb" />
         <option value="$PROJECT_DIR$/README.rdoc" />
+        <option value="$PROJECT_DIR$/db/migrate/20150306093226_add_registration_id_to_activities.rb" />
+        <option value="$PROJECT_DIR$/app/models/registration.rb" />
+        <option value="$PROJECT_DIR$/app/models/production.rb" />
+        <option value="$PROJECT_DIR$/app/models/cultivation.rb" />
+        <option value="$PROJECT_DIR$/app/views/team/registrations/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/team/activities/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/team/activities/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/team/activities_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/team/registrations_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/activities/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/activities/new.html.erb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/views/activities/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/activity.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/1_pmus.scss" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/groups/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/groups/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/app/views/activities/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/activities/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/activities_controller.rb" />
       </list>
     </option>
   </component>
@@ -267,6 +285,10 @@
       <sortByType />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="RailsProjectView" />
+>>>>>>> logs
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -295,6 +317,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -366,6 +389,11 @@
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+=======
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+>>>>>>> logs
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -388,16 +416,19 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+<<<<<<< HEAD
       <pane id="RailsProjectView" />
+=======
+>>>>>>> logs
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="form&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/pmus/_form.html.erb&#10;show&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/team/registrations/show.html.erb&#10;index&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/team/registrations/index.html.erb&#10;edit&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/team/registrations/edit.html.erb&#10;new&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/team/registrations/new.html.erb&#10;route&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/config/routes.rb&#10;rout&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/config/routes.rb&#10;applica&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/layouts/application.html.erb&#10;production.r&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/config/environments/production.rb&#10;produ&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/production.rb&#10;development.&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/config/environments/development.rb&#10;gemfile&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/Gemfile&#10;pmu&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/pmu.rb&#10;prod cont&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/productions_controller.rb&#10;pmu co&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/pmus_controller.rb&#10;pmu cont&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/pmus_controller.rb&#10;gemf&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/Gemfile&#10;pmu con&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/pmus_controller.rb&#10;groups cont&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/groups_controller.rb&#10;gemfil&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/Gemfile&#10;pro con&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/productions_controller.rb&#10;show.h&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/productions/show.html.erb&#10;new.html&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/productions/new.html.erb&#10;regis&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/registrations_controller.rb&#10;for&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/pmus/_form.html.erb&#10;co&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/registrations_controller.rb&#10;re&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/registration.rb&#10;pro&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/production.rb&#10;regi&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/registration.rb&#10;gr&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/group.rb&#10;routes&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/config/routes.rb&#10;show.ht&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/productions/show.html.erb&#10;pmu.&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/pmu.rb&#10;rou&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/config/routes.rb&#10;registra&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/registrations_controller.rb&#10;controll&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/groups_controller.rb&#10;inde&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/groups/index.html.erb&#10;gem&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/Gemfile&#10;contac&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/pages/contact.html.erb" />
+    <property name="SearchEverywhereHistoryKey" value="routes&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/config/routes.rb&#10;INDEX&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/activities/index.html.erb&#10;index&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/groups/index.html.erb&#10;acti cont&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/team/activities_controller.rb&#10;rout&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/config/routes.rb&#10;show&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/team/registrations/show.html.erb&#10;activity&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/activity.rb&#10;produ&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/production.rb&#10;productiona&#9;null&#9;null&#10;acti contr&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/activities_controller.rb&#10;activ&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/activity.rb&#10;irr cont&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/irrigations_controller.rb&#10;route&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/config/routes.rb&#10;edit&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/fertilizations/edit.html.erb&#10;form&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/pmus/_form.html.erb&#10;new&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/team/registrations/new.html.erb&#10;applica&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/layouts/application.html.erb&#10;production.r&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/config/environments/production.rb&#10;development.&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/config/environments/development.rb&#10;gemfile&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/Gemfile&#10;pmu&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/pmu.rb&#10;prod cont&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/productions_controller.rb&#10;pmu co&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/pmus_controller.rb&#10;pmu cont&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/pmus_controller.rb&#10;gemf&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/Gemfile&#10;pmu con&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/pmus_controller.rb&#10;groups cont&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/groups_controller.rb&#10;gemfil&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/Gemfile&#10;pro con&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/productions_controller.rb&#10;show.h&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/productions/show.html.erb&#10;new.html&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/productions/new.html.erb&#10;regis&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/registrations_controller.rb&#10;for&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/pmus/_form.html.erb&#10;co&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/registrations_controller.rb&#10;re&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/registration.rb&#10;pro&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/production.rb&#10;regi&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/registration.rb&#10;gr&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/group.rb&#10;show.ht&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/productions/show.html.erb&#10;pmu.&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/models/pmu.rb&#10;rou&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/config/routes.rb&#10;registra&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/registrations_controller.rb&#10;controll&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/controllers/groups_controller.rb&#10;inde&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/groups/index.html.erb&#10;gem&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/Gemfile&#10;contac&#9;FILE&#9;file:///Users/mpa/RubymineProjects/instagap/app/views/pages/contact.html.erb" />
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gap" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gapo" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -406,8 +437,9 @@
       <recent name="$PROJECT_DIR$/app/assets/images/fallback" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/views/team" />
       <recent name="$PROJECT_DIR$/app/controllers" />
+      <recent name="$PROJECT_DIR$/app/views" />
+      <recent name="$PROJECT_DIR$/app/views/team" />
       <recent name="$PROJECT_DIR$/app/controllers/team" />
     </key>
   </component>
@@ -610,17 +642,21 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32049948" sideWeight="0.49936947" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5006305" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32049948" sideWeight="0.5006305" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24968474" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35687265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37452713" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> logs
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Routes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Routes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -636,11 +672,15 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32049948" sideWeight="0.49936947" order="13" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+>>>>>>> logs
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5006305" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32049948" sideWeight="0.5006305" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -648,13 +688,17 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24968474" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3480454" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3656999" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> logs
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Routes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Routes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -681,6 +725,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/views/team/registrations/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24263431" vertical-offset="0" max-vertical-offset="577">
@@ -734,9 +779,113 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.75862" vertical-offset="157" max-vertical-offset="1020">
           <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+=======
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.4752476" vertical-offset="1500" max-vertical-offset="3100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/groups/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43307087" vertical-offset="0" max-vertical-offset="1000">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/productions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4290429" vertical-offset="940" max-vertical-offset="2360">
+          <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="515">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20150301163144_add_production_id_to_irrigations.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22304833" vertical-offset="0" max-vertical-offset="538">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20150301075128_add_production_id_to_fertilizations.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1369863" vertical-offset="0" max-vertical-offset="584">
+          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/productions/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4965398" vertical-offset="553" max-vertical-offset="1460">
+          <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/551fc21c/f9796637-3f98-486d-88b7-7494187b3bef/instagap_development.public.pmus">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/551fc21c/f9796637-3f98-486d-88b7-7494187b3bef/instagap_development.public.activities">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/551fc21c/ce63e48f-a502-4868-a77d-77ef5e54d413/instagap_development.public.productions">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/551fc21c/ce63e48f-a502-4868-a77d-77ef5e54d413/instagap_development.public.productionactiviations">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> logs
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/views/team/pmus/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6896552" vertical-offset="0" max-vertical-offset="800">
@@ -818,11 +967,111 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.4752476" vertical-offset="1500" max-vertical-offset="3100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/db/migrate/20150305101951_remove_production_id_column_from_activities.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17889088" vertical-offset="0" max-vertical-offset="559">
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20150305100530_create_productionactiviations.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34364262" vertical-offset="0" max-vertical-offset="582">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.rdoc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1160">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/group.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="620">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/551fc21c/ce63e48f-a502-4868-a77d-77ef5e54d413/instagap_development.public.activities">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20150306093226_add_registration_id_to_activities.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21466905" vertical-offset="0" max-vertical-offset="559">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/productionactiviation.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="200">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="460">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/activity_loading.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="200">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/protection.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="140">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/harvesting.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+          <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/team/registrations/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6207547" vertical-offset="311" max-vertical-offset="960">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+          <folding />
+>>>>>>> logs
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/fertilization.rb">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.035714287" vertical-offset="0" max-vertical-offset="560">
           <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
         </state>
@@ -895,12 +1144,96 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4290429" vertical-offset="940" max-vertical-offset="2360">
           <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+=======
+        <state vertical-scroll-proportion="0.031847134" vertical-offset="0" max-vertical-offset="628">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/cultivation.rb">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06369427" vertical-offset="0" max-vertical-offset="628">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/team/registrations_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1015" max-vertical-offset="1680">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/team/pmus_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1735" max-vertical-offset="2420">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/registration.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.116959065" vertical-offset="0" max-vertical-offset="513">
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/groups/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="536">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/activities/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43405676" vertical-offset="0" max-vertical-offset="960">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/activities/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2003339" vertical-offset="0" max-vertical-offset="599">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/activities/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.4482758" vertical-offset="0" max-vertical-offset="220">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/irrigation.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="140">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20150304115219_create_activities.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1431127" vertical-offset="0" max-vertical-offset="559">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+>>>>>>> logs
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/1_pmus.scss">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="900">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
@@ -913,22 +1246,150 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="560" max-vertical-offset="1480">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+=======
+        <state vertical-scroll-proportion="0.43396226" vertical-offset="1030" max-vertical-offset="1560">
+          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/productions/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/activities.scss">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="559">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07155635" vertical-offset="0" max-vertical-offset="780">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+>>>>>>> logs
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-34.482758" vertical-offset="0" max-vertical-offset="1120">
           <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+=======
+        <state vertical-scroll-proportion="0.8678501" vertical-offset="0" max-vertical-offset="700">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/groups/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63833636" vertical-offset="467" max-vertical-offset="1020">
+          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/groups/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43399638" vertical-offset="0" max-vertical-offset="800">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0625" vertical-offset="44" max-vertical-offset="620">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/groups.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="559">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/memberships.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="559">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/produces.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="559">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="120">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/standards.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="559">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/activities/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.310345" vertical-offset="381" max-vertical-offset="980">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/activities/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.448276" vertical-offset="241" max-vertical-offset="840">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="681" max-vertical-offset="1600">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/activity.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="980">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="5" />
+>>>>>>> logs
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/db/migrate/20150228172727_create_fertilizations.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59504133" vertical-offset="0" max-vertical-offset="605">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/controllers/activities_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42975205" vertical-offset="220" max-vertical-offset="1760">
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+>>>>>>> logs
           <folding />
         </state>
       </provider>

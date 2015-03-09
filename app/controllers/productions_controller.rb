@@ -54,6 +54,9 @@ class ProductionsController < ApplicationController
 	  	@pmu=Pmu.find(params[:pmu_id])
 	  	@production=@pmu.productions.find(params[:id])
 			@registration=@pmu.registration
+			@fertilizations=@production.fertilizations
+			@irrigations=@production.irrigations
+			@pps=@production.pps
 	  #	else
 	  #	end
   end
