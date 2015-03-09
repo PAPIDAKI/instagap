@@ -19,14 +19,14 @@
     <% @activities.each do |activity| %>
       <tr>
         <%=link_to "#{activity.date} #{activity.type}
-                       #{activity.note} #{activity.operator} #{activity.persons} #{activity.approved_by}"%>
+                       #{activity.note} #{activity.operator} #{activity.persons} #{activity.approved_by}"%><br/>
         <td><%= activity.date %></td>
         <td><%= activity.type %></td>
         <td><%= activity.note %></td>
         <td><%= activity.operator %></td>
         <td><%= activity.persons %></td>
         <td><%= activity.approved_by %></td>
-        <td><%= link_to 'Show' %></td>
+        <td><%= link_to 'Show',activity %></td>
         <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
         <td><%= link_to 'Destroy', activity,method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
