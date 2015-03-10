@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <%=link_to "<<=Back to #{@pmu.registration.name}(show)",group_team_registration_path(@group,@registration)%>
 <h3><%=link_to"#{@pmu.registration.name}",team: @registration%></h3>
@@ -35,7 +34,7 @@
 <p>
   <ul>
     <%@productions.each do |production|%>
-     <li><%=link_to "#{production.produce.name} #{production.variety}",pmu_production_path(@pmu,production) %></li>
+     <li><%=link_to "#{production.produce.name} ( #{production.variety} )",pmu_production_path(@pmu,production) %></li>
     <%end%>
   </ul>
 </p>

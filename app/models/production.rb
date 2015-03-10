@@ -12,6 +12,10 @@ class Production < ActiveRecord::Base
   delegate :irrigations,:fertilizations,:protections,:harvestings ,to: :activities
 
 
-  validates :variety,uniqueness: :true
+  #validates :variety,uniqueness: :true
+
+	def pmu_with_produce_and_variety
+		"#{pmu.location} #{produce.name} (#{variety})"
+	end
 
 end

@@ -57,11 +57,13 @@ class Team::RegistrationsController < ApplicationController
 		@registration=@group.registrations.find(params[:id])
 		@pmus=@registration.pmus
 		@productions=@registration.productions
+		@activities=@registration.activities
 
 		else
 			@registration=Registration.find(params[:registration_id])
 			@group=@registration.group
 			@pmus=@registration.pmus
+			@activities=@registration.activities
 
 		end
 

@@ -1,0 +1,6 @@
+<h1>Editing <%=@activity.type%></h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Cancel' %> |
+<%= link_to 'Delete', team_registration_activity_path(@registration,@activity),method: :delete %>

@@ -56,7 +56,7 @@ class ProductionsController < ApplicationController
 			@registration=@pmu.registration
 			@fertilizations=@production.fertilizations
 			@irrigations=@production.irrigations
-			@pps=@production.pps
+			#@pps=@production.pps
 	  #	else
 	  #	end
   end
@@ -84,8 +84,9 @@ class ProductionsController < ApplicationController
 		@production=Production.find(params[:id])
 		@pmu=@production.pmu
     @production.destroy
+		@registration=@pmu.registration
     respond_to do |format|
-      format.html { redirect_to @pmu, notice: 'Production was successfully destroyed.' }
+      format.html { redirect_to team_registration_pmu_path(@registration,@pmu), notice: 'Production was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
