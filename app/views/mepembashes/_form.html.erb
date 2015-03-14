@@ -1,0 +1,37 @@
+<%= form_for(@mepembash) do |f| %>
+  <% if @mepembash.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mepembash.errors.count, "error") %> prohibited this mepembash from being saved:</h2>
+
+      <ul>
+      <% @mepembash.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :kod_farmak %><br>
+    <%= f.number_field :kod_farmak %>
+  </div>
+  <div class="field">
+    <%= f.label :code_fyta %><br>
+    <%= f.number_field :code_fyta %>
+  </div>
+  <div class="field">
+    <%= f.label :diast_pros %><br>
+    <%= f.text_field :diast_pros %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br>
+    <%= f.text_field :comments %>
+  </div>
+  <div class="field">
+    <%= f.label :delrec %><br>
+    <%= f.text_field :delrec %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

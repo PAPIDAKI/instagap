@@ -42,7 +42,7 @@
 
 <table class="table">
   <thead>
-  <tr><th>Date</th><th>Activity</th><th>Operator</th><th>Note</th><th>Approved By</th></tr>
+  <tr><th>Date</th><th>Activity</th><th>Καλιέργειες</th><th>Operator</th><th>Note</th><th>Approved By</th></tr>
   </thead>
   <tbody>
   <% @activities.each do |activity|%>
@@ -50,6 +50,9 @@
 
     <td><%=activity.date%></td>
     <td><%=activity.type%></td>
+    <td><% activity.productions.each do |production|%>
+          <li><%=production.pmu_with_produce_and_variety%></li>
+          <%end%></td>
     <td><%=activity.operator%></td>
     <td><%=activity.note%></td>
     <td><%=activity.approved_by%></td>

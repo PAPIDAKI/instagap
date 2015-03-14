@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150306093226) do
+ActiveRecord::Schema.define(version: 20150313114237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,48 @@ ActiveRecord::Schema.define(version: 20150306093226) do
   add_index "certifications", ["production_id"], name: "index_certifications_on_production_id", using: :btree
   add_index "certifications", ["standard_id"], name: "index_certifications_on_standard_id", using: :btree
 
+  create_table "farmakos", force: :cascade do |t|
+    t.date     "hmer_egris"
+    t.integer  "kod_farmak"
+    t.string   "gbonoma"
+    t.string   "emporikhon"
+    t.boolean  "fprint"
+    t.boolean  "common"
+    t.boolean  "enimerosi"
+    t.boolean  "amateur_use"
+    t.boolean  "tag"
+    t.boolean  "mixture"
+    t.string   "edr_cod_kat"
+    t.date     "date_notification"
+    t.date     "date_update"
+    t.string   "kode"
+    t.integer  "num_protok"
+    t.string   "num_protok_total"
+    t.string   "tegris"
+    t.string   "type_egris"
+    t.integer  "kat_number_egris"
+    t.integer  "fys_katast"
+    t.integer  "fys_kat"
+    t.integer  "group"
+    t.string   "morfhskeya"
+    t.decimal  "bohthitike"
+    t.string   "aposyrsh"
+    t.string   "kod"
+    t.boolean  "food"
+    t.string   "stoxos"
+    t.string   "tropo_efar"
+    t.string   "met_klima"
+    t.integer  "paraskeyas"
+    t.integer  "antiprosop"
+    t.integer  "contact_market"
+    t.integer  "contact_point"
+    t.string   "code_toxik"
+    t.string   "rcode"
+    t.date     "telos_egri"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
   create_table "groups", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
@@ -58,6 +100,18 @@ ActiveRecord::Schema.define(version: 20150306093226) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "mcrops", force: :cascade do |t|
+    t.integer  "code_fyta"
+    t.string   "kathg"
+    t.string   "eidos"
+    t.string   "gonoma"
+    t.integer  "general"
+    t.string   "code"
+    t.string   "klartext"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "memberships", force: :cascade do |t|
     t.integer  "group_id"
     t.integer  "grower_id"
@@ -67,6 +121,16 @@ ActiveRecord::Schema.define(version: 20150306093226) do
 
   add_index "memberships", ["group_id"], name: "index_memberships_on_group_id", using: :btree
   add_index "memberships", ["grower_id"], name: "index_memberships_on_grower_id", using: :btree
+
+  create_table "mepembashes", force: :cascade do |t|
+    t.integer  "kod_farmak"
+    t.integer  "code_fyta"
+    t.integer  "diast_pros"
+    t.string   "comments"
+    t.string   "delrec"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pmus", force: :cascade do |t|
     t.string   "address"
@@ -151,6 +215,7 @@ ActiveRecord::Schema.define(version: 20150306093226) do
   add_foreign_key "certifications", "standards"
   add_foreign_key "memberships", "groups"
   add_foreign_key "memberships", "growers"
+  add_foreign_key "mepembashes", "mcrops", column: "code_fyta"
   add_foreign_key "pmus", "growers"
   add_foreign_key "productions", "pmus"
   add_foreign_key "productions", "produces"

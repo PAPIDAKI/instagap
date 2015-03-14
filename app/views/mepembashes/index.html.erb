@@ -1,0 +1,42 @@
+<h3>Import Epembashes</h3>
+<%=form_tag import_mepembashes_path,multipart:true do %>
+<%=file_field_tag :file%>
+<%=submit_tag "Upload Epembashes"%>
+<%end%>
+
+
+<%= link_to 'New Mepembash', new_mepembash_path %>
+
+<h1>Listing Mepembashes</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Kod farmak</th>
+      <th>Code fyta</th>
+      <th>Diast pros</th>
+      <th>Comments</th>
+      <th>Delrec</th>
+      <th colspan="3"></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mepembashes.each do |mepembash| %>
+      <tr>
+        <td><%= mepembash.kod_farmak %></td>
+        <td><%= mepembash.code_fyta %></td>
+        <td><%= mepembash.diast_pros %></td>
+        <td><%= mepembash.comments %></td>
+        <td><%= mepembash.delrec %></td>
+        <td><%= link_to 'Show', mepembash %></td>
+        <td><%= link_to 'Edit', edit_mepembash_path(mepembash) %></td>
+        <td><%= link_to 'Destroy', mepembash, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

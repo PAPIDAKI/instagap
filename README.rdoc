@@ -10,6 +10,12 @@ add map -
 gmaps select and calculate
 
 
+Notes on CSV
+1 .headers must be exactly as the attributes
+downcase strings otherwise it loads up empty
+
+
+
 
 
 

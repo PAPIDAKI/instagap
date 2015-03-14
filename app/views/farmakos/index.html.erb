@@ -1,0 +1,105 @@
+<h3>Import Farmakos</h3>
+<%=form_tag import_farmakos_path,multipart:true do %>
+<%=file_field_tag :file%>
+<%=submit_tag "Import csv"%>
+<%end%>
+
+<h1>Listing Farmakos</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Hmer egris</th>
+      <th>Kod farmak</th>
+      <th>Gbonoma</th>
+      <th>Emporikhon</th>
+      <th>Fprint</th>
+      <th>Common</th>
+      <th>Enimerosi</th>
+      <th>Amateur use</th>
+      <th>Tag</th>
+      <th>Mixture</th>
+      <th>Edr cod kat</th>
+      <th>Date notification</th>
+      <th>Date update</th>
+      <th>Kode</th>
+      <th>Num protok</th>
+      <th>Num total</th>
+      <th>Tegris</th>
+      <th>Type egris</th>
+      <th>Type egris</th>
+      <th>Kat number egris</th>
+      <th>Fys katast</th>
+      <th>Fys kat</th>
+      <th>Group</th>
+      <th>Morfhskeya</th>
+      <th>Biothitike</th>
+      <th>Aposyrsi</th>
+      <th>Kod</th>
+      <th>Food</th>
+      <th>Stoxos</th>
+      <th>Tropos efar</th>
+      <th>Met klima</th>
+      <th>Paraskeyas</th>
+      <th>Antiprosop</th>
+      <th>Configontact market</th>
+      <th>Contact point</th>
+      <th>Code toxik</th>
+      <th>Rcode</th>
+      <th>Telos egri</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @farmakos.each do |farmako| %>
+      <tr>
+        <td><%= farmako.hmer_egris %></td>
+        <td><%= farmako.kod_farmak %></td>
+        <td><%= farmako.gbonoma %></td>
+        <td><%= farmako.emporikhon %></td>
+        <td><%= farmako.fprint %></td>
+        <td><%= farmako.common %></td>
+        <td><%= farmako.enimerosi %></td>
+        <td><%= farmako.amateur_use %></td>
+        <td><%= farmako.tag %></td>
+        <td><%= farmako.mixture %></td>
+        <td><%= farmako.edr_cod_kat %></td>
+        <td><%= farmako.date_notification %></td>
+        <td><%= farmako.date_update %></td>
+        <td><%= farmako.kode %></td>
+        <td><%= farmako.num_protok %></td>
+        <td><%= farmako.num_protok_total %></td>
+        <td><%= farmako.tegris %></td>
+        <td><%= farmako.type_egris %></td>
+        <td><%= farmako.type_egris %></td>
+        <td><%= farmako.kat_number_egris %></td>
+        <td><%= farmako.fys_katast %></td>
+        <td><%= farmako.fys_kat %></td>
+        <td><%= farmako.group %></td>
+        <td><%= farmako.morfhskeya %></td>
+        <td><%= farmako.bohthitike %></td>
+        <td><%= farmako.aposyrsh %></td>
+        <td><%= farmako.kod %></td>
+        <td><%= farmako.food %></td>
+        <td><%= farmako.stoxos %></td>
+        <td><%= farmako.tropo_efar %></td>
+        <td><%= farmako.met_klima %></td>
+        <td><%= farmako.paraskeyas %></td>
+        <td><%= farmako.antiprosop %></td>
+        <td><%= farmako.contact_market %></td>
+        <td><%= farmako.contact_point %></td>
+        <td><%= farmako.code_toxik %></td>
+        <td><%= farmako.rcode %></td>
+        <td><%= farmako.telos_egri %></td>
+        <td><%= link_to 'Show', farmako %></td>
+        <td><%= link_to 'Edit', edit_farmako_path(farmako) %></td>
+        <td><%= link_to 'Destroy', farmako, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Farmako', new_farmako_path %>

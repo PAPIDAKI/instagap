@@ -13,7 +13,7 @@
 
   <div>
     <%=f.collection_check_boxes(:production_ids,@registration.productions,:id,:pmu_with_produce_and_variety) do |b| %>
-    <%=b.check_box%> <%= b.label%><br>
+    <%=b.check_box :checked=>true %> <%= b.label%><br>
     <%end%>
   </div>
 
