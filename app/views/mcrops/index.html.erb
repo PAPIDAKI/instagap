@@ -1,0 +1,49 @@
+
+<h3>Import Crops</h3>
+<p>
+<%=form_tag import_mcrops_path,multipart: true do %>
+    <%=file_field_tag :file ,class:'btn'%>
+    <%=submit_tag "Import CSV",class:'btn btn-link'%>
+<%end%>
+</p>
+<p>
+<%= link_to 'New Mcrop', new_mcrop_path,class:'btn btn-link' %></p>
+
+
+<h1>Listing Mcrops</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Code fyta</th>
+      <th>Kathg</th>
+      <th>Eidos</th>
+      <th>Gonoma</th>
+      <th>General</th>
+      <th>Code</th>
+      <th>Klartext</th>
+      <th>No--stylesheet</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mcrops.each do |mcrop| %>
+      <tr>
+        <td><%= mcrop.code_fyta %></td>
+        <td><%= mcrop.kathg %></td>
+        <td><%= mcrop.eidos %></td>
+        <td><%= mcrop.gonoma %></td>
+        <td><%= mcrop.general %></td>
+        <td><%= mcrop.code %></td>
+        <td><%= mcrop.klartext %></td>
+        <td><%= link_to 'Show', mcrop %></td>
+        <td><%= link_to 'Edit', edit_mcrop_path(mcrop) %></td>
+        <td><%= link_to 'Destroy', mcrop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

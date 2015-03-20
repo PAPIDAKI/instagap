@@ -1,5 +1,36 @@
 Rails.application.routes.draw do
 
+
+  resources :mfcs do
+	  collection {post :import}
+  end
+
+
+  resources :farmako_crop_skeyasmata do
+	  collection {post :import}
+  end
+
+
+  resources :farm_dros do
+	  collection{post :import}
+  end
+
+  resources :systatiks,param: :kodikos  do
+	  collection {post :import}
+  end
+
+  resources :farmakos ,param: :kod_farmak do
+	  collection {post :import}
+  end
+
+  resources :mepembashes do
+	  collection {post :import}
+  end
+
+  resources :mcrops ,param: :code_fyta do
+	  collection {post :import}
+  end
+
 	root "groups#index"
 
 	namespace :team do
@@ -17,7 +48,6 @@ Rails.application.routes.draw do
 			resources :pmus
 		end
 	end
-
   resources :growers,:produces,:standards
 
   resources :pmus do

@@ -16,8 +16,9 @@
     <%= f.text_field :pmu_id %>
   </div>
   <div class="form-group">
-    <%= f.label :produce_id %><br>
-    <%= f.collection_select :produce_id,Produce.all,:id,:name,{class:"btn btn-default btn-toggle"} %>
+    <%= f.label :produce_id%>
+    <%= f.collection_select :produce_id,Produce.all,:id,:name ,{class:'btn btn-default btn-toggle'}%>
+
   </div>
   <div class="form-group">
     <%= f.label :variety %><br>

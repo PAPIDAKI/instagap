@@ -1,8 +1,8 @@
 
 <%=link_to "<<=Pmu(of production)",team_registration_pmu_path(@registration,@pmu)%>
 
-<h3>Καλιέργεια   <%= @production.produce.name %>
-  <%=@production.pmu.address%></h3>
+<h3>Καλιέργεια   <%= @production.produce.name %></h3>
+  <%=@production.pmu.address%>
 
 <p>
   <strong>Pmu:</strong>
@@ -44,25 +44,7 @@
   <% @production.standards.each do |standard|%>
       <li><%=standard.name%></li>
   <%end%>
+
 </ul>
-<%= link_to 'Edit', edit_pmu_production_path(@pmu,@production) ,class:'btn btn-link' %>
-
-<hr>
-<%=link_to "+ Add new Fertilization",new_production_fertilization_path(@production)%>
-<% @fertilizations.each do |fertilization|%>
-    <li><%=link_to"#{fertilization.date} #{fertilization.name} amount:#{fertilization.amount}",production_fertilization_path(@production,fertilization)%></li>
-<%end%>
-
-<hr>
-<%=link_to '+ Add new Irrigation',new_production_irrigation_path(@production,@irrigation)%>
-<% @irrigations.each do |irrigation|%>
-    <li><%=link_to "#{irrigation.date} #{irrigation.duration}"%></li>
-<%end%>
-
-<hr>
-<%=link_to '+ Add new PhytoProtection',new_production_pp_path(@production,@pp)%>
-<% @pps.each do  |pp|%>
-    <li><%=link_to "#{pp.date} #{pp.trade_name}"%></li>
-    <%end%>
-
-<hr>
+<%=link_to "Cancel",team_registration_pmu_path(@registration,@pmu)%> |
+<%=link_to "Delete",pmu_production_path(@pmu,@production),method: :delete%>

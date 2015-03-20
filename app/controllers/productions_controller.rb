@@ -47,18 +47,12 @@ class ProductionsController < ApplicationController
   # GET /productions/1
   # GET /productions/1.json
   def show
-	  #@production=Production.find(params[:id])
-	  #@pmu=@production.pmu
 
-	  #if params[:pmu_id]
 	  	@pmu=Pmu.find(params[:pmu_id])
 	  	@production=@pmu.productions.find(params[:id])
 			@registration=@pmu.registration
 			@fertilizations=@production.fertilizations
 			@irrigations=@production.irrigations
-			@pps=@production.pps
-	  #	else
-	  #	end
   end
 
   # PATCH/PUT /productions/1
@@ -84,8 +78,9 @@ class ProductionsController < ApplicationController
 		@production=Production.find(params[:id])
 		@pmu=@production.pmu
     @production.destroy
+		@registration=@pmu.registration
     respond_to do |format|
-      format.html { redirect_to @pmu, notice: 'Production was successfully destroyed.' }
+      format.html { redirect_to team_registration_pmu_path(@registration,@pmu), notice: 'Production was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -107,6 +102,6 @@ class ProductionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def production_params
-      params.require(:production).permit(:pmu_id, :produce_id, :variety, :plantation_year, :number_of_trees, :expected_quantitiy, :ehd,standard_ids:[])
+      params.require(:production).permit(:pmu_id, :produce_id,:mcrop_id, :variety, :plantation_year, :number_of_trees, :expected_quantitiy, :ehd,standard_ids:[])
     end
 end

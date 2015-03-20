@@ -1,0 +1,169 @@
+<%= form_for(@farmako) do |f| %>
+  <% if @farmako.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@farmako.errors.count, "error") %> prohibited this farmako from being saved:</h2>
+
+      <ul>
+      <% @farmako.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :hmer_egris %><br>
+    <%= f.date_select :hmer_egris %>
+  </div>
+  <div class="field">
+    <%= f.label :kod_farmak %><br>
+    <%= f.number_field :kod_farmak %>
+  </div>
+  <div class="field">
+    <%= f.label :gbonoma %><br>
+    <%= f.text_field :gbonoma %>
+  </div>
+  <div class="field">
+    <%= f.label :emporikhon %><br>
+    <%= f.text_field :emporikhon %>
+  </div>
+  <div class="field">
+    <%= f.label :fprint %><br>
+    <%= f.check_box :fprint %>
+  </div>
+  <div class="field">
+    <%= f.label :common %><br>
+    <%= f.check_box :common %>
+  </div>
+  <div class="field">
+    <%= f.label :enimerosi %><br>
+    <%= f.check_box :enimerosi %>
+  </div>
+  <div class="field">
+    <%= f.label :amateur_use %><br>
+    <%= f.check_box :amateur_use %>
+  </div>
+  <div class="field">
+    <%= f.label :tag %><br>
+    <%= f.check_box :tag %>
+  </div>
+  <div class="field">
+    <%= f.label :mixture %><br>
+    <%= f.check_box :mixture %>
+  </div>
+  <div class="field">
+    <%= f.label :edr_cod_kat %><br>
+    <%= f.text_field :edr_cod_kat %>
+  </div>
+  <div class="field">
+    <%= f.label :date_notification %><br>
+    <%= f.date_select :date_notification %>
+  </div>
+  <div class="field">
+    <%= f.label :date_update %><br>
+    <%= f.date_select :date_update %>
+  </div>
+  <div class="field">
+    <%= f.label :kode %><br>
+    <%= f.text_field :kode %>
+  </div>
+  <div class="field">
+    <%= f.label :num_protok %><br>
+    <%= f.number_field :num_protok %>
+  </div>
+  <div class="field">
+    <%= f.label :num_total %><br>
+    <%= f.text_field :num_total %>
+  </div>
+  <div class="field">
+    <%= f.label :tegris %><br>
+    <%= f.text_field :tegris %>
+  </div>
+  <div class="field">
+    <%= f.label :type_egris %><br>
+    <%= f.text_field :type_egris %>
+  </div>
+  <div class="field">
+    <%= f.label :type_egris %><br>
+    <%= f.text_field :type_egris %>
+  </div>
+  <div class="field">
+    <%= f.label :kat_number_egris %><br>
+    <%= f.number_field :kat_number_egris %>
+  </div>
+  <div class="field">
+    <%= f.label :fys_katast %><br>
+    <%= f.number_field :fys_katast %>
+  </div>
+  <div class="field">
+    <%= f.label :fys_kat %><br>
+    <%= f.number_field :fys_kat %>
+  </div>
+  <div class="field">
+    <%= f.label :group %><br>
+    <%= f.number_field :group %>
+  </div>
+  <div class="field">
+    <%= f.label :morfhskeya %><br>
+    <%= f.text_field :morfhskeya %>
+  </div>
+  <div class="field">
+    <%= f.label :biothitike %><br>
+    <%= f.text_field :biothitike %>
+  </div>
+  <div class="field">
+    <%= f.label :aposyrsi %><br>
+    <%= f.text_field :aposyrsi %>
+  </div>
+  <div class="field">
+    <%= f.label :kod %><br>
+    <%= f.text_field :kod %>
+  </div>
+  <div class="field">
+    <%= f.label :food %><br>
+    <%= f.check_box :food %>
+  </div>
+  <div class="field">
+    <%= f.label :stoxos %><br>
+    <%= f.text_field :stoxos %>
+  </div>
+  <div class="field">
+    <%= f.label :tropos_efar %><br>
+    <%= f.text_field :tropos_efar %>
+  </div>
+  <div class="field">
+    <%= f.label :met_klima %><br>
+    <%= f.text_field :met_klima %>
+  </div>
+  <div class="field">
+    <%= f.label :paraskeyas %><br>
+    <%= f.number_field :paraskeyas %>
+  </div>
+  <div class="field">
+    <%= f.label :antiprosop %><br>
+    <%= f.number_field :antiprosop %>
+  </div>
+  <div class="field">
+    <%= f.label :configontact_market %><br>
+    <%= f.number_field :configontact_market %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_point %><br>
+    <%= f.number_field :contact_point %>
+  </div>
+  <div class="field">
+    <%= f.label :code_toxik %><br>
+    <%= f.text_field :code_toxik %>
+  </div>
+  <div class="field">
+    <%= f.label :rcode %><br>
+    <%= f.text_field :rcode %>
+  </div>
+  <div class="field">
+    <%= f.label :telos_egri %><br>
+    <%= f.date_select :telos_egri %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

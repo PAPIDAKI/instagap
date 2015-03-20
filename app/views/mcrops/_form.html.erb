@@ -1,0 +1,46 @@
+<%= form_for(@mcrop) do |f| %>
+  <% if @mcrop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mcrop.errors.count, "error") %> prohibited this mcrop from being saved:</h2>
+
+      <ul>
+      <% @mcrop.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code_fyta %><br>
+    <%= f.number_field :code_fyta %>
+  </div>
+  <div class="field">
+    <%= f.label :kathh %><br>
+    <%= f.text_field :kathg %>
+  </div>
+  <div class="field">
+    <%= f.label :eidos %><br>
+    <%= f.text_field :eidos %>
+  </div>
+  <div class="field">
+    <%= f.label :gonoma %><br>
+    <%= f.text_field :gonoma %>
+  </div>
+  <div class="field">
+    <%= f.label :genenral %><br>
+    <%= f.number_field :general %>
+  </div>
+  <div class="field">
+    <%= f.label :code %><br>
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :klartex %><br>
+    <%= f.text_field :klartext %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

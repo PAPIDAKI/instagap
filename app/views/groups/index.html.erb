@@ -2,13 +2,9 @@
 
 
 
-<h1>Groups</h1>
-<%=link_to "+ Add new Group",new_group_path%>
-<ul>
-  <% @groups.each do |group|%>
-  <li> <%= link_to "#{group.name}",group%></li>
-      <%end%>
-</ul>
+<h1>Groups<br>
+<small><%=link_to "+ Add new Group",new_group_path%></small></h1>
+
 
 
 <table class="table table-condensed table-hover">
@@ -25,21 +21,17 @@
 
   <tbody>
     <% @groups.each do |group| %>
-      <tr>
+      <tr data-link="<%=group_path(group)%>">
         <td><%= image_tag group.avatar_url(:thumb) if group.avatar? %></td>
         <td><%= group.name %></td>
         <td><%= group.address %></td>
         <td><%= group.phone %></td>
         <td><%= group.email %></td>
-        <td><%= link_to 'Show', group ,class:'btn btn-link' %></td>
-        <td><%= link_to 'Edit', edit_group_path(group),class:'btn btn-link'  %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' },class:'btn btn-link'  %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Group', new_group_path ,class:'btn btn-link' %>
+<hr>
 <%=image_tag "https://s3.amazonaws.com/instagap/happy_footer.png"%>

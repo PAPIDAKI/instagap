@@ -1,14 +1,18 @@
-class ActivitiesController < ApplicationController
+class Team::ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
   respond_to :html
-
   before_action :set_type
+
+  before_action :load_registration
 
   def index
 		@activities=type_class.all
   end
 
   def show
+		@registration=Registration.find(params[:registration_id])
+		@group=@registration.group
+
 
   end
 
@@ -17,12 +21,14 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-
+	  @registration=Registration.find(params[:registration_id])
 	  @activity=type_class.new(activity_params)
+	  @activity.registration_id=@registration.id
 
 
-		if @activity.save
-		  redirect_to activities_path,notice:"#{type} was succesfully created."
+	  if @activity.save
+			@group=@registration.group
+		  redirect_to group_team_registration_path(@group,@registration),notice:"#{type} was succesfully created."
 	  else
 		  render :new
 	  end
@@ -31,18 +37,24 @@ class ActivitiesController < ApplicationController
 
 
   def edit
+		@activity=Activity.find(params[:id])
+		@registration=Registration.find(params[:registration_id])
+
   end
 
 
 
   def update
     @activity.update(edit_activity_params)
-		redirect_to activities_path
+		redirect_to team_registration_activity_path(@registration,@activity)
   end
 
   def destroy
+	  @registration=Registration.find(params[:registration_id])
+	  @group=@registration.group
+
     @activity.destroy
-		redirect_to activities_path
+		redirect_to group_team_registration_path(@group,@registration)
   end
 
 
@@ -71,12 +83,15 @@ class ActivitiesController < ApplicationController
     end
 
     def activity_params
-			params.require(type.underscore.to_sym).permit(:date, :type, :note, :operator, :persons, :approved_by,:production_id)
+			params.require(type.underscore.to_sym).permit(:date, :type, :note, :operator, :persons, :approved_by,production_ids: [])
     end
 
     def edit_activity_params
 	  type=@activity.type
-	  params.require(type.underscore.to_sym).permit(:date,:type,:note,:operator,:persons,:approved_by,:production_id)
-
+	  params.require(type.underscore.to_sym).permit(:date,:type,:note,:operator,:persons,:approved_by,production_ids: [])
     end
+
+		def load_registration
+			@registration=Registration.find(params[:registration_id])
+		end
 end

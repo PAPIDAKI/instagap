@@ -1,0 +1,65 @@
+<%= form_for(@mfc) do |f| %>
+  <% if @mfc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mfc.errors.count, "error") %> prohibited this mfc from being saved:</h2>
+
+      <ul>
+      <% @mfc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :farmako_id %><br>
+    <%= f.number_field :farmako_id %>
+  </div>
+  <div class="field">
+    <%= f.label :mcrop_id %><br>
+    <%= f.number_field :mcrop_id %>
+  </div>
+  <div class="field">
+    <%= f.label :crops %><br>
+    <%= f.text_field :crops %>
+  </div>
+  <div class="field">
+    <%= f.label :edr_cod_kat %><br>
+    <%= f.text_field :edr_cod_kat %>
+  </div>
+  <div class="field">
+    <%= f.label :eidos %><br>
+    <%= f.text_field :eidos %>
+  </div>
+  <div class="field">
+    <%= f.label :emporikhon %><br>
+    <%= f.text_field :emporikhon %>
+  </div>
+  <div class="field">
+    <%= f.label :gbonoma %><br>
+    <%= f.text_field :gbonoma %>
+  </div>
+  <div class="field">
+    <%= f.label :aposyrsh %><br>
+    <%= f.date_select :aposyrsh %>
+  </div>
+  <div class="field">
+    <%= f.label :telos_egri %><br>
+    <%= f.date_select :telos_egri %>
+  </div>
+  <div class="field">
+    <%= f.label :un_delete %><br>
+    <%= f.text_field :un_delete %>
+  </div>
+    <div class="field">
+      <%= f.label :un_date %><br>
+      <%= f.date_select :un_date %>
+    </div>
+  <div class="field">
+    <%= f.label :soil %><br>
+    <%= f.text_field :soil %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

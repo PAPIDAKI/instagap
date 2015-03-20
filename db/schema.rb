@@ -12,9 +12,13 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150301163144) do
 =======
 ActiveRecord::Schema.define(version: 20150306093226) do
+>>>>>>> logs
+=======
+ActiveRecord::Schema.define(version: 20150319125505) do
 >>>>>>> logs
 
   # These are extensions that must be enabled in order to support this database
@@ -45,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150306093226) do
   add_index "certifications", ["standard_id"], name: "index_certifications_on_standard_id", using: :btree
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   create_table "fertilizations", force: :cascade do |t|
     t.date     "date"
     t.string   "name"
@@ -65,6 +70,62 @@ ActiveRecord::Schema.define(version: 20150306093226) do
 
 =======
 >>>>>>> logs
+=======
+  create_table "farm_dros", force: :cascade do |t|
+    t.integer  "farmako_id"
+    t.string   "systatik_id"
+    t.string   "kod_morfh"
+    t.decimal  "synthesh"
+    t.decimal  "katharotht"
+    t.binary   "kodikos_kath"
+    t.binary   "delrec"
+    t.binary   "fprint"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "farmakos", primary_key: "kod_farmak", force: :cascade do |t|
+    t.date     "hmer_egris"
+    t.string   "gbonoma"
+    t.string   "emporikhon"
+    t.boolean  "fprint"
+    t.boolean  "common"
+    t.boolean  "enimerosi"
+    t.boolean  "amateur_use"
+    t.boolean  "tag"
+    t.boolean  "mixture"
+    t.string   "edr_cod_kat"
+    t.date     "date_notification"
+    t.date     "date_update"
+    t.string   "kode"
+    t.integer  "num_protok"
+    t.string   "num_protok_total"
+    t.string   "tegris"
+    t.string   "type_egris"
+    t.integer  "kat_number_egris"
+    t.integer  "fys_katast"
+    t.integer  "fys_kat"
+    t.integer  "group"
+    t.string   "morfhskeya"
+    t.decimal  "bohthitike"
+    t.string   "aposyrsh"
+    t.string   "kod"
+    t.boolean  "food"
+    t.string   "stoxos"
+    t.string   "tropo_efar"
+    t.string   "met_klima"
+    t.integer  "paraskeyas"
+    t.integer  "antiprosop"
+    t.integer  "contact_market"
+    t.integer  "contact_point"
+    t.string   "code_toxik"
+    t.string   "rcode"
+    t.date     "telos_egri"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+>>>>>>> logs
   create_table "groups", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
@@ -83,6 +144,7 @@ ActiveRecord::Schema.define(version: 20150306093226) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "irrigations", force: :cascade do |t|
     t.date     "date"
     t.integer  "duration"
@@ -97,6 +159,19 @@ ActiveRecord::Schema.define(version: 20150306093226) do
 
   add_index "irrigations", ["production_id"], name: "index_irrigations_on_production_id", using: :btree
 
+=======
+  create_table "mcrops", primary_key: "code_fyta", force: :cascade do |t|
+    t.string   "kathg"
+    t.string   "eidos"
+    t.string   "gonoma"
+    t.integer  "general"
+    t.string   "code"
+    t.string   "klartext"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+>>>>>>> logs
   create_table "memberships", force: :cascade do |t|
     t.integer  "group_id"
     t.integer  "grower_id"
@@ -106,6 +181,33 @@ ActiveRecord::Schema.define(version: 20150306093226) do
 
   add_index "memberships", ["group_id"], name: "index_memberships_on_group_id", using: :btree
   add_index "memberships", ["grower_id"], name: "index_memberships_on_grower_id", using: :btree
+
+  create_table "mepembashes", force: :cascade do |t|
+    t.integer  "farmako_id"
+    t.integer  "mcrop_id"
+    t.integer  "diast_pros"
+    t.string   "comments"
+    t.string   "delrec"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mfcs", force: :cascade do |t|
+    t.integer  "farmako_id"
+    t.integer  "mcrop_id"
+    t.string   "crops"
+    t.string   "edr_cod_kat"
+    t.string   "eidos"
+    t.string   "emporikhon"
+    t.string   "gbonoma"
+    t.date     "aposyrsh"
+    t.date     "telos_egri"
+    t.binary   "un_delete"
+    t.date     "un_date"
+    t.binary   "soil"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "pmus", force: :cascade do |t|
     t.string   "address"
@@ -162,8 +264,10 @@ ActiveRecord::Schema.define(version: 20150306093226) do
     t.date     "ehd"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "mcrop_id"
   end
 
+  add_index "productions", ["mcrop_id"], name: "index_productions_on_mcrop_id", using: :btree
   add_index "productions", ["pmu_id"], name: "index_productions_on_pmu_id", using: :btree
   add_index "productions", ["produce_id"], name: "index_productions_on_produce_id", using: :btree
 
@@ -183,6 +287,23 @@ ActiveRecord::Schema.define(version: 20150306093226) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "systatiks", id: false, force: :cascade do |t|
+    t.string   "kodikos",    null: false
+    t.string   "onomadron"
+    t.string   "arxiko"
+    t.string   "aposyrsh"
+    t.integer  "cipac"
+    t.string   "dr_cod_kat"
+    t.binary   "old_new"
+    t.string   "fao"
+    t.string   "cas_number"
+    t.integer  "code_xhmik"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "systatiks", ["kodikos"], name: "index_systatiks_on_kodikos", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

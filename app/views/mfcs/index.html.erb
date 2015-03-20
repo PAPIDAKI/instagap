@@ -1,0 +1,54 @@
+
+<h3>Import farmako_crop_skeyasmata.csv</h3>
+<%= form_tag import_mfcs_path,multipart:true do %>
+<%= file_field_tag :file%>
+    <%=submit_tag "Import csv"%>
+        <%end%>
+
+<h1>Listing Mfcs</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Farmako</th>
+      <th>Mcrop</th>
+      <th>Crops</th>
+      <th>Edr cod kat</th>
+      <th>Eidos</th>
+      <th>Emporikhon</th>
+      <th>Gbonoma</th>
+      <th>Apsyrsh</th>
+      <th>Telos egri</th>
+      <th>Un delete</th>
+      <th>Un date</th>
+      <th>Soil</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mfcs.each do |mfc| %>
+      <tr>
+        <td><%= mfc.farmako_id %></td>
+        <td><%= mfc.mcrop_id %></td>
+        <td><%= mfc.crops %></td>
+        <td><%= mfc.edr_cod_kat %></td>
+        <td><%= mfc.eidos %></td>
+        <td><%= mfc.emporikhon %></td>
+        <td><%= mfc.gbonoma %></td>
+        <td><%= mfc.aposyrsh %></td>
+        <td><%= mfc.telos_egri %></td>
+        <td><%= mfc.un_delete %></td>
+        <td><%= mfc.un_date %></td>
+        <td><%= mfc.soil %></td>
+        <td><%= link_to 'Show', mfc %></td>
+        <td><%= link_to 'Edit', edit_mfc_path(mfc) %></td>
+        <td><%= link_to 'Destroy', mfc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mfc', new_mfc_path %>
