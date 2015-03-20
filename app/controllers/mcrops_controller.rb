@@ -14,7 +14,10 @@ class McropsController < ApplicationController
   end
 
   def show
-    respond_with(@mcrop)
+		@mcrop=Mcrop.find(params[:code_fyta])
+		@mepembashes=@mcrop.mepembashes
+		@fcs=FarmakoCropSkeyasmatum.all
+
   end
 
   def new
@@ -43,10 +46,10 @@ class McropsController < ApplicationController
 
   private
     def set_mcrop
-      @mcrop = Mcrop.find(params[:id])
+      @mcrop = Mcrop.find(params[:code_fyta])
     end
 
     def mcrop_params
-      params.require(:mcrop).permit(:code_fyta, :kathh, :eidos, :gonoma, :genenral, :code, :klartex, :no--stylesheet)
+      params.require(:mcrop).permit(:code_fyta, :kathh, :eidos, :gonoma, :genenral, :code, :klartex)
     end
 end

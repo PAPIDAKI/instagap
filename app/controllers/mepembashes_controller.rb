@@ -4,7 +4,7 @@ class MepembashesController < ApplicationController
   respond_to :html
 
   def index
-    @mepembashes = Mepembash.all.order(:kod_farmak)
+    @mepembashes = Mepembash.all.order(:farmako_id)
     respond_with(@mepembashes)
   end
 

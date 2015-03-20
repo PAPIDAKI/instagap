@@ -1,7 +1,25 @@
 Rails.application.routes.draw do
 
 
-  resources :farmakos do
+  resources :mfcs do
+	  collection {post :import}
+  end
+
+
+  resources :farmako_crop_skeyasmata do
+	  collection {post :import}
+  end
+
+
+  resources :farm_dros do
+	  collection{post :import}
+  end
+
+  resources :systatiks,param: :kodikos  do
+	  collection {post :import}
+  end
+
+  resources :farmakos ,param: :kod_farmak do
 	  collection {post :import}
   end
 
@@ -9,7 +27,7 @@ Rails.application.routes.draw do
 	  collection {post :import}
   end
 
-  resources :mcrops do
+  resources :mcrops ,param: :code_fyta do
 	  collection {post :import}
   end
 

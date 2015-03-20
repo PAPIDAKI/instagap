@@ -1,0 +1,49 @@
+
+<h3>Import Farm_Dros CSV</h3>
+<%=form_tag import_farm_dros_path ,multipart:true do %>
+<%=file_field_tag :file%>
+    <br>
+<%=submit_tag "Import"%>
+
+<%end%>
+<%= link_to 'New Farm dro', new_farm_dro_path %>
+
+
+<h1>Listing Farm Dros</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>kod farmak_id</th>
+      <th>systatik_id</th>
+      <th>Kod morfh</th>
+      <th>Synthesh</th>
+      <th>Katharotht</th>
+      <th>Kodikos kath</th>
+      <th>Delrec</th>
+      <th>Fprint</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @farm_dros.each do |farm_dro| %>
+      <tr>
+        <td><%= farm_dro.kod_farmak_id %></td>
+        <td><%= farm_dro.kodikos_id %></td>
+        <td><%= farm_dro.kod_morfh %></td>
+        <td><%= farm_dro.synthesh %></td>
+        <td><%= farm_dro.katharotht %></td>
+        <td><%= farm_dro.kodikos_kath %></td>
+        <td><%= farm_dro.delrec %></td>
+        <td><%= farm_dro.fprint %></td>
+        <td><%= link_to 'Show', farm_dro %></td>
+        <td><%= link_to 'Edit', edit_farm_dro_path(farm_dro) %></td>
+        <td><%= link_to 'Destroy', farm_dro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

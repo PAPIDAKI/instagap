@@ -43,7 +43,7 @@ class FarmakosController < ApplicationController
 
   private
     def set_farmako
-      @farmako = Farmako.find(params[:id])
+      @farmako = Farmako.find(params[:kod_farmak])
     end
 
     def farmako_params

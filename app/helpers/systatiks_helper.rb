@@ -1,0 +1,2 @@
+module SystatiksHelper
+end

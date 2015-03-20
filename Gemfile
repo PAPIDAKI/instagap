@@ -16,6 +16,7 @@ gem 'fog'
 gem "figaro"
 gem "mini_magick"
 gem "devise"
+gem 'prawn'
 
 group :production do
 	gem 'rails_12factor'

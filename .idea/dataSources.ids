@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="Rails instagap: development" uuid="f9796637-3f98-486d-88b7-7494187b3bef">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+    <database-info product="PostgreSQL" version="9.3.4" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.3 JDBC4 (build 1100)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
     <schema name="information_schema" catalog="instagap_development"/>
     <schema name="pg_catalog" catalog="instagap_development"/>
     <schema name="public" catalog="instagap_development"/>
@@ -2354,8 +2357,8 @@
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="certifications_pkey" columns="id"/>
-      <foreign-key name="fk_rails_522b384ced" columns="production_id" ref-table="productions" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_rails_92868f39a1" columns="standard_id" ref-table="standards" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rails_3d2a2708e5" columns="production_id" ref-table="productions" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rails_d651801748" columns="standard_id" ref-table="standards" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="index_certifications_on_production_id" unique="false" columns="production_id"/>
       <index name="index_certifications_on_standard_id" unique="false" columns="standard_id"/>
     </table>
@@ -2371,10 +2374,65 @@
       <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
       <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
+    <table name="farm_dros" schema="public" catalog="instagap_development" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZmFybV9kcm9zX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
+      <column name="farmako_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="systatik_id" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="kod_morfh" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="synthesh" sqlType="numeric" precision="131089" scale="0" nullable="true" jdbcType="2"/>
+      <column name="katharotht" sqlType="numeric" precision="131089" scale="0" nullable="true" jdbcType="2"/>
+      <column name="kodikos_kath" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
+      <column name="delrec" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
+      <column name="fprint" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
+      <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <primary-key name="farm_dros_pkey" columns="id"/>
+    </table>
+    <table name="farm_dros_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="farmako_crop_skeyasmata" schema="public" catalog="instagap_development" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZmFybWFrb19jcm9wX3NrZXlhc21hdGFfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="farmako_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="mcrop_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="crops" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="edr_cod_kat" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="eidos" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="emporikhon" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="gbonoma" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aposyrsh" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="telos_egri" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="un_delete" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
+      <column name="un_date" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="soil" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
+      <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <primary-key name="farmako_crop_skeyasmata_pkey" columns="id"/>
+    </table>
+    <table name="farmako_crop_skeyasmata_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
     <table name="farmakos" schema="public" catalog="instagap_development" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZmFybWFrb3NfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
       <column name="hmer_egris" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="kod_farmak" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="kod_farmak" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZmFybWFrb3Nfa29kX2Zhcm1ha19zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
       <column name="gbonoma" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="emporikhon" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="fprint" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
@@ -2412,9 +2470,9 @@
       <column name="telos_egri" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
-      <primary-key name="farmakos_pkey" columns="id"/>
+      <primary-key name="farmakos_pkey" columns="kod_farmak"/>
     </table>
-    <table name="farmakos_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
+    <table name="farmakos_kod_farmak_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -2436,8 +2494,8 @@
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="avatar" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="groups_pkey" columns="id"/>
-      <exported-key name="fk_rails_0a0da4d03d" table="memberships" schema="public" catalog="instagap_development" columns="group_id"/>
-      <exported-key name="fk_rails_3a0b6417d1" table="registrations" schema="public" catalog="instagap_development" columns="group_id"/>
+      <exported-key name="fk_rails_0d482b18bb" table="memberships" schema="public" catalog="instagap_development" columns="group_id"/>
+      <exported-key name="fk_rails_a04c28dc10" table="registrations" schema="public" catalog="instagap_development" columns="group_id"/>
     </table>
     <table name="groups_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -2459,8 +2517,8 @@
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="growers_pkey" columns="id"/>
-      <exported-key name="fk_rails_c1e5ea22ef" table="memberships" schema="public" catalog="instagap_development" columns="grower_id"/>
-      <exported-key name="fk_rails_81d884d32b" table="pmus" schema="public" catalog="instagap_development" columns="grower_id"/>
+      <exported-key name="fk_rails_a9da9fa290" table="memberships" schema="public" catalog="instagap_development" columns="grower_id"/>
+      <exported-key name="fk_rails_289128f1c4" table="pmus" schema="public" catalog="instagap_development" columns="grower_id"/>
     </table>
     <table name="growers_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -2475,8 +2533,7 @@
       <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
     <table name="mcrops" schema="public" catalog="instagap_development" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbWNyb3BzX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="code_fyta" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="code_fyta" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbWNyb3BzX2NvZGVfZnl0YV9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
       <column name="kathg" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="eidos" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="gonoma" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
@@ -2485,10 +2542,9 @@
       <column name="klartext" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
-      <primary-key name="mcrops_pkey" columns="id"/>
-      <exported-key name="fk_rails_642d6b5180" table="mepembashes" schema="public" catalog="instagap_development" columns="code_fyta"/>
+      <primary-key name="mcrops_pkey" columns="code_fyta"/>
     </table>
-    <table name="mcrops_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
+    <table name="mcrops_code_fyta_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -2507,8 +2563,8 @@
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="memberships_pkey" columns="id"/>
-      <foreign-key name="fk_rails_0a0da4d03d" columns="group_id" ref-table="groups" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_rails_c1e5ea22ef" columns="grower_id" ref-table="growers" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rails_0d482b18bb" columns="group_id" ref-table="groups" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rails_a9da9fa290" columns="grower_id" ref-table="growers" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="index_memberships_on_group_id" unique="false" columns="group_id"/>
       <index name="index_memberships_on_grower_id" unique="false" columns="grower_id"/>
     </table>
@@ -2526,15 +2582,14 @@
     </table>
     <table name="mepembashes" schema="public" catalog="instagap_development" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbWVwZW1iYXNoZXNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="kod_farmak" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="code_fyta" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="farmako_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="mcrop_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="diast_pros" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="comments" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="delrec" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="mepembashes_pkey" columns="id"/>
-      <foreign-key name="fk_rails_642d6b5180" columns="code_fyta" ref-table="mcrops" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <table name="mepembashes_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -2558,8 +2613,8 @@
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="registration_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="pmus_pkey" columns="id"/>
-      <foreign-key name="fk_rails_81d884d32b" columns="grower_id" ref-table="growers" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="fk_rails_ba25a6d17e" table="productions" schema="public" catalog="instagap_development" columns="pmu_id"/>
+      <foreign-key name="fk_rails_289128f1c4" columns="grower_id" ref-table="growers" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_rails_73482be877" table="productions" schema="public" catalog="instagap_development" columns="pmu_id"/>
       <index name="index_pmus_on_grower_id" unique="false" columns="grower_id"/>
       <index name="index_pmus_on_registration_id" unique="false" columns="registration_id"/>
     </table>
@@ -2581,7 +2636,7 @@
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="produces_pkey" columns="id"/>
-      <exported-key name="fk_rails_5d4ec248be" table="productions" schema="public" catalog="instagap_development" columns="produce_id"/>
+      <exported-key name="fk_rails_d4f2cb52e8" table="productions" schema="public" catalog="instagap_development" columns="produce_id"/>
     </table>
     <table name="produces_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -2628,10 +2683,12 @@
       <column name="ehd" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <column name="mcrop_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="productions_pkey" columns="id"/>
-      <foreign-key name="fk_rails_ba25a6d17e" columns="pmu_id" ref-table="pmus" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_rails_5d4ec248be" columns="produce_id" ref-table="produces" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="fk_rails_522b384ced" table="certifications" schema="public" catalog="instagap_development" columns="production_id"/>
+      <foreign-key name="fk_rails_73482be877" columns="pmu_id" ref-table="pmus" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rails_d4f2cb52e8" columns="produce_id" ref-table="produces" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_rails_3d2a2708e5" table="certifications" schema="public" catalog="instagap_development" columns="production_id"/>
+      <index name="index_productions_on_mcrop_id" unique="false" columns="mcrop_id"/>
       <index name="index_productions_on_pmu_id" unique="false" columns="pmu_id"/>
       <index name="index_productions_on_produce_id" unique="false" columns="produce_id"/>
     </table>
@@ -2656,7 +2713,7 @@
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="registrations_pkey" columns="id"/>
-      <foreign-key name="fk_rails_3a0b6417d1" columns="group_id" ref-table="groups" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rails_a04c28dc10" columns="group_id" ref-table="groups" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="index_registrations_on_group_id" unique="false" columns="group_id"/>
     </table>
     <table name="registrations_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
@@ -2681,7 +2738,7 @@
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="standards_pkey" columns="id"/>
-      <exported-key name="fk_rails_92868f39a1" table="certifications" schema="public" catalog="instagap_development" columns="standard_id"/>
+      <exported-key name="fk_rails_d651801748" table="certifications" schema="public" catalog="instagap_development" columns="standard_id"/>
     </table>
     <table name="standards_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -2694,6 +2751,21 @@
       <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
       <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="systatiks" schema="public" catalog="instagap_development" type="TABLE">
+      <column name="kodikos" sqlType="varchar" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="onomadron" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="arxiko" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aposyrsh" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cipac" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="dr_cod_kat" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="old_new" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
+      <column name="fao" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cas_number" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="code_xhmik" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <index name="index_systatiks_on_kodikos" unique="true" columns="kodikos"/>
     </table>
     <table name="users" schema="public" catalog="instagap_development" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndXNlcnNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
@@ -21590,12 +21662,67 @@
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="certifications_pkey" columns="id"/>
-      <foreign-key name="fk_rails_522b384ced" columns="production_id" ref-table="productions" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_rails_92868f39a1" columns="standard_id" ref-table="standards" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rails_3d2a2708e5" columns="production_id" ref-table="productions" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rails_d651801748" columns="standard_id" ref-table="standards" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="index_certifications_on_production_id" unique="false" columns="production_id"/>
       <index name="index_certifications_on_standard_id" unique="false" columns="standard_id"/>
     </table>
     <table name="certifications_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="farmakos" schema="public" catalog="instagap_development" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZmFybWFrb3NfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="hmer_egris" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="kod_farmak" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="gbonoma" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="emporikhon" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fprint" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="common" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="enimerosi" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="amateur_use" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="tag" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="mixture" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="edr_cod_kat" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="date_notification" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="date_update" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="kode" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="num_protok" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="num_protok_total" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="tegris" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="type_egris" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="kat_number_egris" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="fys_katast" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="fys_kat" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="group" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="morfhskeya" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="bohthitike" sqlType="numeric" precision="131089" scale="0" nullable="true" jdbcType="2"/>
+      <column name="aposyrsh" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="kod" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="food" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="stoxos" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="tropo_efar" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="met_klima" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="paraskeyas" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="antiprosop" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="contact_market" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="contact_point" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="code_toxik" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="rcode" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="telos_egri" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <primary-key name="farmakos_pkey" columns="id"/>
+    </table>
+    <table name="farmakos_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -21617,8 +21744,8 @@
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="avatar" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="groups_pkey" columns="id"/>
-      <exported-key name="fk_rails_0a0da4d03d" table="memberships" schema="public" catalog="instagap_development" columns="group_id"/>
-      <exported-key name="fk_rails_3a0b6417d1" table="registrations" schema="public" catalog="instagap_development" columns="group_id"/>
+      <exported-key name="fk_rails_0d482b18bb" table="memberships" schema="public" catalog="instagap_development" columns="group_id"/>
+      <exported-key name="fk_rails_a04c28dc10" table="registrations" schema="public" catalog="instagap_development" columns="group_id"/>
     </table>
     <table name="groups_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -21640,8 +21767,8 @@
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="growers_pkey" columns="id"/>
-      <exported-key name="fk_rails_c1e5ea22ef" table="memberships" schema="public" catalog="instagap_development" columns="grower_id"/>
-      <exported-key name="fk_rails_81d884d32b" table="pmus" schema="public" catalog="instagap_development" columns="grower_id"/>
+      <exported-key name="fk_rails_a9da9fa290" table="memberships" schema="public" catalog="instagap_development" columns="grower_id"/>
+      <exported-key name="fk_rails_289128f1c4" table="pmus" schema="public" catalog="instagap_development" columns="grower_id"/>
     </table>
     <table name="growers_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -21662,12 +21789,35 @@
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="memberships_pkey" columns="id"/>
-      <foreign-key name="fk_rails_0a0da4d03d" columns="group_id" ref-table="groups" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_rails_c1e5ea22ef" columns="grower_id" ref-table="growers" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rails_0d482b18bb" columns="group_id" ref-table="groups" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rails_a9da9fa290" columns="grower_id" ref-table="growers" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="index_memberships_on_group_id" unique="false" columns="group_id"/>
       <index name="index_memberships_on_grower_id" unique="false" columns="grower_id"/>
     </table>
     <table name="memberships_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="mepembashes" schema="public" catalog="instagap_development" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbWVwZW1iYXNoZXNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="kod_farmak" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="code_fyta" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="diast_pros" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="comments" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="delrec" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <primary-key name="mepembashes_pkey" columns="id"/>
+    </table>
+    <table name="mepembashes_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -21689,8 +21839,8 @@
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="registration_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="pmus_pkey" columns="id"/>
-      <foreign-key name="fk_rails_81d884d32b" columns="grower_id" ref-table="growers" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="fk_rails_ba25a6d17e" table="productions" schema="public" catalog="instagap_development" columns="pmu_id"/>
+      <foreign-key name="fk_rails_289128f1c4" columns="grower_id" ref-table="growers" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_rails_73482be877" table="productions" schema="public" catalog="instagap_development" columns="pmu_id"/>
       <index name="index_pmus_on_grower_id" unique="false" columns="grower_id"/>
       <index name="index_pmus_on_registration_id" unique="false" columns="registration_id"/>
     </table>
@@ -21712,7 +21862,7 @@
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="produces_pkey" columns="id"/>
-      <exported-key name="fk_rails_5d4ec248be" table="productions" schema="public" catalog="instagap_development" columns="produce_id"/>
+      <exported-key name="fk_rails_d4f2cb52e8" table="productions" schema="public" catalog="instagap_development" columns="produce_id"/>
     </table>
     <table name="produces_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -21733,6 +21883,8 @@
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="productionactiviations_pkey" columns="id"/>
+      <index name="index_productionactiviations_on_activity_id" unique="false" columns="activity_id"/>
+      <index name="index_productionactiviations_on_production_id" unique="false" columns="production_id"/>
     </table>
     <table name="productionactiviations_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -21758,9 +21910,9 @@
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="productions_pkey" columns="id"/>
-      <foreign-key name="fk_rails_ba25a6d17e" columns="pmu_id" ref-table="pmus" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_rails_5d4ec248be" columns="produce_id" ref-table="produces" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="fk_rails_522b384ced" table="certifications" schema="public" catalog="instagap_development" columns="production_id"/>
+      <foreign-key name="fk_rails_73482be877" columns="pmu_id" ref-table="pmus" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rails_d4f2cb52e8" columns="produce_id" ref-table="produces" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_rails_3d2a2708e5" table="certifications" schema="public" catalog="instagap_development" columns="production_id"/>
       <index name="index_productions_on_pmu_id" unique="false" columns="pmu_id"/>
       <index name="index_productions_on_produce_id" unique="false" columns="produce_id"/>
     </table>
@@ -21785,7 +21937,7 @@
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="registrations_pkey" columns="id"/>
-      <foreign-key name="fk_rails_3a0b6417d1" columns="group_id" ref-table="groups" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rails_a04c28dc10" columns="group_id" ref-table="groups" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="index_registrations_on_group_id" unique="false" columns="group_id"/>
     </table>
     <table name="registrations_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
@@ -21810,7 +21962,7 @@
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <primary-key name="standards_pkey" columns="id"/>
-      <exported-key name="fk_rails_92868f39a1" table="certifications" schema="public" catalog="instagap_development" columns="standard_id"/>
+      <exported-key name="fk_rails_d651801748" table="certifications" schema="public" catalog="instagap_development" columns="standard_id"/>
     </table>
     <table name="standards_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>

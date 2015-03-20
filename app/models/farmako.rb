@@ -2,6 +2,13 @@ class Farmako < ActiveRecord::Base
 	has_many :mepembashes
 	has_many :mcrops,through: :mepembashes
 
+	has_many :farm_dros
+	has_many :systatiks,through: :farm_dros
+
+	#has_many :farmako_crop_skeyasmatums
+	#has_many :mcrops,through: :farmako_crop_skeyasmatums
+
+
 	def self.import(file)
 		CSV.foreach(file.path,headers:true,:header_converters =>lambda{|h| h.downcase.gsub('-','_').gsub(' ','_')}) do |row|
 			#import csv and fix the  row to downcase and replace blaks and - with _

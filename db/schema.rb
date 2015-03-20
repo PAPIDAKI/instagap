@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150313114237) do
+ActiveRecord::Schema.define(version: 20150319125505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,9 +40,21 @@ ActiveRecord::Schema.define(version: 20150313114237) do
   add_index "certifications", ["production_id"], name: "index_certifications_on_production_id", using: :btree
   add_index "certifications", ["standard_id"], name: "index_certifications_on_standard_id", using: :btree
 
-  create_table "farmakos", force: :cascade do |t|
+  create_table "farm_dros", force: :cascade do |t|
+    t.integer  "farmako_id"
+    t.string   "systatik_id"
+    t.string   "kod_morfh"
+    t.decimal  "synthesh"
+    t.decimal  "katharotht"
+    t.binary   "kodikos_kath"
+    t.binary   "delrec"
+    t.binary   "fprint"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "farmakos", primary_key: "kod_farmak", force: :cascade do |t|
     t.date     "hmer_egris"
-    t.integer  "kod_farmak"
     t.string   "gbonoma"
     t.string   "emporikhon"
     t.boolean  "fprint"
@@ -100,8 +112,7 @@ ActiveRecord::Schema.define(version: 20150313114237) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "mcrops", force: :cascade do |t|
-    t.integer  "code_fyta"
+  create_table "mcrops", primary_key: "code_fyta", force: :cascade do |t|
     t.string   "kathg"
     t.string   "eidos"
     t.string   "gonoma"
@@ -123,13 +134,30 @@ ActiveRecord::Schema.define(version: 20150313114237) do
   add_index "memberships", ["grower_id"], name: "index_memberships_on_grower_id", using: :btree
 
   create_table "mepembashes", force: :cascade do |t|
-    t.integer  "kod_farmak"
-    t.integer  "code_fyta"
+    t.integer  "farmako_id"
+    t.integer  "mcrop_id"
     t.integer  "diast_pros"
     t.string   "comments"
     t.string   "delrec"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "mfcs", force: :cascade do |t|
+    t.integer  "farmako_id"
+    t.integer  "mcrop_id"
+    t.string   "crops"
+    t.string   "edr_cod_kat"
+    t.string   "eidos"
+    t.string   "emporikhon"
+    t.string   "gbonoma"
+    t.date     "aposyrsh"
+    t.date     "telos_egri"
+    t.binary   "un_delete"
+    t.date     "un_date"
+    t.binary   "soil"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "pmus", force: :cascade do |t|
@@ -171,8 +199,10 @@ ActiveRecord::Schema.define(version: 20150313114237) do
     t.date     "ehd"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "mcrop_id"
   end
 
+  add_index "productions", ["mcrop_id"], name: "index_productions_on_mcrop_id", using: :btree
   add_index "productions", ["pmu_id"], name: "index_productions_on_pmu_id", using: :btree
   add_index "productions", ["produce_id"], name: "index_productions_on_produce_id", using: :btree
 
@@ -192,6 +222,23 @@ ActiveRecord::Schema.define(version: 20150313114237) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "systatiks", id: false, force: :cascade do |t|
+    t.string   "kodikos",    null: false
+    t.string   "onomadron"
+    t.string   "arxiko"
+    t.string   "aposyrsh"
+    t.integer  "cipac"
+    t.string   "dr_cod_kat"
+    t.binary   "old_new"
+    t.string   "fao"
+    t.string   "cas_number"
+    t.integer  "code_xhmik"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "systatiks", ["kodikos"], name: "index_systatiks_on_kodikos", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -215,7 +262,6 @@ ActiveRecord::Schema.define(version: 20150313114237) do
   add_foreign_key "certifications", "standards"
   add_foreign_key "memberships", "groups"
   add_foreign_key "memberships", "growers"
-  add_foreign_key "mepembashes", "mcrops", column: "code_fyta"
   add_foreign_key "pmus", "growers"
   add_foreign_key "productions", "pmus"
   add_foreign_key "productions", "produces"

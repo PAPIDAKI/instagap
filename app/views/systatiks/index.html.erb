@@ -1,0 +1,55 @@
+
+<h3>Import Systatiks</h3>
+<%=form_tag import_systatiks_path,multipart:true do %>
+    <%=file_field_tag :file%>
+    <%=submit_tag "Import csv"%>
+<%end%>
+
+<br>
+<%= link_to 'New Systatik', new_systatik_path %>
+
+
+<h1>Listing Systatiks</h1>
+
+<table class="'table">
+  <thead>
+    <tr>
+      <th>Kodikos</th>
+      <th>Onomadron</th>
+      <th>Arxiko</th>
+      <th>Aposyrsh</th>
+      <th>Cipac</th>
+      <th>Dr cod kat</th>
+      <th>Old new</th>
+      <th>Fao</th>
+      <th>Cas number</th>
+      <th>Code xhmik</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @systatiks.each do |systatik| %>
+      <tr>
+        <td><%= systatik.kodikos %></td>
+        <td><%= systatik.onomadron %></td>
+        <td><%= systatik.arxiko %></td>
+        <td><%= systatik.aposyrsh %></td>
+        <td><%= systatik.cipac %></td>
+        <td><%= systatik.dr_cod_kat %></td>
+        <td><%= systatik.old_new %></td>
+        <td><%= systatik.fao %></td>
+        <td><%= systatik.cas_number %></td>
+        <td><%= systatik.code_xhmik %></td>
+        <td><%= link_to 'Show', systatik %></td>
+        <td><%= link_to 'Edit', edit_systatik_path(systatik) %></td>
+        <td><%= link_to 'Destroy', systatik, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
