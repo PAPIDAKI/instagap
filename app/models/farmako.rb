@@ -5,8 +5,8 @@ class Farmako < ActiveRecord::Base
 	has_many :farm_dros
 	has_many :systatiks,through: :farm_dros
 
-	#has_many :farmako_crop_skeyasmatums
-	#has_many :mcrops,through: :farmako_crop_skeyasmatums
+	has_many :mfcs
+	has_many :mcrops,through: :mfcs
 
 
 	def self.import(file)
@@ -25,5 +25,4 @@ class Farmako < ActiveRecord::Base
 			end
 		end
 	end
-
 end

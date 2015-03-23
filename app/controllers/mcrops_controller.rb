@@ -15,8 +15,25 @@ class McropsController < ApplicationController
 
   def show
 		@mcrop=Mcrop.find(params[:code_fyta])
-		@mepembashes=@mcrop.mepembashes
-		@fcs=FarmakoCropSkeyasmatum.all
+		#@mepembashes=@mcrop.mepembashes
+		@mfcs=@mcrop.mfcs.limit(50)
+		#@farmako= Mfc.farmako.mepembashes.where(:mcrop_id==params[:id]).last.diast_pros
+		#@mepembashes=@mcrop.mfcs.each do |mfc|
+			#farmako.mepempashes.where(:mcrop==@mcrop.id)
+		#end
+
+		respond_to do |format|
+			format.html
+			format.pdf do
+				pdf=Prawn::Document.new
+				pdf.text "All chems from prawn"
+
+				pdf=ChemsPdf.new(@mcrop,@mepembashes,@mfcs,@farmako)
+				send_data pdf.render,filename: "igap List for #{@mcrop.gonoma}",
+					type: "application/pdf",
+					disposition:"inline"
+			end
+		end
 
   end
 
@@ -53,3 +70,4 @@ class McropsController < ApplicationController
       params.require(:mcrop).permit(:code_fyta, :kathh, :eidos, :gonoma, :genenral, :code, :klartex)
     end
 end
+

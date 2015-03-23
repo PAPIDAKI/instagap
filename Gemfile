@@ -17,6 +17,7 @@ gem "figaro"
 gem "mini_magick"
 gem "devise"
 gem 'prawn'
+gem 'prawn-table'
 
 group :production do
 	gem 'rails_12factor'
