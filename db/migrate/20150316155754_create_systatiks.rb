@@ -1,6 +1,6 @@
 class CreateSystatiks < ActiveRecord::Migration
   def up
-	  drop_table :systatiks
+	  #drop_table :systatiks
 
 
 	  create_table :systatiks ,id:false do |t|
