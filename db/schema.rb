@@ -13,12 +13,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150301163144) do
 =======
 ActiveRecord::Schema.define(version: 20150306093226) do
 >>>>>>> logs
 =======
 ActiveRecord::Schema.define(version: 20150319125505) do
+>>>>>>> logs
+=======
+ActiveRecord::Schema.define(version: 20150324065347) do
 >>>>>>> logs
 
   # These are extensions that must be enabled in order to support this database
@@ -50,6 +54,7 @@ ActiveRecord::Schema.define(version: 20150319125505) do
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   create_table "fertilizations", force: :cascade do |t|
     t.date     "date"
     t.string   "name"
@@ -71,6 +76,16 @@ ActiveRecord::Schema.define(version: 20150319125505) do
 =======
 >>>>>>> logs
 =======
+=======
+  create_table "chems", force: :cascade do |t|
+    t.string   "mfc"
+    t.decimal  "quantity"
+    t.string   "unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+>>>>>>> logs
   create_table "farm_dros", force: :cascade do |t|
     t.integer  "farmako_id"
     t.string   "systatik_id"
@@ -123,6 +138,19 @@ ActiveRecord::Schema.define(version: 20150319125505) do
     t.date     "telos_egri"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+<<<<<<< HEAD
+>>>>>>> logs
+=======
+  create_table "fertilizers", force: :cascade do |t|
+    t.string   "brand"
+    t.string   "type"
+    t.string   "content"
+    t.decimal  "quantiy"
+    t.string   "unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 >>>>>>> logs
@@ -322,6 +350,13 @@ ActiveRecord::Schema.define(version: 20150319125505) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "waters", force: :cascade do |t|
+    t.decimal  "quantity"
+    t.string   "unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   add_foreign_key "certifications", "productions"
   add_foreign_key "certifications", "standards"

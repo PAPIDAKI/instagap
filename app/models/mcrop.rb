@@ -2,11 +2,11 @@ class Mcrop < ActiveRecord::Base
 	self.primary_key ='code_fyta'
 
 	has_many :mepembashes
-	has_many :farmakos,through: :mepembashes
+ # has_many :farmakos,through: :mepembashes
 
 
-	has_many :farmako_crop_skeyasmatums
-	has_many :farmakos,through: :farmako_crop_skeyasmatums
+	has_many :mfcs
+	has_many :farmakos,through: :mfcs
 
 
 	has_many :productions
@@ -18,9 +18,9 @@ class Mcrop < ActiveRecord::Base
 
 	def self.import(file)
 		CSV.foreach(file.path,headers:true,:header_converters => lambda{|h| h.try(:downcase)}) do |row|
-			#Mcrop.create!row.to_hash
-			mcrop_hash=row.to_hash
 
+
+			mcrop_hash=row.to_hash
 			mcrop=Mcrop.where(code_fyta: mcrop_hash["code_fyta"])
 
 			if mcrop.count==1

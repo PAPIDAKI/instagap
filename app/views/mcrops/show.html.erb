@@ -41,8 +41,8 @@
 
 <hr>
 
-<h3>Approved Chem List (<%=@mepembashes.count%> approved solutions)</h3>
-
+<h3>Approved Chem List (<%=@mfcs.count%> approved solutions)</h3>
+<p><%=link_to "Printable List(PDF)" ,mcrop_path(@mcrop,format:"pdf")%> </p>
   <table class="table">
     <thead>
     <tr>
@@ -55,11 +55,12 @@
     </thead>
 
     <tbody>
-    <% @mepembashes.each do |mepembash| %>
+    <% @mfcs.each do |mfc| %>
         <tr>
-          <td><%= mepembash.farmako.gbonoma %></td>
-          <td><%= mepembash.diast_pros %></td>
-          <td><%= mepembash.farmako.systatiks.first.onomadron %></td>
+          <td><%= mfc.try(:gbonoma) %></td>
+          <td><%= mfc.farmako.mepembashes.where(:mcrop_id==params[:id]).last.try(:diast_pros) %></td>
+          <td><%= mfc.farmako.systatiks.first.try(:onomadron) %></td>
+          <td><%= mfc.try(:telos_egri) %></td>
 
           <td><%= link_to 'Show' %></td>
           <td><%= link_to 'Edit' %></td>

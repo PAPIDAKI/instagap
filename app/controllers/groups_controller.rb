@@ -5,6 +5,15 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
     @groups = Group.all
+		respond_to do |format|
+			format.html
+			format.pdf do
+				pdf = GroupsPdf.new(@groups)
+				send_data pdf.render,filename:'groups.pdf',
+						type:'application/pdf',
+						disposition:"inline"
+			end
+		end
   end
 
   # GET /groups/1
