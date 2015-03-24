@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mfc:</strong>
+  <%= @chem.mfc %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @chem.quantity %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @chem.unit %>
+</p>
+
+<%= link_to 'Edit', edit_chem_path(@chem) %> |
+<%= link_to 'Back', chems_path %>

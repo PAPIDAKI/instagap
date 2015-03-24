@@ -16,11 +16,12 @@ class ChemsPdf <Prawn::Document
 
 	end
 	def default_header
-		logo="#{Rails.root}/app/assets/images/default.jpg"
+		logo="#{Rails.root}/app/assets/images/default.png"
 		data=[[{:image=>logo,:fit=>[100,50],:position=>:center,:vposition=>:center},"Sultanas Export Union ltd"," 3rd cell "]]
 		table data,:column_widths=>[120,300,120],
 		      :cell_style=>{:size=>20,
 		                    :align=>:center,
+		                    :valign=>:center,
 		                    :text_color=>"346842",
 		                    :border_lines=>[:dotted,:dotted, :dotted,:dotted],
 		                    :overflow=>:shrink_to_fit,

@@ -9,10 +9,11 @@ DONE=>Fix date format to dmy with regex find ([0-9]{2})/+([0-9]{2})/+([0-9]{4}) 
 Use  a converter with regex
 DONE=>Add assocciations to chems to get list
 DONE=>Fix nil problem on importing mfcs
-
-Print chems list
+DONE=>Print chems list
 
 Select and add chems to Action
+
+
 Harvest action with lot number
 
 add Basic map

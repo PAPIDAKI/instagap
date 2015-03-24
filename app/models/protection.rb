@@ -1,1 +1,7 @@
-class Protection < Activity; end
+class Protection < Activity
+
+
+
+
+
+end

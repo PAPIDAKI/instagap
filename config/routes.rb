@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
 
+  resources :waters
+
+  resources :fertilizers
+
+  resources :chems
+
   resources :mfcs do
 	  collection {post :import}
   end
