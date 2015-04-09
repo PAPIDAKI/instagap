@@ -1,1 +1,3 @@
-class Fertilization < Activity; end
+class Fertilization < Activity;
+
+end

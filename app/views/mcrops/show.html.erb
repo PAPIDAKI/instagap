@@ -47,8 +47,16 @@
     <thead>
     <tr>
       <th>Trade name</th>
-      <th>Phi</th>
+      <th>Category</th>
       <th>Prime Igedient</th>
+      <th>Reasoning</th>
+      <th>ApplicationUnit</th>
+      <th>Min recom</th>
+      <th>Max recom</th>
+
+      <th>Phi</th>
+
+      <th>Approval Date</th>
       <th>Expiration Date</th>
       <th colspan="3"></th>
     </tr>
@@ -58,8 +66,16 @@
     <% @mfcs.each do |mfc| %>
         <tr>
           <td><%= mfc.try(:gbonoma) %></td>
-          <td><%= mfc.farmako.mepembashes.where(:mcrop_id==params[:id]).last.try(:diast_pros) %></td>
+          <td>Kategory</td>
           <td><%= mfc.farmako.systatiks.first.try(:onomadron) %></td>
+          <td>reasoning</td>
+          <td>application unit</td>
+          <td>min</td>
+          <td>max</td>
+
+          <td><%= mfc.farmako.mepembashes.where(:mcrop_id==params[:id]).last.try(:diast_pros) %></td>
+          
+          <td><%=mfc.farmako.try(:hmer_egris)%>
           <td><%= mfc.try(:telos_egri) %></td>
 
           <td><%= link_to 'Show' %></td>

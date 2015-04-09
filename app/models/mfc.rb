@@ -1,4 +1,5 @@
 class Mfc < ActiveRecord::Base
+#chem association	
 	belongs_to :mcrop
 	belongs_to :farmako
 

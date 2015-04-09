@@ -12,18 +12,24 @@ class Team::ActivitiesController < ApplicationController
   def show
 		@registration=Registration.find(params[:registration_id])
 		@group=@registration.group
-
-
   end
 
   def new
 		@activity=type_class.new
+		@registration=Registration.find(params[:registration_id])
+		@group=@registration.group
+		#@activity.chems.new
+
   end
 
   def create
+
 	  @registration=Registration.find(params[:registration_id])
 	  @activity=type_class.new(activity_params)
 	  @activity.registration_id=@registration.id
+	 # @activity.chem
+
+
 
 
 	  if @activity.save
@@ -35,18 +41,26 @@ class Team::ActivitiesController < ApplicationController
 
   end
 
-
   def edit
 		@activity=Activity.find(params[:id])
 		@registration=Registration.find(params[:registration_id])
+		@group=@registration.group
+		@activity.chems.build
+		#group_id
+		#registration.id
 
   end
 
 
 
   def update
-    @activity.update(edit_activity_params)
-		redirect_to team_registration_activity_path(@registration,@activity)
+		@activity=Activity.find(params[:id])
+		@registration=Registration.find(params[:registration_id])
+		@group=@registration.group
+
+		@activity.update(edit_activity_params)
+
+		redirect_to group_team_registration_path(@group,@registration)
   end
 
   def destroy
@@ -57,10 +71,7 @@ class Team::ActivitiesController < ApplicationController
 		redirect_to group_team_registration_path(@group,@registration)
   end
 
-
-
   private
-
 
     def set_type
 			@type=type
@@ -83,12 +94,29 @@ class Team::ActivitiesController < ApplicationController
     end
 
     def activity_params
-			params.require(type.underscore.to_sym).permit(:date, :type, :note, :operator, :persons, :approved_by,production_ids: [])
+			params.require(type.underscore.to_sym).permit(:date,
+														 :type,
+														 :note,
+														 :operator, 
+														 :persons,
+														 :approved_by,
+														 production_ids: [],
+														 :chems_attributes => [:id,:name],
+														 :quants_attribures=>[:id,:amount,:unit])
     end
 
     def edit_activity_params
 	  type=@activity.type
-	  params.require(type.underscore.to_sym).permit(:date,:type,:note,:operator,:persons,:approved_by,production_ids: [])
+	  params.require(type.underscore.to_sym).permit(:date,
+												  	:type,
+												  	:note,
+												  	:operator,
+												  	:persons,
+												  	:approved_by,
+												  	:registration_id,
+												  	production_ids: [],
+												  	:chems_attributes => [:id,:name],
+												    :quants_attribures=>[:id,:amount,:unit])
     end
 
 		def load_registration

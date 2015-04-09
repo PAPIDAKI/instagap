@@ -1,7 +1,3 @@
-class Protection < Activity
-
-
-
-
+class Protection < Activity;
 
 end

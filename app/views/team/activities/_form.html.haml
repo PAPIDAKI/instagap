@@ -1,0 +1,14 @@
+=simple_form_for [:team,@registration,@activity], html:{multipart:true} do |f|
+	=f.collection_check_boxes :production_ids,@registration.productions,:id,:pmu_with_produce_and_variety,:item_wrapper_class=>'inline'
+	=f.input :date
+	=f.input :note
+	=f.input :operator
+	=f.input :approved_by
+	%hr
+	%h3 Quantities
+	#quantities
+		=f.simple_fields_for  :quantities do |quantity|
+		=render 'quantity_fields',f:quantity
+		.links
+			=link_to_add_association 'add quantity',f,:quantities
+	=f.submit

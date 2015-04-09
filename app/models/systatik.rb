@@ -1,4 +1,5 @@
 class Systatik < ActiveRecord::Base
+#Chem associations and primary keys
 	self.primary_key="kodikos"
 	has_many :farm_dros
 	has_many :farmakos,through: :farm_dros

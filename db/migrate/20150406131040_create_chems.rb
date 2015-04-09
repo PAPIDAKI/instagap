@@ -1,9 +1,7 @@
 class CreateChems < ActiveRecord::Migration
   def change
     create_table :chems do |t|
-      t.string :mfc
-      t.decimal :quantity
-      t.string :unit
+      t.string :name
 
       t.timestamps null: false
     end

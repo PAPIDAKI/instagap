@@ -2,5 +2,6 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Cancel' %> |
+<%= link_to 'Cancel', group_team_registration_path(@group,@registration)
+%> |
 <%= link_to 'Delete', team_registration_activity_path(@registration,@activity),method: :delete %>

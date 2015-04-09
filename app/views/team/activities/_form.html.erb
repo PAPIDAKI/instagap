@@ -11,36 +11,52 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="form-group">
     <%=f.collection_check_boxes(:production_ids,@registration.productions,:id,:pmu_with_produce_and_variety) do |b| %>
     <%=b.check_box :checked=>true %> <%= b.label%><br>
     <%end%>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :date %><br>
-    <%= f.date_select :date %>
+    <%= f.date_select :date,class:'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
+  <hr>
+  <%=f.fields_for :qua do |q|%>
+    <fieldset> 
+
+      <%=q.label :amount %>
+      <%=q.text_field :amount%>
+      <%=q.label :unit%>
+      <%=q.text_field :unit%> 
+
+    </fieldset>
+  <%end%>
+  <hr>
+
+   
+  <div class="form-group">
+    <%= f.hidden_field :type,class:'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :note %><br>
-    <%= f.text_area :note %>
+    <%= f.text_area :note,class:'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :operator %><br>
-    <%= f.text_field :operator %>
+    <%= f.text_field :operator,class:'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :persons %><br>
-    <%= f.number_field :persons %>
+    <%= f.number_field :persons,class:'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :approved_by %><br>
-    <%= f.text_field :approved_by %>
+    <%= f.text_field :approved_by,class:'form-control' %>
   </div>
+
+
+      
 
   <div class="actions">
     <%= f.submit %>

@@ -1,1 +1,3 @@
-class Irrigation < Activity; end
+class Irrigation < Activity
+
+end

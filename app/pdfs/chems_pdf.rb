@@ -4,7 +4,7 @@ class ChemsPdf <Prawn::Document
 
 
 	def initialize(mcrop,mepembashes,mfcs,farmako)
-		super(top_margin:70)
+		super(top_margin:10)
 
 			@mcrop=mcrop
 		@mepembashes=mepembashes
@@ -19,7 +19,7 @@ class ChemsPdf <Prawn::Document
 		logo="#{Rails.root}/app/assets/images/default.png"
 		data=[[{:image=>logo,:fit=>[100,50],:position=>:center,:vposition=>:center},"Sultanas Export Union ltd"," 3rd cell "]]
 		table data,:column_widths=>[120,300,120],
-		      :cell_style=>{:size=>20,
+		      :cell_style=>{:size=>15,
 		                    :align=>:center,
 		                    :valign=>:center,
 		                    :text_color=>"346842",
@@ -47,7 +47,7 @@ class ChemsPdf <Prawn::Document
 			self.position=:center
 			self.cell_style={:borders=>[ ],:size=>10,:height=>25,:padding=>[5,5,5,5]}
 			self.row_colors = ['DDDDDD', 'FFFFDD']
-			self.column_widths = [170, 30, 170,170]
+			self.column_widths = [200, 40, 150,150]
 
 		end
 	end
@@ -55,7 +55,7 @@ class ChemsPdf <Prawn::Document
 	def mcrop_rows
 		[["Trade Name","phi","Prime Igridient","Expiration Date"]]+
 				@mfcs.map do |mfc|
-					[mfc.gbonoma,"fix me",mfc.farmako.systatiks.first.onomadron,mfc.telos_egri]
+					[mfc.gbonoma,"fixme",mfc.farmako.systatiks.first.onomadron,mfc.telos_egri]
 				end
 	end
 

@@ -1,6 +1,5 @@
 DONE=>TODO update git to the secure 2.2.1 v
-TODO set default picture on carrierwave
-
+    TODO set default picture on carrierwave
 DONE=>TODO Add activities through habtm checkboxes
 DONE=>build chems and import csv
 DONE=add many chems
@@ -12,14 +11,17 @@ DONE=>Fix nil problem on importing mfcs
 DONE=>Print chems list
 
 Select and add chems to Action
+    Nested chems
+    select chems and units
+    add multiple chems per activity
+    list of applications with chems waters and fertilizations
 
-
-Harvest action with lot number
-
-add Basic map
 gmaps select and calculate
-Rate harvest lot
+add Basic ma
+   Harvest action with lot number
+   Rate harvest lot
 
+autosave installed 
 
 
 
@@ -33,9 +35,10 @@ downcase strings otherwise it loads up empty
 
 
 
-
-
-
+==Chems 
+ Import csv's form minagric 
+ mcrop 			
+ 	> farmkos <
 
 
 

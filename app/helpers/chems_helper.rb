@@ -1,2 +1,0 @@
-module ChemsHelper
-end

@@ -4,8 +4,14 @@ class McropsController < ApplicationController
   respond_to :html
 
   def index
-    @mcrops = Mcrop.all
-    respond_with(@mcrops)
+		@mcrops=Mcrop.produce_20
+
+		#case params[:scope]
+		#	when 'produce_10'
+		#		@mcrops=Mcrop.produce_20
+		#	else
+		#		@mcrops=Mcrop.produce_10
+		#end
   end
 
   def import

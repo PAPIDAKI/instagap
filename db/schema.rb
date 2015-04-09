@@ -11,19 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150301163144) do
-=======
-ActiveRecord::Schema.define(version: 20150306093226) do
->>>>>>> logs
-=======
-ActiveRecord::Schema.define(version: 20150319125505) do
->>>>>>> logs
-=======
-ActiveRecord::Schema.define(version: 20150324065347) do
->>>>>>> logs
+ActiveRecord::Schema.define(version: 20150406131212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,40 +40,12 @@ ActiveRecord::Schema.define(version: 20150324065347) do
   add_index "certifications", ["production_id"], name: "index_certifications_on_production_id", using: :btree
   add_index "certifications", ["standard_id"], name: "index_certifications_on_standard_id", using: :btree
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  create_table "fertilizations", force: :cascade do |t|
-    t.date     "date"
-    t.string   "name"
-    t.string   "typos"
-    t.string   "concentration"
-    t.decimal  "amount"
-    t.string   "application_method"
-    t.string   "machinery"
-    t.string   "approved_by"
-    t.string   "operator"
-    t.string   "note"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.integer  "production_id"
-  end
-
-  add_index "fertilizations", ["production_id"], name: "index_fertilizations_on_production_id", using: :btree
-
-=======
->>>>>>> logs
-=======
-=======
   create_table "chems", force: :cascade do |t|
-    t.string   "mfc"
-    t.decimal  "quantity"
-    t.string   "unit"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
->>>>>>> logs
   create_table "farm_dros", force: :cascade do |t|
     t.integer  "farmako_id"
     t.string   "systatik_id"
@@ -140,20 +100,6 @@ ActiveRecord::Schema.define(version: 20150324065347) do
     t.datetime "updated_at",        null: false
   end
 
-<<<<<<< HEAD
->>>>>>> logs
-=======
-  create_table "fertilizers", force: :cascade do |t|
-    t.string   "brand"
-    t.string   "type"
-    t.string   "content"
-    t.decimal  "quantiy"
-    t.string   "unit"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
->>>>>>> logs
   create_table "groups", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
@@ -172,22 +118,6 @@ ActiveRecord::Schema.define(version: 20150324065347) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-  create_table "irrigations", force: :cascade do |t|
-    t.date     "date"
-    t.integer  "duration"
-    t.decimal  "qunatity"
-    t.integer  "persons"
-    t.string   "operator"
-    t.string   "note"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "production_id"
-  end
-
-  add_index "irrigations", ["production_id"], name: "index_irrigations_on_production_id", using: :btree
-
-=======
   create_table "mcrops", primary_key: "code_fyta", force: :cascade do |t|
     t.string   "kathg"
     t.string   "eidos"
@@ -199,7 +129,6 @@ ActiveRecord::Schema.define(version: 20150324065347) do
     t.datetime "updated_at", null: false
   end
 
->>>>>>> logs
   create_table "memberships", force: :cascade do |t|
     t.integer  "group_id"
     t.integer  "grower_id"
@@ -250,22 +179,6 @@ ActiveRecord::Schema.define(version: 20150324065347) do
   add_index "pmus", ["grower_id"], name: "index_pmus_on_grower_id", using: :btree
   add_index "pmus", ["registration_id"], name: "index_pmus_on_registration_id", using: :btree
 
-  create_table "pps", force: :cascade do |t|
-    t.date     "date"
-    t.string   "trade_name"
-    t.string   "active_ingridient"
-    t.string   "reason"
-    t.decimal  "amount"
-    t.string   "application_method"
-    t.string   "tech_responsible"
-    t.string   "operator"
-    t.string   "persons"
-    t.string   "note"
-    t.integer  "production_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
-
   create_table "produces", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -298,6 +211,18 @@ ActiveRecord::Schema.define(version: 20150324065347) do
   add_index "productions", ["mcrop_id"], name: "index_productions_on_mcrop_id", using: :btree
   add_index "productions", ["pmu_id"], name: "index_productions_on_pmu_id", using: :btree
   add_index "productions", ["produce_id"], name: "index_productions_on_produce_id", using: :btree
+
+  create_table "quants", force: :cascade do |t|
+    t.decimal  "amount"
+    t.string   "unit"
+    t.integer  "chem_id"
+    t.integer  "activity_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "quants", ["activity_id"], name: "index_quants_on_activity_id", using: :btree
+  add_index "quants", ["chem_id"], name: "index_quants_on_chem_id", using: :btree
 
   create_table "registrations", force: :cascade do |t|
     t.string   "name"
@@ -351,13 +276,6 @@ ActiveRecord::Schema.define(version: 20150324065347) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "waters", force: :cascade do |t|
-    t.decimal  "quantity"
-    t.string   "unit"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   add_foreign_key "certifications", "productions"
   add_foreign_key "certifications", "standards"
   add_foreign_key "memberships", "groups"
@@ -365,5 +283,7 @@ ActiveRecord::Schema.define(version: 20150324065347) do
   add_foreign_key "pmus", "growers"
   add_foreign_key "productions", "pmus"
   add_foreign_key "productions", "produces"
+  add_foreign_key "quants", "activities"
+  add_foreign_key "quants", "chems"
   add_foreign_key "registrations", "groups"
 end

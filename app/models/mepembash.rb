@@ -1,5 +1,5 @@
 class Mepembash < ActiveRecord::Base
-
+#chems associations 
 	belongs_to :mcrop
 	belongs_to :farmako
 

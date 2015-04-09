@@ -1,20 +1,11 @@
 Rails.application.routes.draw do
 
 
-  resources :waters
-
-  resources :fertilizers
-
-  resources :chems
-
   resources :mfcs do
 	  collection {post :import}
   end
 
 
-  resources :farmako_crop_skeyasmata do
-	  collection {post :import}
-  end
 
 
   resources :farm_dros do
@@ -33,6 +24,7 @@ Rails.application.routes.draw do
 	  collection {post :import}
   end
 
+	get 'mcrops/produce_20'=>'mcrops#index',scpope: 'produce_10'
   resources :mcrops ,param: :code_fyta do
 	  collection {post :import}
   end
@@ -81,7 +73,9 @@ Rails.application.routes.draw do
 	end
 
 
-	resources :activities
+	resources :activities do
+		resources :chems
+	end
 	resources :fertilizations,controller:'activities',type:'Fertilization'
 	resources :irrigations, controller: 'activities',type:'Irrigation'
 	resources :protections, controller: 'activities',type:'Protection'

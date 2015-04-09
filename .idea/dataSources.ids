@@ -2374,6 +2374,29 @@
       <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
       <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
+    <table name="chems" schema="public" catalog="instagap_development" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnY2hlbXNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="mfc" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="quantity" sqlType="numeric" precision="131089" scale="0" nullable="true" jdbcType="2"/>
+      <column name="unit" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="activity_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <primary-key name="chems_pkey" columns="id"/>
+      <index name="index_chems_on_activity_id" unique="false" columns="activity_id"/>
+    </table>
+    <table name="chems_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
     <table name="farm_dros" schema="public" catalog="instagap_development" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZmFybV9kcm9zX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
       <column name="farmako_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
@@ -2389,36 +2412,6 @@
       <primary-key name="farm_dros_pkey" columns="id"/>
     </table>
     <table name="farm_dros_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="farmako_crop_skeyasmata" schema="public" catalog="instagap_development" type="TABLE">
-      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZmFybWFrb19jcm9wX3NrZXlhc21hdGFfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="farmako_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="mcrop_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="crops" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="edr_cod_kat" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="eidos" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="emporikhon" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="gbonoma" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="aposyrsh" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="telos_egri" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="un_delete" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
-      <column name="un_date" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="soil" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
-      <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
-      <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
-      <primary-key name="farmako_crop_skeyasmata_pkey" columns="id"/>
-    </table>
-    <table name="farmako_crop_skeyasmata_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -2473,6 +2466,31 @@
       <primary-key name="farmakos_pkey" columns="kod_farmak"/>
     </table>
     <table name="farmakos_kod_farmak_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="fertilizers" schema="public" catalog="instagap_development" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZmVydGlsaXplcnNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="brand" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="type" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="content" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="quantiy" sqlType="numeric" precision="131089" scale="0" nullable="true" jdbcType="2"/>
+      <column name="unit" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fertilization_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <primary-key name="fertilizers_pkey" columns="id"/>
+      <index name="index_fertilizers_on_fertilization_id" unique="false" columns="fertilization_id"/>
+    </table>
+    <table name="fertilizers_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -2592,6 +2610,36 @@
       <primary-key name="mepembashes_pkey" columns="id"/>
     </table>
     <table name="mepembashes_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="mfcs" schema="public" catalog="instagap_development" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbWZjc19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
+      <column name="farmako_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="mcrop_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="crops" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="edr_cod_kat" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="eidos" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="emporikhon" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="gbonoma" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aposyrsh" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="telos_egri" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="un_delete" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
+      <column name="un_date" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="soil" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
+      <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <primary-key name="mfcs_pkey" columns="id"/>
+    </table>
+    <table name="mfcs_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -2786,6 +2834,28 @@
       <index name="index_users_on_reset_password_token" unique="true" columns="reset_password_token"/>
     </table>
     <table name="users_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="waters" schema="public" catalog="instagap_development" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnd2F0ZXJzX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
+      <column name="quantity" sqlType="numeric" precision="131089" scale="0" nullable="true" jdbcType="2"/>
+      <column name="unit" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="irrigation_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <primary-key name="waters_pkey" columns="id"/>
+      <index name="index_waters_on_irrigation_id" unique="false" columns="irrigation_id"/>
+    </table>
+    <table name="waters_id_seq" schema="public" catalog="instagap_development" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
