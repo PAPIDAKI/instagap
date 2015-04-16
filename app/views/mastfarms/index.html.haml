@@ -1,0 +1,35 @@
+%h1 Listing mastfarms
+%p
+  =form_tag import_mastfarms_path,multipart:true do
+    =file_field_tag :file,class:'btn'
+    =submit_tag "Import CSV",class:'btn btn-link'
+%p
+  = link_to 'New Mastfarm', new_mastfarm_path,class:'btn btn-link'
+
+
+%table
+  %thead
+    %tr
+      %th Counter
+      %th Code asten
+      %th Fbcode
+      %th Dosh farm
+      %th Kod doshs
+      %th
+      %th
+      %th
+
+  %tbody
+    - @mastfarms.each do |mastfarm|
+      %tr
+        %td= mastfarm.counter
+        %td= mastfarm.code_asten
+        %td= mastfarm.fbcode
+        %td= mastfarm.dosh_farm
+        %td= mastfarm.kod_doshs
+        %td= link_to 'Show', mastfarm
+        %td= link_to 'Edit', edit_mastfarm_path(mastfarm)
+        %td= link_to 'Destroy', mastfarm, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+

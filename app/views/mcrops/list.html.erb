@@ -1,0 +1,6 @@
+<h1>PhytoProtection List</h1>
+<%=form_for @mrops do |f|%>
+<div class='field'>
+	<%=f.label :mcrop%>
+	<%=f.collection_select :code_fyta,Mcrop.order(:gonoma),:code_fyta,:gonoma,include_blank: false%>
+</div>

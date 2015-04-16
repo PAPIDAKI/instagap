@@ -1,0 +1,41 @@
+%h1 Listing Cfarmast 
+%p
+  =form_tag import_mcfarmasts_path,multipart:true do
+    =file_field_tag :file ,class:'btn'
+    =submit_tag "Imprt CSV",class:'btn btn-link'
+%p
+  = link_to 'New Mcfarmast', new_mcfarmast_path,class:'btn btn-link'
+
+
+%table
+  %thead
+    %tr
+      %th Kod farmak
+      %th Counter
+      %th Code fyta
+      %th Tropoxrono
+      %th Code asten
+      %th Fbcode
+      %th Dosh farm
+      %th Kod doshs
+      %th
+      %th
+      %th
+
+  %tbody
+    - @mcfarmasts.each do |mcfarmast|
+      %tr
+        %td= mcfarmast.kod_farmak
+        %td= mcfarmast.counter
+        %td= mcfarmast.code_fyta
+        %td= mcfarmast.tropoxrono
+        %td= mcfarmast.code_asten
+        %td= mcfarmast.fbcode
+        %td= mcfarmast.dosh_farm
+        %td= mcfarmast.kod_doshs
+        %td= link_to 'Show', mcfarmast
+        %td= link_to 'Edit', edit_mcfarmast_path(mcfarmast)
+        %td= link_to 'Destroy', mcfarmast, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+

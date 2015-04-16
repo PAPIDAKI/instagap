@@ -50,9 +50,10 @@
       <th>Category</th>
       <th>Prime Igedient</th>
       <th>Reasoning</th>
-      <th>ApplicationUnit</th>
-      <th>Min recom</th>
-      <th>Max recom</th>
+      <th>Dosage</th>
+
+      <th>Application Unit</th>
+      <th>Application Method</th>
 
       <th>Phi</th>
 
@@ -65,22 +66,21 @@
     <tbody>
     <% @mfcs.each do |mfc| %>
         <tr>
-          <td><%= mfc.try(:gbonoma) %></td>
-          <td>Kategory</td>
-          <td><%= mfc.farmako.systatiks.first.try(:onomadron) %></td>
-          <td>reasoning</td>
-          <td>application unit</td>
-          <td>min</td>
-          <td>max</td>
-
-          <td><%= mfc.farmako.mepembashes.where(:mcrop_id==params[:id]).last.try(:diast_pros) %></td>
+          <td><%= mfc.try(:gbonoma).upcase %></td>
+          <td><%=mfc.mkatigori.kathgoria%></td>
+          <td><%= mfc.mfarmako.systatiks.first.try(:onomadron).upcase %></td>
+          <td><%=mfc.mfarmako.mfarmkasts.where(:mcrop_id==params[:code_fyta]).first.try(:mastfarms).try(:last).try(:masthenium).try(:astenia)%></td>
+          <td><%=mfc.mfarmako.mfarmkasts.where(:mcrop_id==params[:code_fyta]).first.try(:mastfarms).try(:last).try(:dosh_farm)%></td>
+          <td><%=mfc.mfarmako.mfarmkasts.where(:mcropi_id==params[:code_fyta]).first.try(:mastfarms).try(:last).try(:mdosh).try(:dosh)%></td>
+          <td><%=truncate(mfc.mfarmako.try(:tropo_efar))%></td>
           
-          <td><%=mfc.farmako.try(:hmer_egris)%>
-          <td><%= mfc.try(:telos_egri) %></td>
 
-          <td><%= link_to 'Show' %></td>
-          <td><%= link_to 'Edit' %></td>
-          <td><%= link_to 'Destroy' %></td>
+          <td><%= mfc.mfarmako.mepembashes.where(:mcrop_id==params[:code_fyta]).first.try(:diast_pros) %></td>
+          
+          <td><%=mfc.mfarmako.try(:hmer_egris)%>
+          <td><%= mfc.mfarmako.try(:telos_egri) %></td>
+
+          
         </tr>
     <%end%>
 

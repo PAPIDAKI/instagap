@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Kod farmak:
+  = @mcfarmast.kod_farmak
+%p
+  %b Counter:
+  = @mcfarmast.counter
+%p
+  %b Code fyta:
+  = @mcfarmast.code_fyta
+%p
+  %b Tropoxrono:
+  = @mcfarmast.tropoxrono
+%p
+  %b Code asten:
+  = @mcfarmast.code_asten
+%p
+  %b Fbcode:
+  = @mcfarmast.fbcode
+%p
+  %b Dosh farm:
+  = @mcfarmast.dosh_farm
+%p
+  %b Kod doshs:
+  = @mcfarmast.kod_doshs
+
+= link_to 'Edit', edit_mcfarmast_path(@mcfarmast)
+\|
+= link_to 'Back', mcfarmasts_path

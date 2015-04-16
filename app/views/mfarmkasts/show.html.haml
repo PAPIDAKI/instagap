@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Counter:
+  = @mfarmkast.counter
+%p
+  %b Kod farmak:
+  = @mfarmkast.kod_farmak
+%p
+  %b Code fyta:
+  = @mfarmkast.code_fyta
+%p
+  %b Tropoxrono:
+  = @mfarmkast.tropoxrono
+%p
+  %b Delrec:
+  = @mfarmkast.delrec
+%p
+  %b General:
+  = @mfarmkast.general
+%p
+  %b Un delete:
+  = @mfarmkast.un_delete
+%p
+  %b Un date:
+  = @mfarmkast.un_date
+
+= link_to 'Edit', edit_mfarmkast_path(@mfarmkast)
+\|
+= link_to 'Back', mfarmkasts_path

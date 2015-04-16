@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Code asten:
+  = @masthenium.code_asten
+%p
+  %b Astenia:
+  = @masthenium.astenia
+%p
+  %b Nastenia:
+  = @masthenium.nastenia
+
+= link_to 'Edit', edit_masthenium_path(@masthenium)
+\|
+= link_to 'Back', masthenia_path

@@ -1,0 +1,124 @@
+= form_for @mfarmako do |f|
+  - if @mfarmako.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@mfarmako.errors.count, "error")} prohibited this mfarmako from being saved:"
+      %ul
+        - @mfarmako.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :hmer_egris
+    = f.date_select :hmer_egris
+  .field
+    = f.label :kod_farmak
+    = f.number_field :kod_farmak
+  .field
+    = f.label :gbonoma
+    = f.text_field :gbonoma
+  .field
+    = f.label :emporikhon
+    = f.text_field :emporikhon
+  .field
+    = f.label :fprint
+    = f.check_box :fprint
+  .field
+    = f.label :common
+    = f.check_box :common
+  .field
+    = f.label :enimerosi
+    = f.check_box :enimerosi
+  .field
+    = f.label :amateur_use
+    = f.check_box :amateur_use
+  .field
+    = f.label :tag
+    = f.check_box :tag
+  .field
+    = f.label :mixture
+    = f.check_box :mixture
+  .field
+    = f.label :edr_cod_kat
+    = f.text_field :edr_cod_kat
+  .field
+    = f.label :date_notification
+    = f.date_select :date_notification
+  .field
+    = f.label :date_updateLdate
+    = f.text_field :date_updateLdate
+  .field
+    = f.label :kode
+    = f.text_field :kode
+  .field
+    = f.label :num_protok
+    = f.number_field :num_protok
+  .field
+    = f.label :num_protok-total
+    = f.number_field :num_protok-total
+  .field
+    = f.label :tegris
+    = f.text_field :tegris
+  .field
+    = f.label :type_egris
+    = f.text_field :type_egris
+  .field
+    = f.label :kat_number
+    = f.text_field :kat_number
+  .field
+    = f.label :fys_katast
+    = f.number_field :fys_katast
+  .field
+    = f.label :fys-kat
+    = f.number_field :fys-kat
+  .field
+    = f.label :adate
+    = f.date_select :adate
+  .field
+    = f.label :group
+    = f.check_box :group
+  .field
+    = f.label :morfhskeya
+    = f.text_field :morfhskeya
+  .field
+    = f.label :bohthitike
+    = f.text_field :bohthitike
+  .field
+    = f.label :aposyrsh
+    = f.text_field :aposyrsh
+  .field
+    = f.label :kod
+    = f.text_field :kod
+  .field
+    = f.label :food
+    = f.check_box :food
+  .field
+    = f.label :stoxos
+    = f.text_field :stoxos
+  .field
+    = f.label :trop_efar
+    = f.text_area :trop_efar
+  .field
+    = f.label :met_klima
+    = f.text_area :met_klima
+  .field
+    = f.label :paraskeyas
+    = f.number_field :paraskeyas
+  .field
+    = f.label :antiprosop
+    = f.number_field :antiprosop
+  .field
+    = f.label :contact_market
+    = f.number_field :contact_market
+  .field
+    = f.label :contact_point
+    = f.number_field :contact_point
+  .field
+    = f.label :code_toxik
+    = f.text_field :code_toxik
+  .field
+    = f.label :rcode
+    = f.text_field :rcode
+  .field
+    = f.label :telos_egri
+    = f.date_select :telos_egri
+  .actions
+    = f.submit 'Save'

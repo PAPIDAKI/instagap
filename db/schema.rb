@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406131212) do
+ActiveRecord::Schema.define(version: 20150415094201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,8 +46,14 @@ ActiveRecord::Schema.define(version: 20150406131212) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "doshes", primary_key: "kod_doshs", force: :cascade do |t|
+    t.string   "dosh"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "farm_dros", force: :cascade do |t|
-    t.integer  "farmako_id"
+    t.integer  "mfarmako_id"
     t.string   "systatik_id"
     t.string   "kod_morfh"
     t.decimal  "synthesh"
@@ -98,6 +104,7 @@ ActiveRecord::Schema.define(version: 20150406131212) do
     t.date     "telos_egri"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.date     "adate"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -118,6 +125,37 @@ ActiveRecord::Schema.define(version: 20150406131212) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "mastfarms", force: :cascade do |t|
+    t.integer  "mfarmkast_id"
+    t.string   "masthenium_id"
+    t.string   "fbcode"
+    t.string   "dosh_farm"
+    t.integer  "mdosh_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "masthenia", id: false, force: :cascade do |t|
+    t.string   "code_asten", null: false
+    t.string   "astenia"
+    t.string   "nastenia"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mcfarmasts", force: :cascade do |t|
+    t.integer  "farmako_id"
+    t.integer  "counter"
+    t.integer  "mcrop_id"
+    t.string   "tropoxrono"
+    t.string   "code_asten"
+    t.string   "fbcode"
+    t.string   "dosh_farm"
+    t.integer  "mdosh_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "mcrops", primary_key: "code_fyta", force: :cascade do |t|
     t.string   "kathg"
     t.string   "eidos"
@@ -125,6 +163,12 @@ ActiveRecord::Schema.define(version: 20150406131212) do
     t.integer  "general"
     t.string   "code"
     t.string   "klartext"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mdoshes", primary_key: "kod_doshs", force: :cascade do |t|
+    t.string   "dosh"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -140,20 +184,74 @@ ActiveRecord::Schema.define(version: 20150406131212) do
   add_index "memberships", ["grower_id"], name: "index_memberships_on_grower_id", using: :btree
 
   create_table "mepembashes", force: :cascade do |t|
-    t.integer  "farmako_id"
+    t.integer  "mfarmako_id"
     t.integer  "mcrop_id"
     t.integer  "diast_pros"
     t.string   "comments"
     t.string   "delrec"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "mfarmakos", primary_key: "kod_farmak", force: :cascade do |t|
+    t.date     "hmer_egris"
+    t.string   "gbonoma"
+    t.string   "emporikhon"
+    t.boolean  "fprint"
+    t.boolean  "common"
+    t.boolean  "enimerosi"
+    t.boolean  "amateur_use"
+    t.boolean  "tag"
+    t.boolean  "mixture"
+    t.string   "edr_cod_kat"
+    t.date     "date_notification"
+    t.string   "date_update"
+    t.string   "kode"
+    t.integer  "num_protok"
+    t.integer  "num_protok_total"
+    t.string   "tegris"
+    t.string   "type_egris"
+    t.string   "kat_number_egris"
+    t.integer  "fys_katast"
+    t.integer  "fys_kat"
+    t.date     "adate"
+    t.boolean  "group"
+    t.string   "morfhskeya"
+    t.decimal  "bohthitike"
+    t.string   "aposyrsh"
+    t.string   "kod"
+    t.boolean  "food"
+    t.string   "stoxos"
+    t.text     "tropo_efar"
+    t.text     "met_klima"
+    t.integer  "paraskeyas"
+    t.integer  "antiprosop"
+    t.integer  "contact_market"
+    t.integer  "contact_point"
+    t.string   "code_toxik"
+    t.string   "rcode"
+    t.date     "telos_egri"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "mfarmkasts", primary_key: "counter", force: :cascade do |t|
+    t.integer  "mfarmako_id"
+    t.integer  "mcrop_id"
+    t.string   "tropoxrono"
+    t.boolean  "delrec"
+    t.boolean  "general"
+    t.boolean  "un_delete"
+    t.date     "un_date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "mfcs", force: :cascade do |t|
-    t.integer  "farmako_id"
+    t.integer  "mfarmako_id"
     t.integer  "mcrop_id"
     t.string   "crops"
-    t.string   "edr_cod_kat"
+    t.string   "mkatigori_id"
     t.string   "eidos"
     t.string   "emporikhon"
     t.string   "gbonoma"
@@ -162,6 +260,26 @@ ActiveRecord::Schema.define(version: 20150406131212) do
     t.binary   "un_delete"
     t.date     "un_date"
     t.binary   "soil"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "mkatigoris", id: false, force: :cascade do |t|
+    t.integer  "code_kathg"
+    t.integer  "kod_kathg"
+    t.integer  "kode_kathg"
+    t.integer  "gkode_kathg"
+    t.string   "dr_cod_kat"
+    t.string   "edr_cod_kat", null: false
+    t.integer  "code"
+    t.boolean  "ovisible"
+    t.boolean  "biocides"
+    t.string   "kathgoria"
+    t.string   "kathgories"
+    t.string   "gkathg"
+    t.string   "gkathgoria"
+    t.string   "hkathgoria"
+    t.string   "ghkathgoria"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

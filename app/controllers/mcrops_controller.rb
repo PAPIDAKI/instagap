@@ -3,6 +3,10 @@ class McropsController < ApplicationController
 
   respond_to :html
 
+  def list
+
+  end
+
   def index
 		@mcrops=Mcrop.produce_20
 
@@ -22,7 +26,7 @@ class McropsController < ApplicationController
   def show
 		@mcrop=Mcrop.find(params[:code_fyta])
 		#@mepembashes=@mcrop.mepembashes
-		@mfcs=@mcrop.mfcs.limit(50)
+		@mfcs=@mcrop.mfcs.order(:gbonoma).limit(50)
 		#@farmako= Mfc.farmako.mepembashes.where(:mcrop_id==params[:id]).last.diast_pros
 		#@mepembashes=@mcrop.mfcs.each do |mfc|
 			#farmako.mepempashes.where(:mcrop==@mcrop.id)
@@ -38,7 +42,8 @@ class McropsController < ApplicationController
 				send_data pdf.render,filename: "igap List for #{@mcrop.gonoma}",
 					type: "application/pdf",
 					disposition:"inline"
-			end
+        end
+			
 		end
 
   end

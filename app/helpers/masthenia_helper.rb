@@ -1,0 +1,2 @@
+module MastheniaHelper
+end

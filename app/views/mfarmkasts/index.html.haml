@@ -1,0 +1,42 @@
+%h1 Listing mfarmkasts
+%p
+  =form_tag import_mfarmkasts_path,multipart:true do
+    =file_field_tag :file,class:'btn'
+    =submit_tag "Import CSV",class:'btn btn-link'
+
+%p
+  = link_to 'New Mfarmkast', new_mfarmkast_path,class:'btn btn-link'
+
+
+%table
+  %thead
+    %tr
+      %th Counter
+      %th Kod farmak
+      %th Code fyta
+      %th Tropoxrono
+      %th Delrec
+      %th General
+      %th Un delete
+      %th Un date
+      %th
+      %th
+      %th
+
+  %tbody
+    - @mfarmkasts.each do |mfarmkast|
+      %tr
+        %td= mfarmkast.counter
+        %td= mfarmkast.farmako_id
+        %td= mfarmkast.mcrop_id
+        %td= mfarmkast.tropoxrono
+        %td= mfarmkast.delrec
+        %td= mfarmkast.general
+        %td= mfarmkast.un_delete
+        %td= mfarmkast.un_date
+        %td= link_to 'Show', mfarmkast
+        %td= link_to 'Edit', edit_mfarmkast_path(mfarmkast)
+        %td= link_to 'Destroy', mfarmkast, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+

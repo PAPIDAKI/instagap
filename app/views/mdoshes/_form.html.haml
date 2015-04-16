@@ -1,0 +1,16 @@
+= form_for @mdosh do |f|
+  - if @mdosh.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@mdosh.errors.count, "error")} prohibited this mdosh from being saved:"
+      %ul
+        - @mdosh.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :kod_doshs
+    = f.number_field :kod_doshs
+  .field
+    = f.label :dosh
+    = f.text_field :dosh
+  .actions
+    = f.submit 'Save'

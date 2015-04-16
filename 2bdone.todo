@@ -1,19 +1,28 @@
 
  =Logs
- ☐ activity - quantity - chem model 
- ☐ set up controllers
- ☐ Set nested forms 
- ☐ Set views (show and index)
- =Chems 
- ☐ User End 
- ☐ One page with all the chems per produce 
- ☐ The chems info will be the required to suck data  for later use 
- ☐ Printable 
- ☐ Protected with watermark
- Admin panel for updates 
+   ☐ activity - quantity - chem model 
+   ☐ set up controllers
+   ☐ Set nested forms 
+   ☐ Set views (show and index)
 
- Pmus map
- System 
+=Chems 
+               User End 
+               ☐ One page with all the chems per produce 
+               ☐ The chems info will be the required to suck data  for later use 
+                  
+               ☐ Printable 
+               ☐ Protected with watermark
+               ☐ Admin panel for updates 
+                  From routes build equivalent
+
+Pmus map
+Printables
+
+
+System 
+
+
+
  Multitenacy
 
  Marketing 

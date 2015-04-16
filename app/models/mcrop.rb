@@ -3,11 +3,16 @@ class Mcrop < ActiveRecord::Base
 	PRODUCES=[]
 
 
-#Chems table relationships 
-	has_many :mepembashes
-     # has_many :farmakos,through: :mepembashes
+#Chems table relationships
 	has_many :mfcs
-	has_many :farmakos,through: :mfcs
+	has_many :mfarmakos,through: :mfcs
+
+	has_many :mfarmkasts
+	has_many :mfarmakos,through: :mfarmkasts
+
+
+	has_many :mepembashes  
+     has_many :mfarmakos,through: :mepembashes
 
 
 	has_many :productions

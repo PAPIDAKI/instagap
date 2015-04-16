@@ -3,18 +3,29 @@ require 'prawn/table'
 class ChemsPdf <Prawn::Document
 
 
-	def initialize(mcrop,mepembashes,mfcs,farmako)
+	def initialize(mcrop,mepembashes,mfcs,mfarmako)
 		super(top_margin:10)
 
 			@mcrop=mcrop
 		@mepembashes=mepembashes
 		@mfcs=mfcs
-		@farmako=farmako
-		default_header
-		header
-		table_content
+		@farmako=mfarmako
 
+		font_families.update(
+			"DejaVu" =>{
+        #:normal => "#{Prawn::DATADIR}/fonts/DejaVuSans-bold.ttf"
+         :normal=>"/Library/Fonts/DejaVuSans.ttf"
+		      }
+		    )
+			default_header
+			header
+			#table_content	
 	end
+
+	def fallback_fonts
+       "DejaVu"
+    end
+
 	def default_header
 		logo="#{Rails.root}/app/assets/images/default.png"
 		data=[[{:image=>logo,:fit=>[100,50],:position=>:center,:vposition=>:center},"Sultanas Export Union ltd"," 3rd cell "]]
@@ -32,22 +43,26 @@ class ChemsPdf <Prawn::Document
 
 		move_down 20
 	end
-
 	def header
-		text "Chem List for #{@mcrop.gonoma}",
+		#font "#{Prawn::DATADIR}/fonts/symbol.ttf" do
+		text " Chems List for #{@mcrop.gonoma}",
 	       size:20,style: :bold
+	   #end
 	end
 
 	def table_content
 		move_down 10
+		
 
 		table mcrop_rows do
+
 			row(0).font_style = :bold
 			self.header = true
 			self.position=:center
 			self.cell_style={:borders=>[ ],:size=>10,:height=>25,:padding=>[5,5,5,5]}
 			self.row_colors = ['DDDDDD', 'FFFFDD']
 			self.column_widths = [200, 40, 150,150]
+			
 
 		end
 	end
@@ -55,10 +70,10 @@ class ChemsPdf <Prawn::Document
 	def mcrop_rows
 		[["Trade Name","phi","Prime Igridient","Expiration Date"]]+
 				@mfcs.map do |mfc|
-					[mfc.gbonoma,"fixme",mfc.farmako.systatiks.first.onomadron,mfc.telos_egri]
+					[mfc.gbonoma,"fixme",mfc.mfarmako.systatiks.first.onomadron,mfc.telos_egri]
 				end
 	end
 
 end
-#mfc.farmako.mepembashes.where(:mcrop_id==params[:id]).last.diast_pros
+#mfc.mfarmako.mepembashes.where(:mcrop_id==params[:id]).last.diast_pros
 

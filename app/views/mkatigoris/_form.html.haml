@@ -1,0 +1,55 @@
+= form_for @mkatigori do |f|
+  - if @mkatigori.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@mkatigori.errors.count, "error")} prohibited this mkatigori from being saved:"
+      %ul
+        - @mkatigori.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :code_kathg
+    = f.number_field :code_kathg
+  .field
+    = f.label :kod_kathg
+    = f.number_field :kod_kathg
+  .field
+    = f.label :kode_kathg
+    = f.number_field :kode_kathg
+  .field
+    = f.label :gkode_kathg
+    = f.number_field :gkode_kathg
+  .field
+    = f.label :dr_cod_kat
+    = f.text_field :dr_cod_kat
+  .field
+    = f.label :edr_cod_kat
+    = f.text_field :edr_cod_kat
+  .field
+    = f.label :code
+    = f.number_field :code
+  .field
+    = f.label :ovisible
+    = f.check_box :ovisible
+  .field
+    = f.label :biocides
+    = f.text_field :biocides
+  .field
+    = f.label :kathgoria
+    = f.text_field :kathgoria
+  .field
+    = f.label :kathgories
+    = f.text_field :kathgories
+  .field
+    = f.label :gkathg
+    = f.text_field :gkathg
+  .field
+    = f.label :gkathgoria
+    = f.text_field :gkathgoria
+  .field
+    = f.label :hkathgoria
+    = f.text_field :hkathgoria
+  .field
+    = f.label :ghkathgoria
+    = f.text_field :ghkathgoria
+  .actions
+    = f.submit 'Save'

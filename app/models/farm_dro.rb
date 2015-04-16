@@ -1,6 +1,6 @@
 class FarmDro < ActiveRecord::Base
 	belongs_to :systatik
-	belongs_to :farmako
+	belongs_to :mfarmako
 
 	def self.import(file)
 

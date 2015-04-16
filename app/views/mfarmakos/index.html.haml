@@ -1,0 +1,101 @@
+%h1 Listing mfarmakos
+%p
+  =form_tag import_mfarmakos_path,multipart:true do
+    =file_field_tag :file,class:'btn btn-link'
+    =submit_tag "Import CSV" ,class:'btn btn-link'
+%p
+  = link_to 'New Mfarmako', new_mfarmako_path ,class:'btn btn-link'
+
+
+%table
+  %thead
+    %tr
+      %th Hmer egris
+      %th Kod farmak
+      %th Gbonoma
+      %th Emporikhon
+      %th Fprint
+      %th Common
+      %th Enimerosi
+      %th Amateur use
+      %th Tag
+      %th Mixture
+      %th Edr cod kat
+      %th Date notification
+      %th Date updateldate
+      %th Kode
+      %th Num protok
+      %th Num protok-total
+      %th Tegris
+      %th Type egris
+      %th Kat number
+      %th Fys katast
+      %th Fys-kat
+      %th Adate
+      %th Group
+      %th Morfhskeya
+      %th Bohthitike
+      %th Aposyrsh
+      %th Kod
+      %th Food
+      %th Stoxos
+      %th Trop efar
+      %th Met klima
+      %th Paraskeyas
+      %th Antiprosop
+      %th Contact market
+      %th Contact point
+      %th Code toxik
+      %th Rcode
+      %th Telos egri
+      %th
+      %th
+      %th
+
+  %tbody
+    - @mfarmakos.each do |mfarmako|
+      %tr
+        %td= mfarmako.hmer_egris
+        %td= mfarmako.kod_farmak
+        %td= mfarmako.gbonoma
+        %td= mfarmako.emporikhon
+        %td= mfarmako.fprint
+        %td= mfarmako.common
+        %td= mfarmako.enimerosi
+        %td= mfarmako.amateur_use
+        %td= mfarmako.tag
+        %td= mfarmako.mixture
+        %td= mfarmako.edr_cod_kat
+        %td= mfarmako.date_notification
+        %td= mfarmako.date_update
+        %td= mfarmako.kode
+        %td= mfarmako.num_protok
+        %td= mfarmako.num_protok_total
+        %td= mfarmako.tegris
+        %td= mfarmako.type_egris
+        %td= mfarmako.kat_number_egris
+        %td= mfarmako.fys_katast
+        %td= mfarmako.fys_kat
+        %td= mfarmako.adate
+        %td= mfarmako.group
+        %td= mfarmako.morfhskeya
+        %td= mfarmako.bohthitike
+        %td= mfarmako.aposyrsh
+        %td= mfarmako.kod
+        %td= mfarmako.food
+        %td= mfarmako.stoxos
+        %td= mfarmako.tropo_efar
+        %td= mfarmako.met_klima
+        %td= mfarmako.paraskeyas
+        %td= mfarmako.antiprosop
+        %td= mfarmako.contact_market
+        %td= mfarmako.contact_point
+        %td= mfarmako.code_toxik
+        %td= mfarmako.rcode
+        %td= mfarmako.telos_egri
+        %td= link_to 'Show', mfarmako
+        %td= link_to 'Edit', edit_mfarmako_path(mfarmako)
+        %td= link_to 'Destroy', mfarmako, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+

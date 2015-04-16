@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Counter:
+  = @mastfarm.counter
+%p
+  %b Code asten:
+  = @mastfarm.code_asten
+%p
+  %b Fbcode:
+  = @mastfarm.fbcode
+%p
+  %b Dosh farm:
+  = @mastfarm.dosh_farm
+%p
+  %b Kod doshs:
+  = @mastfarm.kod_doshs
+
+= link_to 'Edit', edit_mastfarm_path(@mastfarm)
+\|
+= link_to 'Back', mastfarms_path

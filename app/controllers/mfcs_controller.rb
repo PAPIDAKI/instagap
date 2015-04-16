@@ -4,6 +4,7 @@ class MfcsController < ApplicationController
   respond_to :html
 
   def index
+  
     @mfcs = Mfc.all
     respond_with(@mfcs)
   end
@@ -47,6 +48,6 @@ class MfcsController < ApplicationController
     end
 
     def mfc_params
-      params.require(:mfc).permit(:farmako_id, :mcrop_id, :crops, :edr_cod_kat, :eidos, :emporikhon, :gbonoma, :aposyrsh, :telos_egri, :un_delete,:un_date ,:soil)
+      params.require(:mfc).permit(:mfarmako_id, :mcrop_id, :crops, :mkatigori_id, :eidos, :emporikhon, :gbonoma, :aposyrsh, :telos_egri, :un_delete,:un_date ,:soil)
     end
 end

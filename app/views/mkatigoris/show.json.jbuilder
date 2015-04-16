@@ -1,0 +1,1 @@
+json.extract! @mkatigori, :id, :code_kathg, :kod_kathg, :kode_kathg, :gkode_kathg, :dr_cod_kat, :edr_cod_kat, :code, :ovisible, :biocides, :kathgoria, :kathgories, :gkathg, :gkathgoria, :hkathgoria, :ghkathgoria, :created_at, :updated_at

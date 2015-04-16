@@ -1,34 +1,70 @@
 Rails.application.routes.draw do
 
 
+
+  resources :mfarmakos do
+  	collection {post :import}
+  end
+
+#============Chem resources ======
+  #=====Imported CSVs======
+
+  resources :mastfarms do
+  	collection {post :import}
+  end
+
+  resources :mfarmkasts do
+  	collection {post :import}
+  end
+
+  resources :mcfarmasts do 
+  	collection {post :import}
+  end
+
+  resources :mdoshes do
+  	collection {post :import}
+  end
+
+  resources :masthenia do
+  	collection {post :import}
+  end
+
+  resources :mkatigoris do
+  	collection {post :import}
+  end
+
   resources :mfcs do
 	  collection {post :import}
   end
-
-
-
 
   resources :farm_dros do
 	  collection{post :import}
   end
 
+  
+#4.Systatik imports all the prime ingredients 
   resources :systatiks,param: :kodikos  do
 	  collection {post :import}
   end
 
-  resources :farmakos ,param: :kod_farmak do
-	  collection {post :import}
-  end
-
+  
+#3.Mepembash imports  the phi (diast_pros) is a join table (mcrop and farmako)
   resources :mepembashes do
 	  collection {post :import}
   end
 
-	get 'mcrops/produce_20'=>'mcrops#index',scpope: 'produce_10'
-  resources :mcrops ,param: :code_fyta do
+#2. Farmakos imports all chems for brand name 
+  resources :farmakos ,param: :kod_farmak do
 	  collection {post :import}
   end
 
+#1.Mcrops imports all the crops 
+# the get mcrops/produce_20 is  a scope to list selected crops 
+  get 'mcrops/produce_20'=>'mcrops#index',scpope: 'produce_10'
+  resources :mcrops ,param: :code_fyta do
+	  collection {post :import}
+  end
+#========End of Chems =======================
 	root "groups#index"
 
 	namespace :team do

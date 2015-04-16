@@ -1,0 +1,19 @@
+= form_for @masthenium do |f|
+  - if @masthenium.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@masthenium.errors.count, "error")} prohibited this masthenium from being saved:"
+      %ul
+        - @masthenium.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :code_asten
+    = f.text_field :code_asten
+  .field
+    = f.label :astenia
+    = f.text_field :astenia
+  .field
+    = f.label :nastenia
+    = f.text_field :nastenia
+  .actions
+    = f.submit 'Save'

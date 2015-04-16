@@ -1,0 +1,2 @@
+module MfarmakosHelper
+end

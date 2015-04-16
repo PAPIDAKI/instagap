@@ -1,0 +1,57 @@
+%h3 Import Categories
+%p
+  =form_tag import_mkatigoris_path,multipart:true do
+    =file_field_tag :file,class:'btn'
+    =submit_tag "Import CSV",class:'btn btn-link'
+%p
+  = link_to 'New Mkatigori', new_mkatigori_path,class:'btn btn-link'
+
+
+%h1 Listing mkatigoris
+
+%table
+  %thead
+    %tr
+      %th Code kathg
+      %th Kod kathg
+      %th Kode kathg
+      %th Gkode kathg
+      %th Dr cod kat
+      %th Edr cod kat
+      %th Code
+      %th Ovisible
+      %th Biocides
+      %th Kathgoria
+      %th Kathgories
+      %th Gkathg
+      %th Gkathgoria
+      %th Hkathgoria
+      %th Ghkathgoria
+      %th
+      %th
+      %th
+
+  %tbody
+    - @mkatigoris.each do |mkatigori|
+      %tr
+        %td= mkatigori.code_kathg
+        %td= mkatigori.kod_kathg
+        %td= mkatigori.kode_kathg
+        %td= mkatigori.gkode_kathg
+        %td= mkatigori.dr_cod_kat
+        %td= mkatigori.edr_cod_kat
+        %td= mkatigori.code
+        %td= mkatigori.ovisible
+        %td= mkatigori.biocides
+        %td= mkatigori.kathgoria
+        %td= mkatigori.kathgories
+        %td= mkatigori.gkathg
+        %td= mkatigori.gkathgoria
+        %td= mkatigori.hkathgoria
+        %td= mkatigori.ghkathgoria
+        %td= link_to 'Show', mkatigori
+        %td= link_to 'Edit', edit_mkatigori_path(mkatigori)
+        %td= link_to 'Destroy', mkatigori, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+

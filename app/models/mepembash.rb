@@ -1,7 +1,7 @@
 class Mepembash < ActiveRecord::Base
 #chems associations 
 	belongs_to :mcrop
-	belongs_to :farmako
+	belongs_to :mfarmako
 
 	def self.import(file)
 		CSV.foreach(file.path,headers:true,:header_converters =>lambda{|h| h.downcase.gsub('-','_').gsub(' ','_').gsub('kod_farmak','farmako_id').gsub('code_fyta','mcrop_id')}) do |row|

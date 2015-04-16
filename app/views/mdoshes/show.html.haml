@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Kod doshs:
+  = @mdosh.kod_doshs
+%p
+  %b Dosh:
+  = @mdosh.dosh
+
+= link_to 'Edit', edit_mdosh_path(@mdosh)
+\|
+= link_to 'Back', mdoshes_path

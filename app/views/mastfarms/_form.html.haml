@@ -1,0 +1,25 @@
+= form_for @mastfarm do |f|
+  - if @mastfarm.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@mastfarm.errors.count, "error")} prohibited this mastfarm from being saved:"
+      %ul
+        - @mastfarm.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :counter
+    = f.number_field :counter
+  .field
+    = f.label :code_asten
+    = f.text_field :code_asten
+  .field
+    = f.label :fbcode
+    = f.text_field :fbcode
+  .field
+    = f.label :dosh_farm
+    = f.text_field :dosh_farm
+  .field
+    = f.label :kod_doshs
+    = f.number_field :kod_doshs
+  .actions
+    = f.submit 'Save'

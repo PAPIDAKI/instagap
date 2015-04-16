@@ -1,0 +1,36 @@
+%h3 Import mAsthnies
+%p
+  =form_tag import_masthenia_path,multipart:true do
+    =file_field_tag :file,class:'btn'
+    =submit_tag "Import CSV",class:'btn btn-link'
+%p
+  = link_to 'New Masthenium', new_masthenium_path,class:'btn btn-link'
+
+
+
+
+
+%h1 Listing masthenia
+
+%table
+  %thead
+    %tr
+      %th Code asten
+      %th Astenia
+      %th Nastenia
+      %th
+      %th
+      %th
+
+  %tbody
+    - @masthenia.each do |masthenium|
+      %tr
+        %td= masthenium.code_asten
+        %td= masthenium.astenia
+        %td= masthenium.nastenia
+        %td= link_to 'Show', masthenium
+        %td= link_to 'Edit', edit_masthenium_path(masthenium)
+        %td= link_to 'Destroy', masthenium, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+

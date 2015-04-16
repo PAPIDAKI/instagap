@@ -1,0 +1,29 @@
+%h1 Listing Dosages
+%p
+  =form_tag import_mdoshes_path,multipart:true do 
+    =file_field_tag :file ,class:'btn'
+    =submit_tag "Import CSV",class:'btn btn-link'
+%p
+  = link_to 'New Mdosh', new_mdosh_path,class:'btn btn-link'
+
+
+%table
+  %thead
+    %tr
+      %th Kod doshs
+      %th Dosh
+      %th
+      %th
+      %th
+
+  %tbody
+    - @mdoshes.each do |mdosh|
+      %tr
+        %td= mdosh.kod_doshs
+        %td= mdosh.dosh
+        %td= link_to 'Show', mdosh
+        %td= link_to 'Edit', edit_mdosh_path(mdosh)
+        %td= link_to 'Destroy', mdosh, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
