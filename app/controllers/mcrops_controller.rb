@@ -8,7 +8,7 @@ class McropsController < ApplicationController
   end
 
   def index
-		@mcrops=Mcrop.produce_20
+		@mcrops=Mcrop.all
 
 		#case params[:scope]
 		#	when 'produce_10'
@@ -24,13 +24,10 @@ class McropsController < ApplicationController
   end
 
   def show
-		@mcrop=Mcrop.find(params[:code_fyta])
-		#@mepembashes=@mcrop.mepembashes
-		@mfcs=@mcrop.mfcs.order(:gbonoma).limit(50)
-		#@farmako= Mfc.farmako.mepembashes.where(:mcrop_id==params[:id]).last.diast_pros
-		#@mepembashes=@mcrop.mfcs.each do |mfc|
-			#farmako.mepempashes.where(:mcrop==@mcrop.id)
-		#end
+		@mcrop=Mcrop.includes(:mfarmakos,:mfcs).find(params[:code_fyta])
+		# @mfcs=@mcrop.demo
+    @mfarmakos=@mcrop.mfarmakos
+
 
 		respond_to do |format|
 			format.html
@@ -39,10 +36,12 @@ class McropsController < ApplicationController
 				pdf.text "All chems from prawn"
 
 				pdf=ChemsPdf.new(@mcrop,@mepembashes,@mfcs,@farmako)
-				send_data pdf.render,filename: "igap List for #{@mcrop.gonoma}",
+
+				send_data pdf.render,filename: "igap List for #{@mcrop.gonoma}" ,
 					type: "application/pdf",
 					disposition:"inline"
-        end
+        
+      end
 			
 		end
 

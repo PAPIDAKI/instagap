@@ -27,8 +27,12 @@ class Team::PmusController < ApplicationController
 
 	# GET /pmus/new
 	def new
-		@registration=Registration.find(params[:registration_id])
-		@pmu = @registration.pmus.new
+		if params[:registration_id]
+			@registration=Registration.find(params[:registration_id])
+			@pmu = @registration.pmus.new
+		else
+			@registration=Registration.find(params[:id])
+		end
 	end
 
 	# GET /pmus/1/edit
@@ -49,7 +53,7 @@ class Team::PmusController < ApplicationController
 		@registration=Registration.find(params[:registration_id])
 		@pmu = @registration.pmus.create(pmu_params)
 		if @pmu.save
-			redirect_to root_url
+			redirect_to team_registration_path(@registration)
 
 		else
 			render :new

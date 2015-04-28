@@ -6,4 +6,6 @@ class Grower < ActiveRecord::Base
 	has_many :produces,through: :productions
 	has_many :certifications,through: :productions
 	has_many :standards,through: :certifications
+
+	belongs_to :user
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150415094201) do
+ActiveRecord::Schema.define(version: 20150425084511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,24 @@ ActiveRecord::Schema.define(version: 20150415094201) do
     t.string   "dosh"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "entypos", primary_key: "counter", force: :cascade do |t|
+    t.string   "methodos"
+    t.string   "stadio_season"
+    t.integer  "num_min"
+    t.integer  "num_max"
+    t.integer  "dias_min"
+    t.integer  "dias_max"
+    t.integer  "kgm_min"
+    t.integer  "kgm_max"
+    t.integer  "lt_min"
+    t.integer  "lt_max"
+    t.integer  "kgmekt_min"
+    t.integer  "kgmekt_max"
+    t.string   "comments"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "farm_dros", force: :cascade do |t|
@@ -115,6 +133,7 @@ ActiveRecord::Schema.define(version: 20150415094201) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "avatar"
+    t.integer  "user_id"
   end
 
   create_table "growers", force: :cascade do |t|
@@ -235,7 +254,8 @@ ActiveRecord::Schema.define(version: 20150415094201) do
     t.datetime "updated_at",        null: false
   end
 
-  create_table "mfarmkasts", primary_key: "counter", force: :cascade do |t|
+  create_table "mfarmkasts", force: :cascade do |t|
+    t.integer  "counter"
     t.integer  "mfarmako_id"
     t.integer  "mcrop_id"
     t.string   "tropoxrono"
@@ -349,6 +369,7 @@ ActiveRecord::Schema.define(version: 20150415094201) do
     t.integer  "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   add_index "registrations", ["group_id"], name: "index_registrations_on_group_id", using: :btree

@@ -4,7 +4,7 @@ class MfarmkastsController < ApplicationController
   # GET /mfarmkasts
   # GET /mfarmkasts.json
   def index
-    @mfarmkasts = Mfarmkast.all
+    @mfarmkasts = Mfarmkast.all.order(:counter)
   end
   def import 
     Mfarmkast.import(params[:file])
@@ -73,6 +73,6 @@ class MfarmkastsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mfarmkast_params
-      params.require(:mfarmkast).permit(:counter, :kod_farmak, :code_fyta, :tropoxrono, :delrec, :general, :un_delete, :un_date)
+      params.require(:mfarmkast).permit(:counter, :mfarmako_id :mcrop_id, :tropoxrono, :delrec, :general, :un_delete, :un_date)
     end
 end

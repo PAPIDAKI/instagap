@@ -1,3 +1,4 @@
+
 class Mfc < ActiveRecord::Base
 #chem association	
 	belongs_to :mcrop
@@ -15,9 +16,13 @@ class Mfc < ActiveRecord::Base
 	              :header_converters=>lambda{|h|h.downcase.gsub(' ','_').gsub('-','_').gsub('kod_farmak','mfarmako_id').gsub('code_fyta','mcrop_id').gsub('edr_cod_kat','mkatigori_id')}
 	               ) do |row|
 
+
+
+
       fcs_hash=row.to_hash
 	  	#fcs=Mfc.where(mfarmako_id: fcs_hash["mfarmako_id"],mcrop_id: fcs_hash["mcrop_id"])
 	  	fcs=Mfc.where(id: fcs_hash["id"])
+
 
 	  	if fcs.count==1
 	  	fcs.first.update_attributes(fcs_hash)

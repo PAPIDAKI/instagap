@@ -1,0 +1,55 @@
+= form_for @entypo do |f|
+  - if @entypo.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@entypo.errors.count, "error")} prohibited this entypo from being saved:"
+      %ul
+        - @entypo.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :counter
+    = f.number_field :counter
+  .field
+    = f.label :methodos
+    = f.text_field :methodos
+  .field
+    = f.label :stadio_season
+    = f.text_field :stadio_season
+  .field
+    = f.label :num_min
+    = f.number_field :num_min
+  .field
+    = f.label :num_max
+    = f.number_field :num_max
+  .field
+    = f.label :diast_min
+    = f.number_field :diast_min
+  .field
+    = f.label :diast_max
+    = f.number_field :diast_max
+  .field
+    = f.label :kgm-min
+    = f.number_field :kgm-min
+  .field
+    = f.label :kgm
+    = f.text_field :kgm
+  .field
+    = f.label :max
+    = f.number_field :max
+  .field
+    = f.label :lt_min
+    = f.number_field :lt_min
+  .field
+    = f.label :lt_max
+    = f.number_field :lt_max
+  .field
+    = f.label :kgmekt_min
+    = f.number_field :kgmekt_min
+  .field
+    = f.label :kgmekt_max
+    = f.number_field :kgmekt_max
+  .field
+    = f.label :comments
+    = f.text_field :comments
+  .actions
+    = f.submit 'Save'

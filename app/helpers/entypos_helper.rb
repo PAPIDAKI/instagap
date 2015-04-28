@@ -1,0 +1,2 @@
+module EntyposHelper
+end

@@ -5,6 +5,16 @@ class StandardsController < ApplicationController
   # GET /standards.json
   def index
     @standards = Standard.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf=Prawn::Document.new
+        pdf.font("#{Prawn::DATADIR}/fonts/DejaVuSans.ttf") do 
+        pdf.text("Hello World ,Γειά σου Κόσμε!")
+        send_data pdf.render
+      end
+      end
+    end
   end
 
   # GET /standards/1

@@ -1,0 +1,23 @@
+%h3 Chems
+%p
+%strong
+	
+	Dates are converted to  d/m/y after importing csv 
+%p
+	1.Corps (mcorp) last update (Date):
+	=link_to "crops",mcrops_path
+%br
+	2.Import Farmaka (mfarmako):
+	=link_to "farmako",mfarmakos_path 
+%br
+	3.:
+	%br
+	A  join table (mcrop and mfarmako) that sets the Farmako to the Crop 
+	%br and derives  the Category (edr_cod_kat) and the Expiration Date(telos_egri)
+	%b
+		%strong
+		Mind the date format in the csv file.
+	%br
+	=link_to "Farmako_crop_skeyasmata",mfcs_path
+%br
+	4.Epembashes

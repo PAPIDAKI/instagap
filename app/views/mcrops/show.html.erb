@@ -1,39 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Code fyta:</strong>
-  <%= @mcrop.code_fyta %>
+  <strong><%= @mcrop.kathg %></strong>
+(<%= @mcrop.eidos %>)
 </p>
 
 <p>
-  <strong>Kathh:</strong>
-  <%= @mcrop.kathg %>
+  <strong><%= @mcrop.gonoma %></strong>
+    <%= @mcrop.klartext %>
+
 </p>
 
-<p>
-  <strong>Eidos:</strong>
-  <%= @mcrop.eidos %>
-</p>
-
-<p>
-  <strong>Gonoma:</strong>
-  <%= @mcrop.gonoma %>
-</p>
-
-<p>
-  <strong>Genenral:</strong>
-  <%= @mcrop.general %>
-</p>
-
-<p>
-  <strong>Code:</strong>
-  <%= @mcrop.code %>
-</p>
-
-<p>
-  <strong>Klartex:</strong>
-  <%= @mcrop.klartext %>
-</p>
 
 
 <%= link_to 'Edit', edit_mcrop_path(@mcrop) %> |
@@ -41,7 +18,7 @@
 
 <hr>
 
-<h3>Approved Chem List (<%=@mfcs.count%> approved solutions)</h3>
+<h3>Approved Chem List (<%=@mfarmakos.count%> approved solutions)</h3>
 <p><%=link_to "Printable List(PDF)" ,mcrop_path(@mcrop,format:"pdf")%> </p>
   <table class="table">
     <thead>
@@ -64,23 +41,28 @@
     </thead>
 
     <tbody>
-    <% @mfcs.each do |mfc| %>
+    <% @mfarmakos.each do |farmako| %>
         <tr>
-          <td><%= mfc.try(:gbonoma).upcase %></td>
-          <td><%=mfc.mkatigori.kathgoria%></td>
-          <td><%= mfc.mfarmako.systatiks.first.try(:onomadron).upcase %></td>
-          <td><%=mfc.mfarmako.mfarmkasts.where(:mcrop_id==params[:code_fyta]).first.try(:mastfarms).try(:last).try(:masthenium).try(:astenia)%></td>
-          <td><%=mfc.mfarmako.mfarmkasts.where(:mcrop_id==params[:code_fyta]).first.try(:mastfarms).try(:last).try(:dosh_farm)%></td>
-          <td><%=mfc.mfarmako.mfarmkasts.where(:mcropi_id==params[:code_fyta]).first.try(:mastfarms).try(:last).try(:mdosh).try(:dosh)%></td>
-          <td><%=truncate(mfc.mfarmako.try(:tropo_efar))%></td>
-          
+          <td><%=farmako.try(:gbonoma) %></td>
+          <td><%=farmako.category(params[:code_fyta])%></td>
+          <td>
+            <ul>
+              <li><% farmako.systatiks.each do |systatik|%>
+                  <%=systatik.try(:onomadron) %><%end%></li>
+            </ul>
+          </td>
 
-          <td><%= mfc.mfarmako.mepembashes.where(:mcrop_id==params[:code_fyta]).first.try(:diast_pros) %></td>
-          
-          <td><%=mfc.mfarmako.try(:hmer_egris)%>
-          <td><%= mfc.mfarmako.try(:telos_egri) %></td>
 
-          
+
+          <td><%=farmako.mfarmkasts.where(mcrop_id:params[:code_fyta]).first.try(:mastfarms).try(:last).try(:masthenium).try(:astenia)%></td>
+          <td><%=farmako.mfarmkasts.where(mcrop_id:params[:code_fyta]).first.try(:mastfarms).try(:last).try(:dosh_farm)%></td>
+          <td><%=farmako.mfarmkasts.where(mcrop_id:params[:code_fyta]).first.try(:mastfarms).try(:last).try(:mdosh).try(:dosh)%></td>
+          <td><%= farmako.mepembashes.where(mcrop_id:params[:code_fyta]).first.try(:diast_pros) %></td>
+
+
+          <td><%=truncate(farmako.try(:tropo_efar))%></td>
+          <td><%=farmako.try(:hmer_egris)%>
+          <td><%=farmako.try(:telos_egri) %></td>
         </tr>
     <%end%>
 

@@ -11,14 +11,22 @@
 </head>
 <body>
 <%=render 'layouts/navbar'%>
+
+
     <div class="container-fluid">
+      <div class='row'>
+      <div class='col-xs-3'>
+        <%=render 'layouts/sidebarleft'%>
+      </div>
+      <div class='col-xs-6'>
+        <%= yield %>
+      </div>
+      <div class='col-xs-3'>
+        <%=render 'layouts/sidebarright'%>
+      </div>
+    </div>
+        <%=render 'layouts/footer'%>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-
-      <%= yield %>
-
-    <%=render 'layouts/footer'%>
 </div>
 
 </body>

@@ -1,6 +1,7 @@
 class Team::RegistrationsController < ApplicationController
 
 	def index
+		# 
 		@group=Group.find(params[:group_id])
 		@registrations=@group.registrations
 	end
@@ -60,7 +61,7 @@ class Team::RegistrationsController < ApplicationController
 		@activities=@registration.activities
 
 		else
-			@registration=Registration.find(params[:registration_id])
+			@registration=Registration.find(params[:id])
 			@group=@registration.group
 			@pmus=@registration.pmus
 			@activities=@registration.activities

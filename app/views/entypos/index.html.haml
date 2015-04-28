@@ -1,0 +1,55 @@
+%h1 Listing entypos
+%p
+  =form_tag import_entypos_path,multipart:true do
+    =file_field_tag :file,class:'btn btn-link'
+    =submit_tag 'Import CSV',class:'btn btn-link'
+%p
+  = link_to 'New Entypo', new_entypo_path
+
+
+
+%table
+  %thead
+    %tr
+      %th Counter
+      %th Methodos
+      %th Stadio season
+      %th Num min
+      %th Num max
+      %th Diast min
+      %th Diast max
+      %th Kgm-min
+      %th Kgm
+      %th Max
+      %th Lt min
+      %th Lt max
+      %th Kgmekt min
+      %th Kgmekt max
+      %th Comments
+      %th
+      %th
+      %th
+
+  %tbody
+    - @entypos.each do |entypo|
+      %tr
+        %td= entypo.counter
+        %td= entypo.methodos
+        %td= entypo.stadio_season
+        %td= entypo.num_min
+        %td= entypo.num_max
+        %td= entypo.dias_min
+        %td= entypo.dias_max
+        %td= entypo.kgm_min
+        %td= entypo.kgm_max
+        %td= entypo.lt_min
+        %td= entypo.lt_max
+        %td= entypo.kgmekt_min
+        %td= entypo.kgmekt_max
+        %td= entypo.comments
+        %td= link_to 'Show', entypo
+        %td= link_to 'Edit', edit_entypo_path(entypo)
+        %td= link_to 'Destroy', entypo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+

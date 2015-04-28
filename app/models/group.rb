@@ -12,6 +12,8 @@ class Group < ActiveRecord::Base
 	has_many :certifications,through: :productions
 	has_many :standards,through: :certifications
 
+	belongs_to :users
+
 	mount_uploader :avatar, AvatarUploader
 
 	def team_registrations

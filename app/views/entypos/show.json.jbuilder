@@ -1,0 +1,1 @@
+json.extract! @entypo, :id, :counter, :methodos, :stadio_season, :num_min, :num_max, :diast_min, :diast_max, :kgm-min, :kgm, :max, :lt_min, :lt_max, :kgmekt_min, :kgmekt_max, :comments, :created_at, :updated_at

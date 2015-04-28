@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
 
 
+  resources :entypos do
+  	collection {post :import}
+  end
+
   resources :mfarmakos do
   	collection {post :import}
   end
@@ -126,7 +130,8 @@ Rails.application.routes.draw do
 
 
 	get 'pages/about'
-  get 'pages/contact'
+  	get 'pages/contact'
+  	get 'pages/chems'
 
 	devise_for :users
 

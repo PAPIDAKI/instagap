@@ -1,4 +1,5 @@
 .jumbotron {
+  margin:10px;
   background-color: #eef7e1;
   border:1px solid #8dc63f;
 }
@@ -7,24 +8,39 @@ h2{
   color:#666666;
   font-weight: bold;
 }
-
+.sidebarleft{
+  //background-color: #8dc63f;
+  //align:justified;
+  .btn{
+    align: center;
+  }
+  .h4{
+    margin:10px;
+    text-align: center;
+  }
+}
 .navbar-default{
   .container-fluid{
     background-color: #8dc63f;
     .navbar-nav >li > a{
       color: #ffffff;
       font-size: 18px;
-      font-weight: bold;
+      //font-weight: bold;
     }
+
+
+    .brand {height:25px;}
+
     .navbar-brand {
-      color:#000000;
-      font-size: 30px;
-      font-weight: bold;
-      //font-family: 'Hobo Std';
-      text-shadow: 2px 0 0 #fff, -2px 0 0 #fff,
-      0 2px 0 #fff, 0 -2px 0 #fff,
-      1px 1px #fff, -1px -1px 0 #fff,
-      1px -1px 0 #fff, -1px 1px 0 #fff;
+     color:#000000;
+     font-size: 30px;
+     font-weight: bold;
+     //font-family: 'Hobo Std';
+     text-shadow: 2px 0 0 #fff, -2px 0 0 #fff,
+     0 2px 0 #fff, 0 -2px 0 #fff,
+     1px 1px #fff, -1px -1px 0 #fff,
+     1px -1px 0 #fff, -1px 1px 0 #fff;
+    
     }
   }
 }

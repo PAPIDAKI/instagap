@@ -1,5 +1,5 @@
-<h1>New Pmu</h1>
+<h3>New Pmu for <%=@registration.name %>(<%=@registration.group.name%>)</h3>
 
 <%= render 'form' %>
 
-<%= link_to 'Cancel FIXME ',class:'btn btn-link'  %>
+<%= link_to 'Cancel',team_registration_path(@registration),class:'btn btn-link'  %>

@@ -8,11 +8,11 @@ class Mcrop < ActiveRecord::Base
 	has_many :mfarmakos,through: :mfcs
 
 	has_many :mfarmkasts
-	has_many :mfarmakos,through: :mfarmkasts
+	# has_many :mfarmakos,through: :mfarmkasts
 
 
 	has_many :mepembashes  
-     has_many :mfarmakos,through: :mepembashes
+    # has_many :mfarmakos,through: :mepembashes
 
 
 	has_many :productions
@@ -49,5 +49,13 @@ class Mcrop < ActiveRecord::Base
 			end
 		end
 	end
+
+	def demo
+		mfcs.order(:gbonoma)
+	end
+
+
+
+
 
 end

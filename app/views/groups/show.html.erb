@@ -18,13 +18,18 @@
  </div>
    </div>
 <p>
+<% content_for (:side) do %>
 <% if @registrations.any? %>
-    <h3>Registered members</h3>
+<h3>
+  <%=@group.name%>
+</h3>
+  
     <% @registrations.each do |r|%>
     <ul>
       <li> <%=link_to "#{r.name} -#{r.role}",group_team_registration_path(@group,r)%></li>
     </ul>
     <%end%>
+<%end%>
 <%end%>
 </p>
 <p>

@@ -1,7 +1,8 @@
 class Mastfarm < ActiveRecord::Base
-belongs_to :mfarmkast
+belongs_to :entypo
 belongs_to :masthenium
 belongs_to :mdosh
+
 
 	def self.import(file)
 		CSV.foreach(file.path,headers:true,:header_converters=>lambda{|h| h.try(:downcase).gsub('-','_').gsub(' ','_')}) do |row|

@@ -6,25 +6,26 @@ class ChemsPdf <Prawn::Document
 	def initialize(mcrop,mepembashes,mfcs,mfarmako)
 		super(top_margin:10)
 
-			@mcrop=mcrop
+		@mcrop=mcrop
 		@mepembashes=mepembashes
 		@mfcs=mfcs
 		@farmako=mfarmako
 
 		font_families.update(
 			"DejaVu" =>{
-        #:normal => "#{Prawn::DATADIR}/fonts/DejaVuSans-bold.ttf"
-         :normal=>"/Library/Fonts/DejaVuSans.ttf"
+         :bold => "#{Prawn::DATADIR}/fonts/DejaVuSans-bold.ttf",
+         :normal=>"#{Prawn::DATADIR}/fonts/dejavusans.ttf"
 		      }
 		    )
+		 font "DejaVu"
+
+
 			default_header
 			header
-			#table_content	
+			table_content	
 	end
 
-	def fallback_fonts
-       "DejaVu"
-    end
+	
 
 	def default_header
 		logo="#{Rails.root}/app/assets/images/default.png"
@@ -44,10 +45,10 @@ class ChemsPdf <Prawn::Document
 		move_down 20
 	end
 	def header
-		#font "#{Prawn::DATADIR}/fonts/symbol.ttf" do
-		text " Chems List for #{@mcrop.gonoma}",
-	       size:20,style: :bold
-	   #end
+		text "#{@mcrop.gonoma} Λίστα Εγκεκριμένων Φυτοφαρμάκων",
+	       size:15,style: :bold,
+	       :align=>:center
+	   
 	end
 
 	def table_content
