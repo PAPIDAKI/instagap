@@ -23,7 +23,7 @@ gem 'prawn-table'
 gem 'cocoon'
 gem 'haml'
 gem 'haml-rails'
-gem 'simple_form'
+gem 'simple_form','3.0.3'
 gem 'bootstrap-sass', '~> 3.3.4'
 
 
