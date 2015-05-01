@@ -1,10 +1,9 @@
 class EntyposController < ApplicationController
   before_action :set_entypo, only: [:show, :edit, :update, :destroy]
 
-  # GET /entypos
-  # GET /entypos.json
+
   def index
-    @entypos = Entypo.all.includes(:mastfarms).
+    @entypos = Entypo.all
   end
 
   def import
@@ -68,7 +67,7 @@ class EntyposController < ApplicationController
     end
   end
 
-  private
+   private
     # Use callbacks to share common setup or constraints between actions.
     def set_entypo
       @entypo = Entypo.find(params[:id])
@@ -78,4 +77,5 @@ class EntyposController < ApplicationController
     def entypo_params
       params.require(:entypo).permit(:counter, :methodos, :stadio_season, :num_min, :num_max, :dias_min, :dias_max, :kgm_min, :kgm, :max, :lt_min, :lt_max, :kgmekt_min, :kgmekt_max, :comments)
     end
-end
+ end
+
