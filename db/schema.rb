@@ -139,7 +139,7 @@ ActiveRecord::Schema.define(version: 20150501050246) do
   end
 
   create_table "mastfarms", force: :cascade do |t|
-    t.integer  "entypo_id"
+    t.integer  "counter"
     t.string   "masthenium_id"
     t.string   "fbcode"
     t.string   "dosh_farm"
@@ -249,7 +249,7 @@ ActiveRecord::Schema.define(version: 20150501050246) do
   end
 
   create_table "mfarmkasts", force: :cascade do |t|
-    t.integer  "entypo_id"
+    t.integer  "counter"
     t.integer  "mfarmako_id"
     t.integer  "mcrop_id"
     t.string   "tropoxrono"
