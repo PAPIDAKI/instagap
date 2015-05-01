@@ -74,6 +74,6 @@ class MfarmakosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mfarmako_params
-      params.require(:mfarmako).permit(:hmer_egris, :kod_farmak, :gbonoma, :emporikhon, :fprint, :common, :enimerosi, :amateure_use, :tag, :mixture, :edr_cod_kat, :date_notification, :date_updateLdate, :kode, :num_protok, :num_protok-total, :tegris, :type_egris, :kat_number, :fys_katast, :fys-kat, :adate, :group, :morfhskeya, :bohthitike, :aposyrsh, :kod, :food, :stoxos, :trop_efar, :met_klima, :paraskeyas, :antiprosop, :contact_market, :contact_point, :code_toxik, :rcode, :telos_egri)
+      params.require(:mfarmako).permit(:hmer_egris, :kod_farmak, :gbonoma, :emporikhon, :fprint, :common, :enimerosi, :amateure_use, :tag, :mixture, :edr_cod_kat, :date_notification, :date_updateLdate, :kode, :num_protok, :num_protok_total, :tegris, :type_egris, :kat_number, :fys_katast, :fys_kat, :adate, :group, :morfhskeya, :bohthitike, :aposyrsh, :kod, :food, :stoxos, :trop_efar, :met_klima, :paraskeyas, :antiprosop, :contact_market, :contact_point, :code_toxik, :rcode, :telos_egri)
     end
 end
