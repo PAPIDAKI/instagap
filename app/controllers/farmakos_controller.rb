@@ -4,7 +4,7 @@ class FarmakosController < ApplicationController
   respond_to :html
 
   def index
-    @farmakos = Farmako.all.order(telos_egri: :desc)
+    @farmakos = Farmako.all.find_each.order(telos_egri: :desc)
     respond_with(@farmakos)
   end
 

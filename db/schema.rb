@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425084511) do
+ActiveRecord::Schema.define(version: 20150429111550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -145,7 +145,7 @@ ActiveRecord::Schema.define(version: 20150425084511) do
   end
 
   create_table "mastfarms", force: :cascade do |t|
-    t.integer  "mfarmkast_id"
+    t.integer  "entypo_id"
     t.string   "masthenium_id"
     t.string   "fbcode"
     t.string   "dosh_farm"
@@ -255,7 +255,7 @@ ActiveRecord::Schema.define(version: 20150425084511) do
   end
 
   create_table "mfarmkasts", force: :cascade do |t|
-    t.integer  "counter"
+    t.integer  "entypo_id"
     t.integer  "mfarmako_id"
     t.integer  "mcrop_id"
     t.string   "tropoxrono"
@@ -410,6 +410,7 @@ ActiveRecord::Schema.define(version: 20150425084511) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "role",                   default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

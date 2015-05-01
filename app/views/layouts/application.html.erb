@@ -14,11 +14,24 @@
 
 
     <div class="container-fluid">
+   
+
       <div class='row'>
       <div class='col-xs-3'>
         <%=render 'layouts/sidebarleft'%>
       </div>
       <div class='col-xs-6'>
+       <!-- custom flash messages from devise  -->
+    <% flash.each do |name, msg|%>
+      <% if msg.is_a?(String)%>
+         <div class="alert alert-<%=name=:notice ? "succcess": "danger"%> alert-dismisable">
+         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <%=content_tag :div,msg, :id=>"flash_#{name}"%>
+          </div>
+      <%end%>
+    <%end%>
+      <!-- end of custom flash message -->
+
         <%= yield %>
       </div>
       <div class='col-xs-3'>

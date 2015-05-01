@@ -1,4 +1,5 @@
 class Entypo < ActiveRecord::Base
+	
 	has_many :mfarmkasts
 	has_many :mastfarms
 	

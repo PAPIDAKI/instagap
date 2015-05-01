@@ -4,7 +4,7 @@ class MastfarmsController < ApplicationController
   # GET /mastfarms
   # GET /mastfarms.json
   def index
-    @mastfarms = Mastfarm.all
+    @mastfarms = Mastfarm.all.includes(:masthenium)
   end
 
   def import

@@ -1,7 +1,7 @@
 class Mastfarm < ActiveRecord::Base
 belongs_to :entypo
-belongs_to :masthenium
 belongs_to :mdosh
+belongs_to :masthenium
 
 
 	def self.import(file)

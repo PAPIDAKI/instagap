@@ -38,8 +38,8 @@ class Mfarmako < ActiveRecord::Base
 		end
 	end
 
-	def asthenias
-
+	def asthenias(params)
+		mfarmkasts.where(mcrop_id:params).first.try(:entypo)#.try(:mastfarms).last
 	end
 
 	def phi

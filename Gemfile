@@ -24,15 +24,19 @@ gem 'cocoon'
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'bootstrap-sass', '~> 3.3.4'
 
 
 group :production do
 	gem 'rails_12factor'
 end
 
-gem 'bullet',group: :development
 group :development, :test do
-	gem 'awesome_print',:require=>'ap'
+  gem 'bullet'
+  gem 'table_print'
+  
+  gem "better_errors"
+  # gem 'awesome_print',:require=>'ap'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   # Access an IRB console on exception pages or by using <%= console %> in views

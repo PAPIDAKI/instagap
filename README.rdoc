@@ -9,9 +9,16 @@ Use  a converter with regex
 DONE=>Add assocciations to chems to get list
 DONE=>Fix nil problem on importing mfcs
 DONE=>Print chems list
-=>Chem managment page(steps and status)
-=>csv convert dates
+TODO:Chem managment page(steps and status)
+DONE:csv convert dates
 =>csv 
+
+Top 5 today
+TODO:1.Authentication to all pages
+	2.Authorization to all pages 
+	3.per user account scoping
+	4.Bootstrap  navbar sass etc 
+	5.Chems printable list 
 
 Select and add chems to Action
     Nested chems

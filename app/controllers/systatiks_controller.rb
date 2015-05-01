@@ -1,5 +1,6 @@
 class SystatiksController < ApplicationController
   before_action :set_systatik, only: [:show, :edit, :update, :destroy]
+  before_filter :authebticate_user!
 
   respond_to :html
 

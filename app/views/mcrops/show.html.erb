@@ -47,20 +47,31 @@
           <td><%=farmako.category(params[:code_fyta])%></td>
           <td>
             <ul>
-              <li><% farmako.systatiks.each do |systatik|%>
-                  <%=systatik.try(:onomadron) %><%end%></li>
+              <% farmako.systatiks.each do |systatik|%>
+                  <li><%=systatik.try(:onomadron) %> </li>
+                  <%end%>
             </ul>
           </td>
 
+          <td>
+            <ul>
+              <% @mastfarms.try(:each) do |mastf|%>
+                <li><%=mastf.try(:masthenium).try(:astenia)%></li>
+                <%end%>
+            </ul>
+          </td>
 
+          <td>
+              <ul><%farmako.mfarmkasts.where(mcrop_id:params[:code_fyta]).last.try(:entypo).try(:mastfarms).try(:each) do |mastf|%>
+                <li><%=mastf.try(:dosh_farm)%></li>
+                <%end%>
+              </ul>
+          </td>
 
-          <td><%=farmako.mfarmkasts.where(mcrop_id:params[:code_fyta]).first.try(:mastfarms).try(:last).try(:masthenium).try(:astenia)%></td>
-          <td><%=farmako.mfarmkasts.where(mcrop_id:params[:code_fyta]).first.try(:mastfarms).try(:last).try(:dosh_farm)%></td>
-          <td><%=farmako.mfarmkasts.where(mcrop_id:params[:code_fyta]).first.try(:mastfarms).try(:last).try(:mdosh).try(:dosh)%></td>
-          <td><%= farmako.mepembashes.where(mcrop_id:params[:code_fyta]).first.try(:diast_pros) %></td>
-
-
+          <td>
+           <%=farmako.mfarmkasts.where(mcrop_id:params[:code_fyta]).last.try(:entypo).try(:mastfarms).try(:first).try(:mdosh).try(:dosh)%></td>
           <td><%=truncate(farmako.try(:tropo_efar))%></td>
+          <td><%= farmako.mepembashes.where(mcrop_id:params[:code_fyta]).first.try(:diast_pros) %></td>          
           <td><%=farmako.try(:hmer_egris)%>
           <td><%=farmako.try(:telos_egri) %></td>
         </tr>

@@ -1,5 +1,7 @@
 class McropsController < ApplicationController
   before_action :set_mcrop, only: [:show, :edit, :update, :destroy]
+    before_filter :authenticate_user!
+
 
   respond_to :html
 
@@ -24,9 +26,24 @@ class McropsController < ApplicationController
   end
 
   def show
-		@mcrop=Mcrop.includes(:mfarmakos,:mfcs).find(params[:code_fyta])
-		# @mfcs=@mcrop.demo
-    @mfarmakos=@mcrop.mfarmakos
+    # TODO:add queries to fill up farmakos table 
+		@mcrop=Mcrop.find(params[:code_fyta])
+    @mfarmakos=@mcrop.mfarmakos.includes(:systatiks)
+    where()
+
+        # farmako.mfarmkasts.where(mcrop_id:params[:code_fyta]).last.try(:entypo).try(:mastfarms)
+
+    # @mfarmkasts=@mfarmakos.each {|f| f.mfarmkasts}
+    # @entypo=@mfarmkasts.each {|mf| mf.entypo}
+     # @mastfarms=Mastfarms.all
+
+    # @mfarmkasts=Mfarmkast.mfarmako
+    # @mfarmakos.each {|mf| mf.mfarmkasts.where(mcrop_id:params[:code_fyta])}
+    # @entypos=@mfarmkasts.each{|mf| mf.entypo}
+    # @entypo=@mfarmkast.entypo
+    # @mastfarms=@entypo.mastfarms
+     # @entypos = Entypo.includes(:mastfarms).all
+    # @mastfarms=Mastfarm.includes(:masthenium).all
 
 
 		respond_to do |format|

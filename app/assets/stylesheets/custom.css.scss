@@ -21,20 +21,25 @@ h2{
 }
 .navbar-default{
   .container-fluid{
-    background-color: #8dc63f;
+    // background-color: #8dc63f;
     .navbar-nav >li > a{
-      color: #ffffff;
+      color: #93b73e;
       font-size: 18px;
       //font-weight: bold;
     }
 
 
-    .brand {height:25px;}
+    // .brand {height:25px;}
+    #logo {
+  height: 150%;
+  margin-top: -8px;
+  margin-left: auto;
+    }
 
     .navbar-brand {
      color:#000000;
      font-size: 30px;
-     font-weight: bold;
+     // font-weight: bold;
      //font-family: 'Hobo Std';
      text-shadow: 2px 0 0 #fff, -2px 0 0 #fff,
      0 2px 0 #fff, 0 -2px 0 #fff,

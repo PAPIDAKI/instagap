@@ -4,7 +4,7 @@ class MfarmakosController < ApplicationController
   # GET /mfarmakos
   # GET /mfarmakos.json
   def index
-    @mfarmakos = Mfarmako.includes[:systatiks].all
+    @mfarmakos = Mfarmako.all.find_each
   end
 
   def import

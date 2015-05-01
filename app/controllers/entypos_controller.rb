@@ -4,7 +4,7 @@ class EntyposController < ApplicationController
   # GET /entypos
   # GET /entypos.json
   def index
-    @entypos = Entypo.all
+    @entypos = Entypo.all.includes(:mastfarms).
   end
 
   def import

@@ -4,8 +4,6 @@ class Mfarmkast < ActiveRecord::Base
 	belongs_to :entypo
 
 
-	has_many :mastfarms
-	has_many :masthenia,through: :mastfarms
 
 	def self.import(file)
 		CSV.foreach(file.path,headers: true,:header_converters=>lambda{|h| h.try(:downcase).gsub('-','_').gsub(' ','_').gsub('kod_farmak','mfarmako_id').gsub('code_fyta','mcrop_id') }) do |row|

@@ -1,6 +1,6 @@
 class Masthenium < ActiveRecord::Base
 	self.primary_key='code_asten'
-	has_many :mfarmkasts
+	has_many :mastfarms
 
 	#from this table get a list of asthenias names
 
