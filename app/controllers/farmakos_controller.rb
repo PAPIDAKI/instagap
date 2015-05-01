@@ -56,7 +56,7 @@ class FarmakosController < ApplicationController
          :enimerosi, 
          :amateur_use,
           :tag, 
-         :mixture, 2
+         :mixture, 
          :edr_cod_kat, 
          :date_notification, 
          :date_update, 
