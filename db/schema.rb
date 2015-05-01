@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150429111550) do
+ActiveRecord::Schema.define(version: 20150501050246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,12 +39,6 @@ ActiveRecord::Schema.define(version: 20150429111550) do
 
   add_index "certifications", ["production_id"], name: "index_certifications_on_production_id", using: :btree
   add_index "certifications", ["standard_id"], name: "index_certifications_on_standard_id", using: :btree
-
-  create_table "chems", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "doshes", primary_key: "kod_doshs", force: :cascade do |t|
     t.string   "dosh"
@@ -424,6 +418,5 @@ ActiveRecord::Schema.define(version: 20150429111550) do
   add_foreign_key "productions", "pmus"
   add_foreign_key "productions", "produces"
   add_foreign_key "quants", "activities"
-  add_foreign_key "quants", "chems"
   add_foreign_key "registrations", "groups"
 end
