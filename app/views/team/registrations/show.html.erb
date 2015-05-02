@@ -41,7 +41,7 @@
 
     <td><%=activity.date%></td>
     <td><%=activity.type%></td>
-    <td><% activity.productions.each do |production|%>
+    <td><% activity.productions.includes(:pmu).each do |production|%>
           <li><%=production.pmu_with_produce_and_variety%></li>
           <%end%></td>
     <td><%=activity.operator%></td>

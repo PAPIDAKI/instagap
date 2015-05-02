@@ -29,7 +29,6 @@ class McropsController < ApplicationController
     # TODO:add queries to fill up farmakos table 
 		@mcrop=Mcrop.find(params[:code_fyta])
     @mfarmakos=@mcrop.mfarmakos.includes(:systatiks)
-    where()
 
         # farmako.mfarmkasts.where(mcrop_id:params[:code_fyta]).last.try(:entypo).try(:mastfarms)
 

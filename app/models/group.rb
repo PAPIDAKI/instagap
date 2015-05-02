@@ -12,7 +12,7 @@ class Group < ActiveRecord::Base
 	has_many :certifications,through: :productions
 	has_many :standards,through: :certifications
 
-	belongs_to :users
+	belongs_to :user
 
 	mount_uploader :avatar, AvatarUploader
 

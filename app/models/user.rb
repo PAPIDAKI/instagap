@@ -13,7 +13,7 @@ end
 
 
 
-         has_many :groups
+         has_many :groups ,dependent: :destroy
          has_many :registrations
          has_many :pmus
 end

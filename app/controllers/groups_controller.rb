@@ -1,10 +1,11 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
-
+  before_filter:authenticate_user!
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.where(user:current_user)
+    # @groups=Group.all
 		respond_to do |format|
 			format.html
 			format.pdf do
@@ -81,7 +82,7 @@ class GroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
-      params.require(:group).permit(:name, :address, :phone, :email,:avatar,:remove_avatar)
+      params.require(:group).permit(:name, :address, :phone, :email,:avatar,:remove_avatar,:user_id)
     end
 end
 

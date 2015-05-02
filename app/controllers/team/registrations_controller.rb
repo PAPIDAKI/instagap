@@ -57,7 +57,7 @@ class Team::RegistrationsController < ApplicationController
 		@group=Group.find(params[:group_id])
 		@registration=@group.registrations.find(params[:id])
 		@pmus=@registration.pmus
-		@productions=@registration.productions
+		@productions=@registration.productions.includes(:productions)
 		@activities=@registration.activities
 
 		else

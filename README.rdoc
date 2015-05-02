@@ -13,6 +13,13 @@ TODO:Chem managment page(steps and status)
 DONE:csv convert dates
 =>csv 
 
+TODO:home page index groups reload jquery
+TODO:a home page for unsigned users sort of landing page
+TODO:round icons on index page 
+TODO:send emails from index mail_to link
+TODO:fix bootstrap for small devises
+TODO:groups/move back to Projects and use as a button 
+TODO: 
 Top 5 today
 TODO:1.Authentication to all pages
 	2.Authorization to all pages 

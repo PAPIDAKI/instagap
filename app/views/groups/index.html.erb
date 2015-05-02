@@ -6,23 +6,26 @@
 <br>
 
 
+<!-- <div class='container'> -->
+  <div class='row'>
+  <div class='col-md-6'>
 
 <table class="table table-condensed table-hover">
- <!--  <thead>
+  <thead>
     <tr>
-      <th></th>
+      <th class='col-md-1'></th>
       <th>Name</th>
       <th>Address</th>
       <th>Phone</th>
       <th>Email</th>
       <th colspan="3"></th>
     </tr>
-  </thead> -->
+  </thead>
 
   <tbody>
     <% @groups.each do |group| %>
       <tr data-link="<%=group_path(group)%>">
-        <td><%= image_tag group.avatar_url(:thumb) if group.avatar? %></td>
+        <td><%= image_tag group.avatar_url(:thumb),class:'img-rounded'if group.avatar? %></td>
         <td><%= group.name %></td>
         <td><%= group.address %></td>
         <td><%= group.phone %></td>
@@ -31,7 +34,8 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
+</div>
 <br>
-<hr>
-<%=image_tag "https://s3.amazonaws.com/instagap/happy_footer.png" ,style:"margin-left:-29%"%>
+
+<%=image_tag "https://s3.amazonaws.com/instagap/happy_footer.png"  ,class:'img-responsive'%>
