@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501050246) do
+ActiveRecord::Schema.define(version: 20150503061213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -207,7 +207,6 @@ ActiveRecord::Schema.define(version: 20150501050246) do
   end
 
   create_table "mfarmakos", primary_key: "kod_farmak", force: :cascade do |t|
-    t.date     "hmer_egris"
     t.string   "gbonoma"
     t.string   "emporikhon"
     t.boolean  "fprint"
@@ -217,7 +216,6 @@ ActiveRecord::Schema.define(version: 20150501050246) do
     t.boolean  "tag"
     t.boolean  "mixture"
     t.string   "edr_cod_kat"
-    t.date     "date_notification"
     t.string   "date_update"
     t.string   "kode"
     t.integer  "num_protok"
@@ -227,7 +225,6 @@ ActiveRecord::Schema.define(version: 20150501050246) do
     t.string   "kat_number_egris"
     t.integer  "fys_katast"
     t.integer  "fys_kat"
-    t.date     "adate"
     t.boolean  "group"
     t.string   "morfhskeya"
     t.decimal  "bohthitike"
@@ -243,9 +240,12 @@ ActiveRecord::Schema.define(version: 20150501050246) do
     t.integer  "contact_point"
     t.string   "code_toxik"
     t.string   "rcode"
-    t.date     "telos_egri"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.string   "hmer_egris"
+    t.string   "date_notification"
+    t.string   "adate"
+    t.string   "telos_egri"
   end
 
   create_table "mfarmkasts", force: :cascade do |t|

@@ -23,7 +23,6 @@
 
 
 
-<h3>Logbook</h3>
 <div class="btn-group btn-group-justified">
 <%=link_to 'Fertilization',new_team_registration_fertilization_path(@registration),class:'btn btn-warning'%>
 <%=link_to 'Irrigation',new_team_registration_irrigation_path(@registration),class:'btn btn-info'%>
@@ -31,40 +30,85 @@
 <%= link_to 'Cultivation',new_team_registration_cultivation_path(@registration),class:'btn btn-success'%> 
 <%=link_to 'Harvesting',new_team_registration_harvesting_path(@registration),class:'btn btn-default'%>
 </div>
-<table class="table">
-  <thead>
-  <tr><th>Date</th><th>Activity</th><th>Καλιέργειες</th><th>Operator</th><th>Note</th><th>Approved By</th></tr>
-  </thead>
-  <tbody>
-  <% @activities.each do |activity|%>
-  <tr>
 
-    <td><%=activity.date%></td>
-    <td><%=activity.type%></td>
-    <td><% activity.productions.includes(:pmu).each do |production|%>
-          <li><%=production.pmu_with_produce_and_variety%></li>
-          <%end%></td>
-    <td><%=activity.operator%></td>
-    <td><%=activity.note%></td>
-    <td><%=activity.approved_by%></td>
-    <td><%=link_to "Show",team_registration_activity_path(@registration,activity)%></td>
-    <td><%=link_to "Delete",team_registration_activity_path(@registration,activity),method: :delete%></td>
+<br>
+
+<!-- tabs navigation=============== -->
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-6'>
+
+    <ul class='nav nav-tabs'>
+      <li class='active'><a href='#tab1' data-toggle='tab'><h4>Logbook</h4></a></li>
+      <li><a href='#tab2' data-toggle='tab'><h4>Pmus Καλιέργειες</h4></a></li>
+      <li><a href='#tab3' data-toggle='tab'><h4>Print outs</h4></a></li>  
+    </ul>
+
+    <!-- Tab Sections -->
+    <div class='tab-content'%>
+    <!-- Tab 1 Logbook content -->
+      <div class='tab-pane active' id='tab1'>
+          <table class="table">
+            <thead>
+            <tr><th>Date</th><th>Activity</th><th>Καλιέργειες</th><th>Operator</th><th>Note</th><th>Approved By</th></tr>
+            </thead>
+            <tbody>
+                <% @activities.each do |activity|%>
+             <tr>
+              <td><%=activity.date%></td>
+              <td><%=activity.type%></td>
+              <td><% activity.productions.includes(:pmu).each do |production|%>
+                    <li><%=production.pmu_with_produce_and_variety%></li>
+                    <%end%></td>
+              <td><%=activity.operator%></td>
+              <td><%=activity.note%></td>
+              <td><%=activity.approved_by%></td>
+              <td><%=link_to "Show",team_registration_activity_path(@registration,activity)%></td>
+              <td><%=link_to "Delete",team_registration_activity_path(@registration,activity),method: :delete%></td>
+            </tr>
+            <%end%>
+            </tbody>
+          </table>
+      </div>
+     <!--Tab 2 Pmus  -->
+      <div class='tab-pane' id='tab2'>
+      <br>
+            <%=link_to "Add Pmu",new_team_registration_pmu_path(@registration),class:'btn btn-primary' %>
+             <h4><%=pluralize(@registration.pmus.count,'pmu')%></h4>
 
 
+            <ol>
+                <% @pmus.each do |pmu|%>
+                <li><%=link_to pmu.address,team_registration_pmu_path(@registration,pmu)%></li>
+                <%end%>
+            </ol>
+              
+      </div>
+      <!-- Content for tab 3 print outs or systen chwcklist -->
+      <div class='tab-pane' id='tab3'>
+            Tis is our ta32323233     Tis is our ta32323233 
+            Tis is our ta32323233 
+            Tis is our ta32323233 
+            Tis is our ta32323233 
+            Tis is our ta32323233 
+            Tis is our ta32323233 
+            Tis is our ta32323233 
+      </div>
+      
+      </div>
+  </div>
+</div>
+</div>
 
-  </tr>
-  <%end%>
-  </tbody>
-</table>
 
 
 
 <hr>
-<h3>Print outs</h3>
 
 
 
 
+<!-- Side bar on left with group members -->
 <p>
 <% content_for (:side) do %>
  <% if @group.registrations.any? %>
@@ -83,18 +127,6 @@
   </div>
 <%end%>
 </p>
-<p>
-<% content_for(:pmu) do%>
-<h3>Pmus</h3>
 
-<%=link_to "Add Pmu",new_team_registration_pmu_path(@registration),class:'btn btn-link' %>
-<%=@registration.pmus.count%>
-    <ol>
-      <% @pmus.each do |pmu|%>
-      <li><%=link_to pmu.address,team_registration_pmu_path(@registration,pmu)%></li>
-          <%end%>
-    </ol>
-    <%end%>
+
 <%end%>
-</p>
-</p>

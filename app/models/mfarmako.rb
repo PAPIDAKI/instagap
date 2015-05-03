@@ -11,7 +11,6 @@ class Mfarmako < ActiveRecord::Base
 	has_many :mfarmkasts
 	# has_many :
 
-	# CSV::Converters[:fix]=lambda{:hmer_egris.gsub('([0-9]{2})/+([0-9]{2})/+([0-9]{4}) 00:00:00' ,'$2/$1/$3')}
 
 	
 
@@ -22,8 +21,9 @@ class Mfarmako < ActiveRecord::Base
 			#1.import csv and fix the  row to downcase and replace blaks and - with _
 			# 2.Change the date format on the fly instead of doing it on the csv file
 			# with find and replace .
-			row[0]=row[0].gsub(/([0-9]{2})\/+([0-9]{2})\/+([0-9]{4}) 00:00:00/,'\2-\1-\3') rescue nil
-			row[37]=row[37].gsub(/([0-9]{2})\/+([0-9]{2})\/+([0-9]{4}) 00:00:00/,'\2-\1-\3') rescue nil
+			row[0]=row[0].gsub(/([0-9]{2}), 00:00:00/,'\1') rescue nil
+			# row[0]=row[0].gsub(/([0-9]{2})\/+([0-9]{2})\/+([0-9]{2})/,'\2-\1-\3') rescue nil
+			row[37]=row[37].gsub(/([0-9]{2}), 00:00:00/,'\1') rescue nil
 
 			farmako_hash=row.to_hash
 
