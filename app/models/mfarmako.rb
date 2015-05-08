@@ -38,19 +38,12 @@ class Mfarmako < ActiveRecord::Base
 		end
 	end
 
-	def asthenias(params)
-		mfarmkasts.where(mcrop_id:params).first.try(:entypo)#.try(:mastfarms).last
-	end
-
-	def phi
-
+	def phi(params)
+		mepembashes.where(mcrop_id:params).first.try(:diast_pros)  
 	end
 
 	def category(params)
-		# mcrop=Mcrop.params[:id]
-       # mfcs.where(mcrop_id:1140300).first.mkatigori.kathgoria
         mfcs.where(mcrop_id:params).first.mkatigori.kathgoria
-
 	end
 
 	def prime_igredient
@@ -58,5 +51,24 @@ class Mfarmako < ActiveRecord::Base
           systatik.try(:onomadron)
       end
 	end
+
+	def asthenias(params)
+		z=mfarmkasts.where(mcrop_id:params).first.try(:counter)
+		Mastfarm.where(counterable_id:z).includes(:masthenium)
+	end
+
+	def dosage(params)
+		z=mfarmkasts.where(mcrop_id:params).first.try(:counter)
+		Mastfarm.where(counterable_id:z).first.try(:dosh_farm)
+	end
+	def dosage_unit(params)
+		z=mfarmkasts.where(mcrop_id:params).first.try(:counter)
+		Mastfarm.where(counterable_id:z).first.try(:mdosh).try(:dosh)
+	end
+
+	
+
+
+	
 
 end

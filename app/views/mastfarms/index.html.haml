@@ -22,11 +22,11 @@
   %tbody
     - @mastfarms.each do |mastfarm|
       %tr
-        %td= mastfarm.counter
-        %td= mastfarm.code_asten
+        %td= mastfarm.counterable_id
+        %td= mastfarm.masthenium_id
         %td= mastfarm.fbcode
         %td= mastfarm.dosh_farm
-        %td= mastfarm.kod_doshs
+        %td= mastfarm.mdosh_id
         %td= link_to 'Show', mastfarm
         %td= link_to 'Edit', edit_mastfarm_path(mastfarm)
         %td= link_to 'Destroy', mastfarm, :method => :delete, :data => { :confirm => 'Are you sure?' }

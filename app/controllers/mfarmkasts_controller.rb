@@ -4,7 +4,7 @@ class MfarmkastsController < ApplicationController
   # GET /mfarmkasts
   # GET /mfarmkasts.json
   def index
-    @mfarmkasts = Mfarmkast.all.order(:counter)
+    @mfarmkasts = Mfarmkast.limit(50).order(:updated_at)
   end
   def import 
     Mfarmkast.import(params[:file])

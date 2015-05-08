@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Counter:
+  = @mfarmkziz.counter
+%p
+  %b Mfarmako:
+  = @mfarmkziz.mfarmako_id
+%p
+  %b Mcrop:
+  = @mfarmkziz.mcrop_id
+%p
+  %b Tropoxron:
+  = @mfarmkziz.tropoxron
+%p
+  %b Delrec:
+  = @mfarmkziz.delrec
+%p
+  %b General:
+  = @mfarmkziz.general
+%p
+  %b Un delete:
+  = @mfarmkziz.un_delete
+%p
+  %b Undate:
+  = @mfarmkziz.undate
+
+= link_to 'Edit', edit_mfarmkziz_path(@mfarmkziz)
+\|
+= link_to 'Back', mfarmkzizs_path

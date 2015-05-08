@@ -4,7 +4,7 @@ class MastfarmsController < ApplicationController
   # GET /mastfarms
   # GET /mastfarms.json
   def index
-    @mastfarms = Mastfarm.all.includes(:masthenium)
+    @mastfarms = Mastfarm.limit(100)
   end
 
   def import
@@ -74,6 +74,6 @@ class MastfarmsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mastfarm_params
-      params.require(:mastfarm).permit(:counter, :code_asten, :fbcode, :dosh_farm, :kod_doshs)
+      params.require(:mastfarm).permit(:counter, :code_asten, :fbcode, :dosh_farm, :kod_doshs,:counterable_type)
     end
 end

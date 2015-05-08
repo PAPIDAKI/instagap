@@ -12,7 +12,7 @@ class Mcrop < ActiveRecord::Base
 
 
 	has_many :mepembashes  
-    # has_many :mfarmakos,through: :mepembashes
+     # has_many :mfarmakos,through: :mepembashes
 
 
 	has_many :productions

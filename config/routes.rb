@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
 
 
+  resources :mfarmkzizs do
+  	collection {post :import}
+  end
+
   resources :entypos do
   	collection {post :import}
   end

@@ -3,6 +3,8 @@ class Mcfarmast < ActiveRecord::Base
 	belongs_to :mcrop
 	belongs_to :masthenium
 	belongs_to :mdosh
+
+	
 	def self.import(file)
 		CSV.foreach(file.path,headers:true,:header_converters=>lambda{|h| h.try(:downcase)}) do |row|
 			mcfarmast_hash=row.to_hash

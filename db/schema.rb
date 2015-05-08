@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150503061213) do
+ActiveRecord::Schema.define(version: 20150508093358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,32 +139,23 @@ ActiveRecord::Schema.define(version: 20150503061213) do
   end
 
   create_table "mastfarms", force: :cascade do |t|
-    t.integer  "counter"
+    t.integer  "counterable_id"
     t.string   "masthenium_id"
     t.string   "fbcode"
     t.string   "dosh_farm"
     t.integer  "mdosh_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "counterable_type"
+    t.integer  "mfarmkziz_id"
   end
+
+  add_index "mastfarms", ["mfarmkziz_id"], name: "index_mastfarms_on_mfarmkziz_id", using: :btree
 
   create_table "masthenia", id: false, force: :cascade do |t|
     t.string   "code_asten", null: false
     t.string   "astenia"
     t.string   "nastenia"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "mcfarmasts", force: :cascade do |t|
-    t.integer  "farmako_id"
-    t.integer  "counter"
-    t.integer  "mcrop_id"
-    t.string   "tropoxrono"
-    t.string   "code_asten"
-    t.string   "fbcode"
-    t.string   "dosh_farm"
-    t.integer  "mdosh_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -257,6 +248,18 @@ ActiveRecord::Schema.define(version: 20150503061213) do
     t.boolean  "general"
     t.boolean  "un_delete"
     t.date     "un_date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "mfarmkzizs", primary_key: "counter", force: :cascade do |t|
+    t.integer  "mfarmako_id"
+    t.integer  "mcrop_id"
+    t.string   "tropoxrono"
+    t.boolean  "delrec"
+    t.boolean  "general"
+    t.boolean  "un_delete"
+    t.string   "un_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

@@ -1,7 +1,12 @@
+
 class Mfarmkast < ActiveRecord::Base
 	belongs_to :mcrop
 	belongs_to :mfarmako
-	belongs_to :entypo
+	# belongs_to :entypo
+	# has_many :mastfarms ,:as=> :counterable
+	has_many :mastfarms
+	has_many :masthenenia ,through: :mastfarms
+
 
 
 
@@ -13,7 +18,7 @@ class Mfarmkast < ActiveRecord::Base
 		    row.delete('code') 
 
 			mfarmkast_hash=row.to_hash
-			mfarmkast=Mfarmkast.where(counter: mfarmkast_hash['counter'])
+			mfarmkast=Mfarmkast.where(id: mfarmkast_hash['id'])
 			 if mfarmkast==1
 				 mfarmkast.first.update_attributes(mfarmkast_hash)
 			 else

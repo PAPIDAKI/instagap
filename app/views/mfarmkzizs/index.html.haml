@@ -1,0 +1,42 @@
+%h1 Listing mfarmkzizs
+%p
+  =form_tag import_mfarmkzizs_path,multipart:true do
+    =file_field_tag :file,class:'btn'
+    =submit_tag "Import CSV",class:'btn btn-link'
+
+%p
+  = link_to 'New Mfarmkziz', new_mfarmkziz_path
+
+%table
+  %thead
+    %tr
+      %th Counter
+      %th Mfarmako
+      %th Mcrop
+      %th Tropoxron
+      %th Delrec
+      %th General
+      %th Un delete
+      %th Undate
+      %th
+      %th
+      %th
+
+  %tbody
+    - @mfarmkzizs.each do |mfarmkziz|
+      %tr
+        %td= mfarmkziz.counter
+        %td= mfarmkziz.mfarmako_id
+        %td= mfarmkziz.mcrop_id
+        %td= mfarmkziz.tropoxrono
+        %td= mfarmkziz.delrec
+        %td= mfarmkziz.general
+        %td= mfarmkziz.un_delete
+        %td= mfarmkziz.un_date
+        %td= link_to 'Show', mfarmkziz
+        %td= link_to 'Edit', edit_mfarmkziz_path(mfarmkziz)
+        %td= link_to 'Destroy', mfarmkziz, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Mfarmkziz', new_mfarmkziz_path
