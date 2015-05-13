@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  resources :cocos
+
   resources :mfarmkzizs do
   	collection {post :import}
   end

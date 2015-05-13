@@ -8,6 +8,7 @@
         <li><%= message %></li>
       <% end %>
       </ul>
+
     </div>
   <% end %>
 
@@ -22,19 +23,24 @@
     <%= f.date_select :date,class:'form-control' %>
   </div>
   <hr>
-  <%=f.fields_for :qua do |q|%>
-    <fieldset> 
+  <h3>Solution</h3>
+    <%=f.fields_for :solutions, @activity.solutions.build do |ff| %>
+      <div class='form-group'>
+            <%=ff.label :name%><br>
+            <%=ff.text_field :name%>
+      </div>
+            <div class='form-group'>
+            <%=ff.label :phi%><br>
+            <%=ff.text_field :phi%>
+      </div>
+            <div class='form-group'>
+            <%=ff.label :quantity%><br>
+            <%=ff.text_field :quantity%>
+      </div>
 
-      <%=q.label :amount %>
-      <%=q.text_field :amount%>
-      <%=q.label :unit%>
-      <%=q.text_field :unit%> 
-
-    </fieldset>
-  <%end%>
+    <%end%>
   <hr>
-
-   
+ 
   <div class="form-group">
     <%= f.hidden_field :type,class:'form-control' %>
   </div>
@@ -55,10 +61,12 @@
     <%= f.text_field :approved_by,class:'form-control' %>
   </div>
 
+   
 
-      
-
+     
+    
   <div class="actions">
     <%= f.submit class:'btn btn-default'%>
   </div>
-<% end %>
+  <% end %>
+

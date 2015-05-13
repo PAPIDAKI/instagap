@@ -37,7 +37,7 @@
         <td><%= mcrop.general %></td>
         <td><%= mcrop.code %></td>
         <td><%= mcrop.klartext %></td>
-        <td><%= link_to 'Show', mcrop %></td>
+        <td><%= link_to 'Show', mcrop,class:'btn btn-lg btn-warning',data: {disable_with: "<i class='fa fa-spinner fa-pulse'></i> Loading..."} %></td>
         <td><%= link_to 'Edit', edit_mcrop_path(mcrop) %></td>
         <td><%= link_to 'Destroy', mcrop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

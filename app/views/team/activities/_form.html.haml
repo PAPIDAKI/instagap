@@ -1,14 +1,70 @@
-=simple_form_for [:team,@registration,@activity], html:{multipart:true} do |f|
-	=f.collection_check_boxes :production_ids,@registration.productions,:id,:pmu_with_produce_and_variety,:item_wrapper_class=>'inline'
-	=f.input :date
-	=f.input :note
-	=f.input :operator
-	=f.input :approved_by
-	%hr
-	%h3 Quantities
-	#quantities
-		=f.simple_fields_for  :quantities do |quantity|
-		=render 'quantity_fields',f:quantity
-		.links
-			=link_to_add_association 'add quantity',f,:quantities
-	=f.submit
+= form_for([:team,@registration,@activity]) do |f|
+  - if @activity.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@activity.errors.count, "error")
+        prohibited this activity from being saved:
+      %ul
+        - @activity.errors.full_messages.each do |message|
+          %li= message
+  .form-group
+    = f.collection_check_boxes(:production_ids,@registration.productions,:id,:pmu_with_produce_and_variety) do |b|
+      = b.check_box :checked=>true
+      = b.label
+      %br/
+  .form-group
+    = f.label :date
+    %br/
+    = f.date_select :date,class:'form-control'
+  %hr/
+
+  %h4 Solutions
+  #solutions
+    = f.fields_for :solutions  do |solution|
+      .fieldset
+        .field
+        #name
+        = solution.label :name
+        %br
+        = solution.text_field :name
+        .field
+
+        %br
+        =solution.label :phi
+        %br
+        = solution.text_field :phi
+        .field
+        %br
+        = solution.label :quantity
+        %br
+        = solution.text_field :quantity
+        %br
+          =solution.hidden_field :_destroy
+          =link_to "Remove",'#' ,class:'remove_fields'
+      -#     -# = render 'solution_fields', :f=>solution
+      -#   .links
+      -#   -# = link_to_add_association 'add solution', f, :solutions
+
+
+  .form-group
+    = f.hidden_field :type,class:'form-control'
+  .form-group
+    = f.label :note
+    %br/
+    = f.text_area :note,class:'form-control'
+  .form-group
+    = f.label :operator
+    %br/
+    = f.text_field :operator,class:'form-control'
+  .form-group
+    = f.label :persons
+    %br/
+    = f.number_field :persons,class:'form-control'
+  .form-group
+    = f.label :approved_by
+    %br/
+    = f.text_field :approved_by,class:'form-control'
+
+ 
+  .actions
+    = f.submit

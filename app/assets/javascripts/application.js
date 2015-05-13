@@ -12,14 +12,23 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
+//= require jquery.turbolinks
 //= require cocoon
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
 
 
 jQuery(function($){
     $("tr[data-link]").click(function(){
-        window.location=this.dataset.link
+        window.location=this.dataset.link;
     });
-})
+	});
+
+
+
+  // $('form').on('click', '.remove_fields', function(event) {
+  // $(this).prev('input[type=hidden]').val('1');
+  // $(this).closest('fieldset').hide();
+  // return event.preventDefault();
+// });

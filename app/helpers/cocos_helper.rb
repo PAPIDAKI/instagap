@@ -1,0 +1,2 @@
+module CocosHelper
+end

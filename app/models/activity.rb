@@ -13,12 +13,11 @@ class Activity < ActiveRecord::Base
 	end
 
 
-	has_many :quants
-	has_many :chems,through: :quants
-	accepts_nested_attributes_for :quants,
-	                              allow_destroy: true,
-	                              reject_if: :all_blank
-	accepts_nested_attributes_for :chems
+	has_many :solutions,:dependent =>:destroy
+	accepts_nested_attributes_for :solutions,
+	                               allow_destroy: true,
+	                               reject_if: :all_blank
+
 
 
 	scope :fertilizations, -> {where(type:'Fertilization')}

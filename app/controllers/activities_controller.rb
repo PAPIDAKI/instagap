@@ -16,7 +16,10 @@ class Team::ActivitiesController < ApplicationController
 
   def new
 		@activity=type_class.new
+		3.times{@activity.solutions.build}
+
 		@registration=Registration.find(params[:registration_id])
+
 		@group=@registration.group
 		#@activity.chems.new
 
@@ -27,7 +30,6 @@ class Team::ActivitiesController < ApplicationController
 	  @registration=Registration.find(params[:registration_id])
 	  @activity=type_class.new(activity_params)
 	  @activity.registration_id=@registration.id
-	 # @activity.chem
 
 
 
@@ -45,9 +47,6 @@ class Team::ActivitiesController < ApplicationController
 		@activity=Activity.find(params[:id])
 		@registration=Registration.find(params[:registration_id])
 		@group=@registration.group
-		@activity.chems.build
-		#group_id
-		#registration.id
 
   end
 
@@ -101,8 +100,8 @@ class Team::ActivitiesController < ApplicationController
 														 :persons,
 														 :approved_by,
 														 production_ids: [],
-														 :chems_attributes => [:id,:name],
-														 :quants_attribures=>[:id,:amount,:unit])
+														 solutions_attributes:[:id,:name,:phi,:quantity,:_destroy]
+														 )
     end
 
     def edit_activity_params
@@ -115,8 +114,9 @@ class Team::ActivitiesController < ApplicationController
 												  	:approved_by,
 												  	:registration_id,
 												  	production_ids: [],
-												  	:chems_attributes => [:id,:name],
-												    :quants_attribures=>[:id,:amount,:unit])
+												  	solutions_attributes:[:id,:name,:phi,:quantity,:_destroy]
+												  	)
+
     end
 
 		def load_registration

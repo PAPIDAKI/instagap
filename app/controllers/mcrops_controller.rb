@@ -30,32 +30,21 @@ class McropsController < ApplicationController
 		@mcrop=Mcrop.find(params[:code_fyta])
     @mfarmakos=@mcrop.mfarmakos.includes(:systatiks).order(:gbonoma)
     # @crop_mfarmkasts=Mfarmkast.where(mcrop_id:params[:code_fyta])
-    
+    @id=@mcrop.code_fyta
     # @reasons=@mfarmakos.first.mfarmkasts do |mfarmkasts|
 
-    
+    # @phi=@mfarmakos.mepembashes.where(mcrop_id:params[:code_fyta]).first.try(:diast_pros) 
         # farmako.mfarmkasts.where(mcrop_id:params[:code_fyta]).last.try(:entypo).try(:mastfarms)
 
-    # @mfarmkasts=@mfarmakos.each {|f| f.mfarmkasts}
-    # @entypo=@mfarmkasts.each {|mf| mf.entypo}
-     # @mastfarms=Mastfarms.all
-
-    # @mfarmkasts=Mfarmkast.mfarmako
-    # @mfarmakos.each {|mf| mf.mfarmkasts.where(mcrop_id:params[:code_fyta])}
-    # @entypos=@mfarmkasts.each{|mf| mf.entypo}
-    # @entypo=@mfarmkast.entypo
-    # @mastfarms=@entypo.mastfarms
-     # @entypos = Entypo.includes(:mastfarms).all
-    # @mastfarms=Mastfarm.includes(:masthenium).all
 
 
 		respond_to do |format|
-			format.html
+			format.html     
 			format.pdf do
 				pdf=Prawn::Document.new
 				pdf.text "All chems from prawn"
 
-				pdf=ChemsPdf.new(@mcrop,@mepembashes,@mfcs,@farmako)
+				pdf=ChemsPdf.new(@mcrop,@mepembashes,@mfcs,@mfarmakos,@id)
 
 				send_data pdf.render,filename: "igap List for #{@mcrop.gonoma}" ,
 					type: "application/pdf",

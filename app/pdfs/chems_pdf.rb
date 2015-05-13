@@ -3,13 +3,14 @@ require 'prawn/table'
 class ChemsPdf <Prawn::Document
 
 
-	def initialize(mcrop,mepembashes,mfcs,mfarmako)
+	def initialize(mcrop,mepembashes,id,mfarmakos,mfcs)
 		super(top_margin:10)
 
 		@mcrop=mcrop
 		@mepembashes=mepembashes
+		@id=id
+		@mfarmakos=mfarmakos
 		@mfcs=mfcs
-		@farmako=mfarmako
 
 		font_families.update(
 			"DejaVu" =>{
@@ -23,6 +24,10 @@ class ChemsPdf <Prawn::Document
 			default_header
 			header
 			table_content	
+	end
+
+	def id
+		@id=@mcrop.code_fyta
 	end
 
 	
@@ -70,8 +75,12 @@ class ChemsPdf <Prawn::Document
 
 	def mcrop_rows
 		[["Trade Name","phi","Prime Igridient","Expiration Date"]]+
-				@mfcs.map do |mfc|
-					[mfc.gbonoma,"fixme",mfc.mfarmako.systatiks.first.onomadron,mfc.telos_egri]
+				@mfarmakos.map do |farmako|
+					[farmako.gbonoma,
+					  farmako.mepembashes.where(mcrop_id:id).first.try(:diast_pros),
+					  farmako.systatiks.first.try(:onomadron),
+					  farmako.telos_egri,
+				     ]
 				end
 	end
 

@@ -20,11 +20,14 @@ gem "mini_magick"
 gem "devise"
 gem 'prawn'
 gem 'prawn-table'
-gem 'cocoon'
+gem 'cocoon', :git => 'git://github.com/nathanvda/cocoon.git'
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form','3.0.3'
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'font-awesome-sass'
+gem 'jquery-turbolinks'
+
 
 
 group :production do
@@ -32,7 +35,7 @@ group :production do
 end
 
 group :development, :test do
-  gem 'bullet'
+  # gem 'bullet'
   gem 'table_print'
   
   gem "better_errors"
