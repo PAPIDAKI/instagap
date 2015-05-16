@@ -25,25 +25,22 @@
         .field
         #name
         = solution.label :name
-        %br
-        = solution.text_field :name
+        = solution.select :name,Mfarmako.all
+
         .field
 
         %br
-        =solution.label :phi
-        %br
+        =solution.label :phi  
         = solution.text_field :phi
         .field
         %br
         = solution.label :quantity
-        %br
         = solution.text_field :quantity
         %br
           =solution.hidden_field :_destroy
-          =link_to "Remove",'#' ,class:'remove_fields'
+          =link_to "Delete",'#' ,class:'remove_fields'
       -#     -# = render 'solution_fields', :f=>solution
-      -#   .links
-      -#   -# = link_to_add_association 'add solution', f, :solutions
+  = link_to_add_fields 'add Solution', f, :solutions
 
 
   .form-group

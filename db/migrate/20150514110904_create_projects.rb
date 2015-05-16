@@ -1,6 +1,6 @@
-class CreateCocos < ActiveRecord::Migration
+class CreateProjects < ActiveRecord::Migration
   def change
-    create_table :cocos do |t|
+    create_table :projects do |t|
       t.string :name
       t.string :description
 

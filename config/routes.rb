@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :cocos
+  resources :projects
 
   resources :mfarmkzizs do
   	collection {post :import}

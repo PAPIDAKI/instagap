@@ -16,7 +16,8 @@ class Team::ActivitiesController < ApplicationController
 
   def new
 		@activity=type_class.new
-		3.times{@activity.solutions.build}
+		#add the form fields for the nested attribute of solution
+		@activity.solutions.build
 
 		@registration=Registration.find(params[:registration_id])
 

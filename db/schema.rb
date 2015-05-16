@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150512125516) do
+ActiveRecord::Schema.define(version: 20150514110938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,13 +39,6 @@ ActiveRecord::Schema.define(version: 20150512125516) do
 
   add_index "certifications", ["production_id"], name: "index_certifications_on_production_id", using: :btree
   add_index "certifications", ["standard_id"], name: "index_certifications_on_standard_id", using: :btree
-
-  create_table "cocos", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
 
   create_table "doshes", primary_key: "kod_doshs", force: :cascade do |t|
     t.string   "dosh"
@@ -354,6 +347,13 @@ ActiveRecord::Schema.define(version: 20150512125516) do
   add_index "productions", ["pmu_id"], name: "index_productions_on_pmu_id", using: :btree
   add_index "productions", ["produce_id"], name: "index_productions_on_produce_id", using: :btree
 
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "registrations", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -401,15 +401,15 @@ ActiveRecord::Schema.define(version: 20150512125516) do
 
   add_index "systatiks", ["kodikos"], name: "index_systatiks_on_kodikos", unique: true, using: :btree
 
-  create_table "todos", force: :cascade do |t|
+  create_table "tasks", force: :cascade do |t|
     t.string   "description"
     t.boolean  "done"
-    t.integer  "coco_id"
+    t.integer  "project_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  add_index "todos", ["coco_id"], name: "index_todos_on_coco_id", using: :btree
+  add_index "tasks", ["project_id"], name: "index_tasks_on_project_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -439,5 +439,5 @@ ActiveRecord::Schema.define(version: 20150512125516) do
   add_foreign_key "productions", "produces"
   add_foreign_key "registrations", "groups"
   add_foreign_key "solutions", "activities"
-  add_foreign_key "todos", "cocos"
+  add_foreign_key "tasks", "projects"
 end
