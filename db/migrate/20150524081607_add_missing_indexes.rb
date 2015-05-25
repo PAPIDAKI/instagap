@@ -22,7 +22,7 @@ class AddMissingIndexes < ActiveRecord::Migration
         add_index :mfarmkzizs, :mfarmako_id
         add_index :mfarmkasts, :mcrop_id
         add_index :mfarmkasts, :mfarmako_id
-        add_index :mepembashes, :mcrop_id
+    # add_index :mepembashes, :mcrop_id
         add_index :mepembashes, :mfarmako_id
         add_index :mepembashes, [:mfarmako_id, :mcrop_id]
         add_index :mastfarms, :mdosh_id
