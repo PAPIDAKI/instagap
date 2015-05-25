@@ -15,9 +15,9 @@ class AddMissingIndexes < ActiveRecord::Migration
         # add_index :pmus, :user_id
         # add_index :pmus, [:mcrop_id, :registration_id]
         add_index :mfcs, :mcrop_id
-        add_index :mfcs, :mfarmako_id
+    # add_index :mfcs, :mfarmako_id
         add_index :mfcs, :mkatigori_id
-        add_index :mfcs, [:mcrop_id, :mfarmako_id]
+    # add_index :mfcs, [:mcrop_id, :mfarmako_id]
         add_index :mfarmkzizs, :mcrop_id
         add_index :mfarmkzizs, :mfarmako_id
         add_index :mfarmkasts, :mcrop_id
