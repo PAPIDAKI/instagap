@@ -23,7 +23,7 @@ class AddMissingIndexes < ActiveRecord::Migration
         add_index :mfarmkasts, :mcrop_id
         add_index :mfarmkasts, :mfarmako_id
     # add_index :mepembashes, :mcrop_id
-        add_index :mepembashes, :mfarmako_id
+    # add_index :mepembashes, :mfarmako_id
         add_index :mepembashes, [:mfarmako_id, :mcrop_id]
         add_index :mastfarms, :mdosh_id
         add_index :mastfarms, :masthenium_id
@@ -31,6 +31,6 @@ class AddMissingIndexes < ActiveRecord::Migration
         # add_index :growers, :user_id
         add_index :groups, :user_id
         add_index :farm_dros, :systatik_id
-        add_index :farm_dros, :mfarmako_id
+    # add_index :farm_dros, :mfarmako_id
   end
 end
