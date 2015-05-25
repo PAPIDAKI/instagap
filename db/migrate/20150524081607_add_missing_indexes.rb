@@ -30,7 +30,7 @@ class AddMissingIndexes < ActiveRecord::Migration
         # add_index :mastfarms, :mfarmkast_id
         # add_index :growers, :user_id
         add_index :groups, :user_id
-        add_index :farm_dros, :systatik_id
+     # add_index :farm_dros, :systatik_id
     # add_index :farm_dros, :mfarmako_id
   end
 end
