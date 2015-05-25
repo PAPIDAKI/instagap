@@ -10,7 +10,7 @@ class McropsController < ApplicationController
   end
 
   def index
-		@mcrops=Mcrop.all.order(:code_fyta)
+		@mcrops=Mcrop.all.order(:code_fyta).page(params[:page])
 
 		#case params[:scope]
 		#	when 'produce_10'
@@ -29,13 +29,8 @@ class McropsController < ApplicationController
     # TODO:add queries to fill up farmakos table 
 		@mcrop=Mcrop.find(params[:code_fyta])
     @mfarmakos=@mcrop.mfarmakos.includes(:systatiks).order(:gbonoma)
-    # @crop_mfarmkasts=Mfarmkast.where(mcrop_id:params[:code_fyta])
+
     @id=@mcrop.code_fyta
-    # @reasons=@mfarmakos.first.mfarmkasts do |mfarmkasts|
-
-    # @phi=@mfarmakos.mepembashes.where(mcrop_id:params[:code_fyta]).first.try(:diast_pros) 
-        # farmako.mfarmkasts.where(mcrop_id:params[:code_fyta]).last.try(:entypo).try(:mastfarms)
-
 
 
 		respond_to do |format|

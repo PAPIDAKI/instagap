@@ -13,7 +13,7 @@
   <tbody>
     <% @produces.each do |produce| %>
       <tr>
-        <td><%= produce.name %></td>
+        <td><%= produce.gonoma %></td>
         <td><%= link_to 'Show', produce,class:'btn btn-link'  %></td>
         <td><%= link_to 'Edit', edit_produce_path(produce) ,class:'btn btn-link' %></td>
         <td><%= link_to 'Destroy', produce, method: :delete, data: { confirm: 'Are you sure?' } ,class:'btn btn-link' %></td>

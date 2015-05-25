@@ -2,8 +2,6 @@
 class Mfarmkast < ActiveRecord::Base
 	belongs_to :mcrop
 	belongs_to :mfarmako
-	# belongs_to :entypo
-	# has_many :mastfarms ,:as=> :counterable
 	has_many :mastfarms
 	has_many :masthenenia ,through: :mastfarms
 

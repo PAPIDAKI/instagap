@@ -9,7 +9,6 @@ class Mfarmako < ActiveRecord::Base
 	has_many :mcrops,through: :mepembashes
 
 	has_many :mfarmkasts
-	# has_many :
 
 
 	

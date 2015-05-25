@@ -16,7 +16,7 @@ class Production < ActiveRecord::Base
   #validates :variety,uniqueness: :true
 
 	def pmu_with_produce_and_variety
-		"#{pmu.location} #{produce.name} (#{variety})"
+		"#{mcrop.gonoma}  ( #{variety}  )#{pmu.location.upcase} "
 	end
 
 end

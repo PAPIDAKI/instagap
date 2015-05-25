@@ -58,13 +58,13 @@ class Team::RegistrationsController < ApplicationController
 		@registration=@group.registrations.find(params[:id])
 		@pmus=@registration.pmus
 		@productions=@registration.productions.includes(:productions)
-		@activities=@registration.activities
+		@activities=@registration.activities.order(id: :desc)
 
 		else
 			@registration=Registration.find(params[:id])
 			@group=@registration.group
 			@pmus=@registration.pmus
-			@activities=@registration.activities
+			@activities=@registration.activities.order(date: :desc)
 
 		end
 

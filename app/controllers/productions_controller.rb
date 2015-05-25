@@ -49,7 +49,7 @@ class ProductionsController < ApplicationController
   def show
 
 	  	@pmu=Pmu.find(params[:pmu_id])
-	  	@production=@pmu.(includes:productions).productions.find(params[:id])
+	  	@production=@pmu.productions.find(params[:id])
 			@registration=@pmu.registration
 			@fertilizations=@production.fertilizations
 			@irrigations=@production.irrigations

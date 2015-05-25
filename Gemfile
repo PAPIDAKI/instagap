@@ -27,6 +27,9 @@ gem 'simple_form','3.0.3'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'font-awesome-sass'
 gem 'jquery-turbolinks'
+gem 'jquery-ui-rails'
+gem 'kaminari'
+
 
 
 
@@ -35,8 +38,10 @@ group :production do
 end
 
 group :development, :test do
-  # gem 'bullet'
+  gem 'bullet'
   gem 'table_print'
+  gem "lol_dba" #finds and recomends missing indexes for preformance improvment
+
   
   gem "better_errors"
   # gem 'awesome_print',:require=>'ap'

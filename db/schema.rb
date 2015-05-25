@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150514110938) do
+ActiveRecord::Schema.define(version: 20150524090756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150514110938) do
     t.integer  "registration_id"
   end
 
+  add_index "activities", ["id", "type"], name: "index_activities_on_id_and_type", using: :btree
   add_index "activities", ["registration_id"], name: "index_activities_on_registration_id", using: :btree
 
   create_table "certifications", force: :cascade do |t|
@@ -76,6 +77,9 @@ ActiveRecord::Schema.define(version: 20150514110938) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  add_index "farm_dros", ["mfarmako_id"], name: "index_farm_dros_on_mfarmako_id", using: :btree
+  add_index "farm_dros", ["systatik_id"], name: "index_farm_dros_on_systatik_id", using: :btree
 
   create_table "farmakos", primary_key: "kod_farmak", force: :cascade do |t|
     t.date     "hmer_egris"
@@ -130,13 +134,7 @@ ActiveRecord::Schema.define(version: 20150514110938) do
     t.integer  "user_id"
   end
 
-  create_table "growers", force: :cascade do |t|
-    t.string   "name"
-    t.string   "address"
-    t.string   "phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  add_index "groups", ["user_id"], name: "index_groups_on_user_id", using: :btree
 
   create_table "mastfarms", force: :cascade do |t|
     t.integer  "counterable_id"
@@ -150,6 +148,8 @@ ActiveRecord::Schema.define(version: 20150514110938) do
     t.integer  "mfarmkziz_id"
   end
 
+  add_index "mastfarms", ["masthenium_id"], name: "index_mastfarms_on_masthenium_id", using: :btree
+  add_index "mastfarms", ["mdosh_id"], name: "index_mastfarms_on_mdosh_id", using: :btree
   add_index "mastfarms", ["mfarmkziz_id"], name: "index_mastfarms_on_mfarmkziz_id", using: :btree
 
   create_table "masthenia", id: false, force: :cascade do |t|
@@ -196,6 +196,10 @@ ActiveRecord::Schema.define(version: 20150514110938) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "mepembashes", ["mcrop_id"], name: "index_mepembashes_on_mcrop_id", using: :btree
+  add_index "mepembashes", ["mfarmako_id", "mcrop_id"], name: "index_mepembashes_on_mfarmako_id_and_mcrop_id", using: :btree
+  add_index "mepembashes", ["mfarmako_id"], name: "index_mepembashes_on_mfarmako_id", using: :btree
 
   create_table "mfarmakos", primary_key: "kod_farmak", force: :cascade do |t|
     t.string   "gbonoma"
@@ -252,6 +256,9 @@ ActiveRecord::Schema.define(version: 20150514110938) do
     t.datetime "updated_at",  null: false
   end
 
+  add_index "mfarmkasts", ["mcrop_id"], name: "index_mfarmkasts_on_mcrop_id", using: :btree
+  add_index "mfarmkasts", ["mfarmako_id"], name: "index_mfarmkasts_on_mfarmako_id", using: :btree
+
   create_table "mfarmkzizs", primary_key: "counter", force: :cascade do |t|
     t.integer  "mfarmako_id"
     t.integer  "mcrop_id"
@@ -263,6 +270,9 @@ ActiveRecord::Schema.define(version: 20150514110938) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "mfarmkzizs", ["mcrop_id"], name: "index_mfarmkzizs_on_mcrop_id", using: :btree
+  add_index "mfarmkzizs", ["mfarmako_id"], name: "index_mfarmkzizs_on_mfarmako_id", using: :btree
 
   create_table "mfcs", force: :cascade do |t|
     t.integer  "mfarmako_id"
@@ -280,6 +290,11 @@ ActiveRecord::Schema.define(version: 20150514110938) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  add_index "mfcs", ["mcrop_id", "mfarmako_id"], name: "index_mfcs_on_mcrop_id_and_mfarmako_id", using: :btree
+  add_index "mfcs", ["mcrop_id"], name: "index_mfcs_on_mcrop_id", using: :btree
+  add_index "mfcs", ["mfarmako_id"], name: "index_mfcs_on_mfarmako_id", using: :btree
+  add_index "mfcs", ["mkatigori_id"], name: "index_mfcs_on_mkatigori_id", using: :btree
 
   create_table "mkatigoris", id: false, force: :cascade do |t|
     t.integer  "code_kathg"
@@ -332,7 +347,6 @@ ActiveRecord::Schema.define(version: 20150514110938) do
 
   create_table "productions", force: :cascade do |t|
     t.integer  "pmu_id"
-    t.integer  "produce_id"
     t.string   "variety"
     t.integer  "plantation_year"
     t.integer  "number_of_trees"
@@ -345,7 +359,6 @@ ActiveRecord::Schema.define(version: 20150514110938) do
 
   add_index "productions", ["mcrop_id"], name: "index_productions_on_mcrop_id", using: :btree
   add_index "productions", ["pmu_id"], name: "index_productions_on_pmu_id", using: :btree
-  add_index "productions", ["produce_id"], name: "index_productions_on_produce_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
@@ -365,6 +378,7 @@ ActiveRecord::Schema.define(version: 20150514110938) do
   end
 
   add_index "registrations", ["group_id"], name: "index_registrations_on_group_id", using: :btree
+  add_index "registrations", ["user_id"], name: "index_registrations_on_user_id", using: :btree
 
   create_table "solutions", force: :cascade do |t|
     t.string   "name"
@@ -374,9 +388,11 @@ ActiveRecord::Schema.define(version: 20150514110938) do
     t.integer  "activity_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "mfc_id"
   end
 
   add_index "solutions", ["activity_id"], name: "index_solutions_on_activity_id", using: :btree
+  add_index "solutions", ["mfc_id"], name: "index_solutions_on_mfc_id", using: :btree
 
   create_table "standards", force: :cascade do |t|
     t.string   "name"
@@ -433,10 +449,7 @@ ActiveRecord::Schema.define(version: 20150514110938) do
   add_foreign_key "certifications", "productions"
   add_foreign_key "certifications", "standards"
   add_foreign_key "memberships", "groups"
-  add_foreign_key "memberships", "growers"
-  add_foreign_key "pmus", "growers"
   add_foreign_key "productions", "pmus"
-  add_foreign_key "productions", "produces"
   add_foreign_key "registrations", "groups"
   add_foreign_key "solutions", "activities"
   add_foreign_key "tasks", "projects"

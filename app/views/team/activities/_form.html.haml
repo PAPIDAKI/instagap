@@ -7,11 +7,17 @@
       %ul
         - @activity.errors.full_messages.each do |message|
           %li= message
-  .form-group
-    = f.collection_check_boxes(:production_ids,@registration.productions,:id,:pmu_with_produce_and_variety) do |b|
-      = b.check_box :checked=>true
-      = b.label
-      %br/
+
+  - if @activity.type=='Protection'
+    .form-group
+      = f.collection_check_boxes(:production_ids,@registration.productions.order(:mcrop_id).includes(:mcrop,:pmu),:id,:pmu_with_produce_and_variety) do |b|
+        = b.check_box :checked=>false
+        = b.label
+        %br
+    %br
+  
+
+
   .form-group
     = f.label :date
     %br/
@@ -20,17 +26,19 @@
 
   %h4 Solutions
   #solutions
+
     = f.fields_for :solutions  do |solution|
       .fieldset
         .field
         #name
         = solution.label :name
-        = solution.select :name,Mfarmako.all
+        -# = solution.text_field :name,id:'tagi',data:{autocomplete_source:Mfc.where(mcrop_id:1140300).order(:gbonoma).map(&:gbonoma)}
+        =solution.collection_select(:mfc_id,Mfc.where(mcrop_id:1140300).order(:gbonoma),:id,:gbonoma)
 
         .field
 
         %br
-        =solution.label :phi  
+        = solution.label :phi
         = solution.text_field :phi
         .field
         %br

@@ -3,6 +3,7 @@ class Mfc < ActiveRecord::Base
 #chem association	
 	belongs_to :mcrop
 	belongs_to :mfarmako
+	has_many :solutions
 
 	#mfckats the join table of mfc and mkaegori
 	# to get the category name of the brandname   

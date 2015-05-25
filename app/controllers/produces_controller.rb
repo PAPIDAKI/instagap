@@ -4,7 +4,8 @@ class ProducesController < ApplicationController
   # GET /produces
   # GET /produces.json
   def index
-    @produces = Produce.all
+    # @produces = Produce.all
+    @produces=Mcrop.where(code_fyta:1140000..1140900)
   end
 
   # GET /produces/1

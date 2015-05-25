@@ -6,7 +6,7 @@ class Team::ActivitiesController < ApplicationController
   before_action :load_registration
 
   def index
-		@activities=type_class.all
+		@activities=type_class.all.order(id:desc)
   end
 
   def show
@@ -101,7 +101,7 @@ class Team::ActivitiesController < ApplicationController
 														 :persons,
 														 :approved_by,
 														 production_ids: [],
-														 solutions_attributes:[:id,:name,:phi,:quantity,:_destroy]
+														 solutions_attributes:[:id,:name,:mfc_id,:phi,:quantity,:_destroy]
 														 )
     end
 
@@ -115,7 +115,7 @@ class Team::ActivitiesController < ApplicationController
 												  	:approved_by,
 												  	:registration_id,
 												  	production_ids: [],
-												  	solutions_attributes:[:id,:name,:phi,:quantity,:_destroy]
+												  	solutions_attributes:[:id,:name,:mfc_id,:phi,:quantity,:_destroy]
 												  	)
 
     end

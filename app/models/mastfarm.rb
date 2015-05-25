@@ -2,7 +2,6 @@ class Mastfarm < ActiveRecord::Base
 # belongs_to :entypo
 belongs_to :mdosh
 belongs_to :masthenium
-# belongs_to :counterable,polymorphic: true
 belongs_to :mfarmkast
 
  

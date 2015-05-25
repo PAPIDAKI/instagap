@@ -55,6 +55,41 @@ downcase strings otherwise it loads up empty
  mcrop 			
  	> farmkos <
 
+  ====Time Performance =====
+   
+  Before:loldba gem indexing
+  >>mcrops:
+  Completed 200 OK in 1855ms (Views: 1763.2ms | ActiveRecord: 20.9ms)
+  X-Runtime:2.058214
+  Time latancy :2.12s
+    >>AFTER
+  Completed 200 OK in 1103ms (Views: 1093.1ms | ActiveRecord: 6.1ms)
+  X-Runtime:1.129664
+    >>pagination of 25 
+  Completed 200 OK in 824ms (Views: 819.1ms | ActiveRecord: 2.2ms)
+
+  >>mcrops show :
+  Completed 200 OK in 27753ms (Views: 5860.9ms | ActiveRecord: 21818.3ms)
+  X-Runtime:27.769542
+    >>>AFTER
+  Completed 200 OK in 16316ms (Views: 5366.8ms | ActiveRecord: 10876.6ms)
+  X-Runtime:16.330491
+   >>>>pagination of 25
+   Completed 200 OK in 2139ms (Views: 1273.4ms | ActiveRecord: 859.9ms)
+
+
+  >>mcrops show pdf:
+  Completed 200 OK in 5135ms (Views: 0.6ms | ActiveRecord: 3079.8ms)
+  X-Runtime:5.146013
+    >>>AFTER
+  Completed 200 OK in 2608ms (Views: 0.6ms | ActiveRecord: 180.0ms)
+  X-Runtime:2.193430
+
+
+
+
+
+
 
 
 
