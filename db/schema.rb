@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150524090756) do
+ActiveRecord::Schema.define(version: 20150526084647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,12 +40,6 @@ ActiveRecord::Schema.define(version: 20150524090756) do
 
   add_index "certifications", ["production_id"], name: "index_certifications_on_production_id", using: :btree
   add_index "certifications", ["standard_id"], name: "index_certifications_on_standard_id", using: :btree
-
-  create_table "doshes", primary_key: "kod_doshs", force: :cascade do |t|
-    t.string   "dosh"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "entypos", primary_key: "counter", force: :cascade do |t|
     t.string   "methodos"
@@ -80,48 +74,6 @@ ActiveRecord::Schema.define(version: 20150524090756) do
 
   add_index "farm_dros", ["mfarmako_id"], name: "index_farm_dros_on_mfarmako_id", using: :btree
   add_index "farm_dros", ["systatik_id"], name: "index_farm_dros_on_systatik_id", using: :btree
-
-  create_table "farmakos", primary_key: "kod_farmak", force: :cascade do |t|
-    t.date     "hmer_egris"
-    t.string   "gbonoma"
-    t.string   "emporikhon"
-    t.boolean  "fprint"
-    t.boolean  "common"
-    t.boolean  "enimerosi"
-    t.boolean  "amateur_use"
-    t.boolean  "tag"
-    t.boolean  "mixture"
-    t.string   "edr_cod_kat"
-    t.date     "date_notification"
-    t.date     "date_update"
-    t.string   "kode"
-    t.integer  "num_protok"
-    t.string   "num_protok_total"
-    t.string   "tegris"
-    t.string   "type_egris"
-    t.integer  "kat_number_egris"
-    t.integer  "fys_katast"
-    t.integer  "fys_kat"
-    t.integer  "group"
-    t.string   "morfhskeya"
-    t.decimal  "bohthitike"
-    t.string   "aposyrsh"
-    t.string   "kod"
-    t.boolean  "food"
-    t.string   "stoxos"
-    t.string   "tropo_efar"
-    t.string   "met_klima"
-    t.integer  "paraskeyas"
-    t.integer  "antiprosop"
-    t.integer  "contact_market"
-    t.integer  "contact_point"
-    t.string   "code_toxik"
-    t.string   "rcode"
-    t.date     "telos_egri"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.date     "adate"
-  end
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
