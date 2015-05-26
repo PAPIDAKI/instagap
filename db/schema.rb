@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526084647) do
+ActiveRecord::Schema.define(version: 20150526092903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,16 +128,6 @@ ActiveRecord::Schema.define(version: 20150526084647) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "memberships", force: :cascade do |t|
-    t.integer  "group_id"
-    t.integer  "grower_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "memberships", ["group_id"], name: "index_memberships_on_group_id", using: :btree
-  add_index "memberships", ["grower_id"], name: "index_memberships_on_grower_id", using: :btree
 
   create_table "mepembashes", force: :cascade do |t|
     t.integer  "mfarmako_id"
@@ -400,7 +390,6 @@ ActiveRecord::Schema.define(version: 20150526084647) do
 
   add_foreign_key "certifications", "productions"
   add_foreign_key "certifications", "standards"
-  add_foreign_key "memberships", "groups"
   add_foreign_key "productions", "pmus"
   add_foreign_key "registrations", "groups"
   add_foreign_key "solutions", "activities"
