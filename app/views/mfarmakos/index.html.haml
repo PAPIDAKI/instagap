@@ -1,9 +1,7 @@
 %h1 Listing mfarmakos
 
 %h3
-  =surround('( ',' )')do
-    Mfarmakos:
-    =@mfarmakos.count
+  =@mfarmakos.count
 
 %p
   =form_tag import_mfarmakos_path,multipart:true do
