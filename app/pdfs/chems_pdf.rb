@@ -16,7 +16,7 @@ class ChemsPdf <Prawn::Document
 			"DejaVu" =>{
          # :bold => "#{Prawn::DATADIR}/fonts/Dejasvusans-bold.ttf",
          # :normal=>"#{Prawn::DATADIR}/fonts/Dejavusans.ttf"
-            :normal=>"#{Rails.root}/app/asset/fonts/Dejavusans.ttf"
+            :normal=>"#{Rails.root}/assets/fonts/Dejavusans.ttf"
 		      }
 		    )
 		 font "DejaVu"
