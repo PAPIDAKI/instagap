@@ -74,8 +74,13 @@ downcase strings otherwise it loads up empty
     >>>AFTER
   Completed 200 OK in 16316ms (Views: 5366.8ms | ActiveRecord: 10876.6ms)
   X-Runtime:16.330491
+  ===On Heroku
+   Completed 200 OK in 14376ms (Views: 3607.4ms | ActiveRecord: 10765.3ms)
+
    >>>>pagination of 25
    Completed 200 OK in 2139ms (Views: 1273.4ms | ActiveRecord: 859.9ms)
+
+
 
 
   >>mcrops show pdf:
