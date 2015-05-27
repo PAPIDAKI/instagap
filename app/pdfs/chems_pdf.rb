@@ -14,8 +14,9 @@ class ChemsPdf <Prawn::Document
 
 		font_families.update(
 			"DejaVu" =>{
-         :bold => "#{Prawn::DATADIR}/fonts/DejaVuSans-bold.ttf",
+         :bold => "#{Prawn::DATADIR}/fonts/Dejasvusans-bold.ttf",
          :normal=>"#{Prawn::DATADIR}/fonts/Dejavusans.ttf"
+            # :normal=>"fonts/Dejavusans.ttf"
 		      }
 		    )
 		 font "DejaVu"
