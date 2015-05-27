@@ -80,5 +80,9 @@ Rails.application.configure do
 	#requires by devise prior to deployment should be set to live url
   #instead of localhost
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+ 
+###==========
+  #for heroku to handle photos and prawn pdf fonts 
+  config.serve_static_assets = true
 
 end
