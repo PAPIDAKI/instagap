@@ -19,35 +19,35 @@
 
 
   .form-group
-    = f.label :date
-    %br/
-    = f.date_select :date,class:'form-control'
+  = f.label :date
+  %br/
+  = f.date_select :date,class:'form-control'
   %hr/
 
-  %h4 Solutions
-  #solutions
-
-    = f.fields_for :solutions  do |solution|
-      .fieldset
+  - if @activity.type=='Protection'
+    %h4 Solutions
+    #solutions
+      = f.fields_for :solutions  do |solution|
+        .fieldset
         .field
         #name
-        = solution.label :name
-        -# = solution.text_field :name,id:'tagi',data:{autocomplete_source:Mfc.where(mcrop_id:1140300).order(:gbonoma).map(&:gbonoma)}
-        =solution.collection_select(:mfc_id,Mfc.where(mcrop_id:1140300).order(:gbonoma),:id,:gbonoma)
+          = solution.label :name
+          -# = solution.text_field :name,id:'tagi',data:{autocomplete_source:Mfc.where(mcrop_id:1140300).order(:gbonoma).map(&:gbonoma)}
+          =solution.collection_select(:mfc_id,Mfc.where(mcrop_id:1140300).order(:gbonoma),:id,:gbonoma)
 
-        .field
+          .field
 
-        %br
-        = solution.label :phi
-        = solution.text_field :phi
-        .field
-        %br
-        = solution.label :quantity
-        = solution.text_field :quantity
-        %br
-          =solution.hidden_field :_destroy
-          =link_to "Delete",'#' ,class:'remove_fields'
-      -#     -# = render 'solution_fields', :f=>solution
+          %br
+          = solution.label :phi
+          = solution.text_field :phi
+          .field
+          %br
+          = solution.label :quantity
+          = solution.text_field :quantity
+          %br
+            =solution.hidden_field :_destroy
+            =link_to "Delete",'#' ,class:'remove_fields'
+        -#     -# = render 'solution_fields', :f=>solution
   = link_to_add_fields 'add Solution', f, :solutions
 
 

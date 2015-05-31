@@ -1,4 +1,4 @@
-
+// playing with jquery
 $(document).ready(function(){
 		// $('form').hide();
 	// var $ht=$('.fieldset').text();
@@ -17,13 +17,15 @@ $(document).ready(function(){
 
 });
 
+
+// add the 'add solution'
 $(document).ready(function(){
  	$('form').on('click', '.add_fields', function(event) {
   var regexp, time;
   time = new Date().getTime();
   regexp = new RegExp($(this).data('id'), 'g');
   $(this).before($(this).data('fields').replace(regexp, time));
-   // return event.preventDefault();
+   // return event.preventDefault()
 });
  });
 
