@@ -120,7 +120,7 @@ Rails.application.routes.draw do
 
 
 	resources :activities do
-		resourcs :chems
+		resources :chems
 	end
 	resources :fertilizations,controller:'activities',type:'Fertilization'
 	resources :irrigations, controller: 'activities',type:'Irrigation'
