@@ -1,8 +1,8 @@
 class Registration < ActiveRecord::Base
   belongs_to :user
   belongs_to :group
-  has_many :pmus,dependent: :destroy
-  has_many :productions ,through: :pmus
+  has_many :productions ,validates: :uniqueness
+  has_many :pmus ,through: :productions
   has_many :mcrops,through: :productions
   
   has_many :activities
